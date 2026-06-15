@@ -1,16 +1,19 @@
 /**
- * Presentation Mode — animated map journey with route tracing and flyer cards.
- * Depends on Leaflet (loaded via CDN in each page).
+ * Presentation Mode — cinematic animated map journey.
+ * Traces routes smoothly with a moving marker, pulsing stops, and flyer cards.
  */
 (function () {
   'use strict';
 
-  let map, overlay, flyer, progressBar, counter, polyline;
+  let map, overlay, flyer, progressBar, counter;
+  let routeLine, traceLayer, activeMarker;
+  let stopMarkers = [];
   let stops = [];
   let current = -1;
   let autoTimer = null;
   let playing = false;
   let animFrame = null;
+  let tracing = false;
 
   function init(tripStops) {
     stops = tripStops;
@@ -29,7 +32,7 @@
       </button>
       <div class="pres-map" id="pres-map-container"></div>
       <div class="pres-flyer">
-        <img class="pres-flyer-img" src="" alt="">
+        <div class="pres-flyer-accent"></div>
         <div class="pres-flyer-body">
           <div class="pres-flyer-eyebrow"></div>
           <h3 class="pres-flyer-title"></h3>
@@ -79,15 +82,48 @@
         .addTo(map);
     }
 
-    // Reset
+    // Reset everything
     current = -1;
-    if (polyline) { map.removeLayer(polyline); polyline = null; }
+    cleanup();
 
-    // Fit to full route briefly, then start
-    const bounds = L.latLngBounds(stops.map(s => s.coords));
+    // Draw the full ghost route (faint)
+    const allCoords = stops.map(s => s.coords);
+    routeLine = L.polyline(allCoords, {
+      color: '#1F9B8C', weight: 2, opacity: .15,
+      dashArray: '6 8', lineCap: 'round'
+    }).addTo(map);
+
+    // Add stop dots
+    stops.forEach((s, i) => {
+      const icon = L.divIcon({ className: '', html: '<div class="pres-stop-dot"></div>', iconSize: [10, 10], iconAnchor: [5, 5] });
+      const m = L.marker(s.coords, { icon }).addTo(map);
+      stopMarkers.push(m);
+    });
+
+    // Trace layer (the solid animated line)
+    traceLayer = L.polyline([], {
+      color: '#1F9B8C', weight: 4, opacity: .9,
+      lineCap: 'round', lineJoin: 'round'
+    }).addTo(map);
+
+    // Active position marker
+    const markerIcon = L.divIcon({ className: '', html: '<div class="pres-marker"></div>', iconSize: [16, 16], iconAnchor: [8, 8] });
+    activeMarker = L.marker(stops[0].coords, { icon: markerIcon, zIndexOffset: 1000 }).addTo(map);
+
+    // Fit full route, then zoom to start
+    const bounds = L.latLngBounds(allCoords);
     map.fitBounds(bounds, { padding: [60, 60], animate: false });
 
-    setTimeout(() => goTo(0), 600);
+    setTimeout(() => goTo(0), 800);
+  }
+
+  function cleanup() {
+    if (routeLine) { map.removeLayer(routeLine); routeLine = null; }
+    if (traceLayer) { map.removeLayer(traceLayer); traceLayer = null; }
+    if (activeMarker) { map.removeLayer(activeMarker); activeMarker = null; }
+    stopMarkers.forEach(m => map.removeLayer(m));
+    stopMarkers = [];
+    cancelTrace();
   }
 
   function close() {
@@ -99,7 +135,7 @@
   }
 
   function goTo(idx) {
-    if (idx < 0 || idx >= stops.length) return;
+    if (idx < 0 || idx >= stops.length || tracing) return;
     cancelTrace();
     flyer.classList.remove('visible');
 
@@ -111,145 +147,127 @@
     progressBar.style.width = ((current + 1) / stops.length * 100) + '%';
     counter.textContent = `${current + 1} / ${stops.length}`;
 
-    if (prevIdx >= 0 && prevIdx < current) {
-      // Animate route trace from prevIdx to current
-      traceRoute(prevIdx, current, () => showFlyer(stop));
-    } else if (prevIdx > current) {
-      // Going backwards — redraw instantly up to current
-      drawRouteInstant(current);
-      const zoom = stop.zoom || 11;
-      map.flyTo(stop.coords, zoom, { duration: 1.2 });
-      setTimeout(() => showFlyer(stop), 900);
+    // Update stop dot styles
+    stopMarkers.forEach((m, i) => {
+      const el = m.getElement();
+      if (el) {
+        const dot = el.querySelector('.pres-stop-dot');
+        if (dot) dot.classList.toggle('active', i === current);
+      }
+    });
+
+    if (prevIdx >= 0 && Math.abs(prevIdx - current) === 1 && prevIdx < current) {
+      // Trace forward one step
+      traceToStop(prevIdx, current, () => {
+        arriveAt(stop);
+      });
     } else {
-      // First stop
+      // Jump (first stop, or going backwards, or skipping)
+      rebuildTrace(current);
+      activeMarker.setLatLng(stop.coords);
       const zoom = stop.zoom || 11;
-      map.flyTo(stop.coords, zoom, { duration: 1.5 });
-      setTimeout(() => showFlyer(stop), 1000);
+      map.flyTo(stop.coords, zoom, { duration: 1.4 });
+      setTimeout(() => arriveAt(stop), 1000);
     }
   }
 
-  /**
-   * Animate the route line tracing from one stop to the next,
-   * interpolating points along the way for smooth drawing.
-   */
-  function traceRoute(fromIdx, toIdx, onComplete) {
-    const segmentStops = stops.slice(fromIdx, toIdx + 1);
-    const allPoints = [];
+  function traceToStop(fromIdx, toIdx, onComplete) {
+    tracing = true;
+    const from = stops[fromIdx].coords;
+    const to = stops[toIdx].coords;
+    const destZoom = stops[toIdx].zoom || 11;
 
-    // Generate intermediate points between each pair of consecutive stops
-    for (let i = 0; i < segmentStops.length - 1; i++) {
-      const start = segmentStops[i].coords;
-      const end = segmentStops[i + 1].coords;
-      const steps = 40; // points per segment
-      for (let j = 0; j <= steps; j++) {
-        const t = j / steps;
-        allPoints.push([
-          start[0] + (end[0] - start[0]) * t,
-          start[1] + (end[1] - start[1]) * t
-        ]);
-      }
+    // Generate interpolated points
+    const numPoints = 60;
+    const points = [];
+    for (let i = 0; i <= numPoints; i++) {
+      const t = i / numPoints;
+      // Ease-in-out for smoother feel
+      const ease = t < 0.5 ? 2 * t * t : 1 - Math.pow(-2 * t + 2, 2) / 2;
+      points.push([
+        from[0] + (to[0] - from[0]) * ease,
+        from[1] + (to[1] - from[1]) * ease
+      ]);
     }
 
-    // Get existing route points (up to fromIdx)
-    const existingCoords = stops.slice(0, fromIdx + 1).map(s => s.coords);
+    // Pan map to show journey mid-point, then destination
+    const midBounds = L.latLngBounds([from, to]);
+    const midZoom = Math.min(map.getBoundsZoom(midBounds, false) - 0.5, destZoom);
+    map.flyTo([(from[0]+to[0])/2, (from[1]+to[1])/2], midZoom, { duration: 0.8 });
 
-    // Remove old polyline
-    if (polyline) map.removeLayer(polyline);
-    polyline = L.polyline(existingCoords, {
-      color: '#1F9B8C',
-      weight: 3.5,
-      opacity: .85,
-      lineCap: 'round',
-      lineJoin: 'round'
-    }).addTo(map);
-
-    // Pan map to show the destination
-    const destStop = stops[toIdx];
-    const zoom = destStop.zoom || 11;
-
-    // Fit bounds to show both current position and destination during trace
-    const traceBounds = L.latLngBounds([stops[fromIdx].coords, destStop.coords]);
-    map.flyToBounds(traceBounds, { padding: [80, 80], duration: 1.0, maxZoom: zoom });
-
-    // Animate drawing the new segment
+    // Animate the trace
     let pointIdx = 0;
-    const totalDuration = 2000; // ms for the full trace
-    const interval = totalDuration / allPoints.length;
+    const duration = 2200;
     const startTime = performance.now();
 
-    function drawNext(timestamp) {
-      const elapsed = timestamp - startTime;
-      const progress = Math.min(elapsed / totalDuration, 1);
-      const targetIdx = Math.floor(progress * (allPoints.length - 1));
+    function tick(now) {
+      const elapsed = now - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const targetIdx = Math.floor(progress * (points.length - 1));
 
-      // Add all points up to targetIdx
-      while (pointIdx <= targetIdx && pointIdx < allPoints.length) {
-        polyline.addLatLng(allPoints[pointIdx]);
+      while (pointIdx <= targetIdx && pointIdx < points.length) {
+        traceLayer.addLatLng(points[pointIdx]);
+        activeMarker.setLatLng(points[pointIdx]);
         pointIdx++;
       }
 
       if (progress < 1) {
-        animFrame = requestAnimationFrame(drawNext);
+        animFrame = requestAnimationFrame(tick);
       } else {
-        // Ensure all points are added
-        while (pointIdx < allPoints.length) {
-          polyline.addLatLng(allPoints[pointIdx]);
-          pointIdx++;
-        }
-        // Now zoom to final destination
-        map.flyTo(destStop.coords, zoom, { duration: 0.8 });
-        setTimeout(onComplete, 600);
+        // Ensure we land exactly on destination
+        traceLayer.addLatLng(to);
+        activeMarker.setLatLng(to);
+        // Final zoom to destination
+        map.flyTo(to, destZoom, { duration: 0.9 });
+        setTimeout(() => {
+          tracing = false;
+          onComplete();
+        }, 700);
       }
     }
 
-    animFrame = requestAnimationFrame(drawNext);
+    // Small delay to let the initial pan start
+    setTimeout(() => {
+      animFrame = requestAnimationFrame(tick);
+    }, 400);
   }
 
-  function cancelTrace() {
-    if (animFrame) {
-      cancelAnimationFrame(animFrame);
-      animFrame = null;
-    }
-  }
-
-  function drawRouteInstant(upToIdx) {
-    if (polyline) map.removeLayer(polyline);
+  function rebuildTrace(upToIdx) {
+    // Rebuild the trace line up to the current stop
+    if (traceLayer) map.removeLayer(traceLayer);
     const coords = stops.slice(0, upToIdx + 1).map(s => s.coords);
-    if (coords.length < 2) { polyline = null; return; }
-    polyline = L.polyline(coords, {
-      color: '#1F9B8C',
-      weight: 3.5,
-      opacity: .85,
-      lineCap: 'round',
-      lineJoin: 'round'
+    traceLayer = L.polyline(coords, {
+      color: '#1F9B8C', weight: 4, opacity: .9,
+      lineCap: 'round', lineJoin: 'round'
     }).addTo(map);
   }
 
-  function showFlyer(stop) {
-    const img = flyer.querySelector('.pres-flyer-img');
-    if (stop.image) {
-      img.src = stop.image;
-      img.alt = stop.title;
-      img.style.display = 'block';
-    } else {
-      img.style.display = 'none';
-    }
+  function arriveAt(stop) {
     flyer.querySelector('.pres-flyer-eyebrow').textContent = stop.eyebrow || `Day ${current + 1}`;
     flyer.querySelector('.pres-flyer-title').textContent = stop.title;
     flyer.querySelector('.pres-flyer-desc').textContent = stop.desc;
 
     const chipsEl = flyer.querySelector('.pres-flyer-chips');
-    chipsEl.innerHTML = (stop.chips || []).map(c => `<span class="pres-flyer-chip">${c}</span>`).join('');
+    chipsEl.innerHTML = (stop.chips || []).map(c =>
+      `<span class="pres-flyer-chip">${c}</span>`
+    ).join('');
 
     flyer.classList.add('visible');
   }
 
+  function cancelTrace() {
+    if (animFrame) { cancelAnimationFrame(animFrame); animFrame = null; }
+    tracing = false;
+  }
+
   function next() {
+    if (tracing) return;
     if (current < stops.length - 1) goTo(current + 1);
     else stopAutoPlay();
   }
 
   function prev() {
+    if (tracing) return;
     if (current > 0) goTo(current - 1);
   }
 
@@ -261,12 +279,20 @@
   function startAutoPlay() {
     playing = true;
     updatePlayIcon();
-    if (current >= stops.length - 1) goTo(0);
-    else next();
+    if (current >= stops.length - 1) {
+      // Reset and start from beginning
+      rebuildTrace(-1);
+      if (traceLayer) map.removeLayer(traceLayer);
+      traceLayer = L.polyline([], { color: '#1F9B8C', weight: 4, opacity: .9, lineCap: 'round', lineJoin: 'round' }).addTo(map);
+      current = -1;
+      goTo(0);
+    } else {
+      next();
+    }
     autoTimer = setInterval(() => {
-      if (current < stops.length - 1) next();
-      else stopAutoPlay();
-    }, 6000);
+      if (!tracing && current < stops.length - 1) next();
+      else if (!tracing) stopAutoPlay();
+    }, 5500);
   }
 
   function stopAutoPlay() {
@@ -291,6 +317,5 @@
     });
   }
 
-  // Expose globally
   window.TripPresentation = { init, open };
 })();
