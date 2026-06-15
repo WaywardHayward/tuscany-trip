@@ -122,6 +122,18 @@
   .opt-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
   .opt-tags{display:flex;flex-wrap:wrap;gap:6px;margin:9px 0 2px}
   .opt-tag{font-size:11px;font-weight:600;letter-spacing:.02em;padding:4px 10px;border-radius:999px;color:var(--green-deep);background:rgba(31,155,140,.10);border:1px solid rgba(31,155,140,.22)}
+  /* MOVE BADGE — how much you shift base, so the stay-put options read at a glance */
+  .movebadge{display:inline-flex;align-items:center;gap:6px;align-self:flex-start;margin:0 0 10px;
+    font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    padding:4px 11px;border-radius:999px}
+  .movebadge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9}
+  .movebadge--one{color:#0f5a3f;background:rgba(31,155,140,.14);border:1px solid rgba(31,155,140,.34)}
+  .movebadge--two{color:#8a5a12;background:rgba(214,155,60,.16);border:1px solid rgba(214,155,60,.4)}
+  .movebadge--tour{color:#6b3f6b;background:rgba(120,80,120,.14);border:1px solid rgba(120,80,120,.34)}
+  .movelegend{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:6px 0 2px;
+    font-size:13px;color:var(--ink-soft)}
+  .movelegend-lead{font-weight:700;color:var(--ink);letter-spacing:.01em}
+  .movelegend-note{margin-right:8px}
   .opt-link{font-weight:600;font-size:14.5px;color:var(--green-deep);margin-top:10px}
   .opt--soon .opt-link{color:var(--lemon)}
 
@@ -292,6 +304,11 @@
     <div class="sec-head reveal"><span class="eyebrow">The shortlist</span></div>
     <h2 class="reveal">Ten ways to spend the summer</h2>
     <p class="sub reveal">Ten plans ready. Pick the one that sings.</p>
+    <div class="movelegend reveal" aria-label="What the base badges mean">
+      <span class="movelegend-lead">How much you move:</span>
+      <span class="movebadge movebadge--one">1 base</span> <span class="movelegend-note">one hotel, unpack once</span>
+      <span class="movebadge movebadge--two">2 bases</span> <span class="movelegend-note">a single move part-way</span>
+    </div>
 
     <div class="options">
 
@@ -303,8 +320,9 @@
           <span class="opt-label">Tuscany</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">A slow green fortnight</div>
-          <p class="opt-blurb">A hidden farmhouse with a pool above Lucca, two great garden villas, Florence for the art, and hill towns by the handful — all the way there by train.</p>
+          <p class="opt-blurb">A hidden farmhouse with a pool above Lucca, two great garden villas, Florence for the art, and hill towns by the handful &mdash; one base the whole fortnight, never repack.</p>
           <div class="opt-tags"><span class="opt-tag">Chilled</span><span class="opt-tag">Countryside</span><span class="opt-tag">Gardens</span></div>
           <span class="opt-link">See the full plan →</span>
         </div>
@@ -318,6 +336,7 @@
           <span class="opt-label">Naples &amp;<br>Pompeii</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--two">2 bases</span>
           <div class="opt-meta">The bay, the ruins &amp; the best pizza</div>
           <p class="opt-blurb">Buzzy Naples for the treasures, then calm Sorrento for Pompeii, Capri and a garden or two. ~8 days by rail, the romantic long way.</p>
           <div class="opt-tags"><span class="opt-tag">City &amp; Coast</span><span class="opt-tag">History</span><span class="opt-tag">Foodie</span></div>
@@ -333,6 +352,7 @@
           <span class="opt-label">Barcelona &amp;<br>Costa Brava</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">Gaudí, the coast &amp; villages like home</div>
           <p class="opt-blurb">Art and markets in Barcelona, then whitewashed villages, medieval stone and clifftop gardens up the Costa Brava. ~9 days by rail.</p>
           <div class="opt-tags"><span class="opt-tag">City Break</span><span class="opt-tag">Coast</span><span class="opt-tag">Art</span></div>
@@ -348,6 +368,7 @@
           <span class="opt-label">Rome &amp;<br>Lazio gardens</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">Rome you know, done differently</div>
           <p class="opt-blurb">Skip the Colosseum and Vatican this time — go for the parks, the Appian Way and Trastevere, then the great gardens of Lazio by train: Tivoli, Ninfa, Bomarzo. ~8 days by rail.</p>
           <div class="opt-tags"><span class="opt-tag">City Break</span><span class="opt-tag">History</span><span class="opt-tag">Gardens</span></div>
@@ -363,6 +384,7 @@
           <span class="opt-label">Portofino &amp;<br>Italian Riviera</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">Pastel harbours, coastal paths &amp; pesto</div>
           <p class="opt-blurb">Base in Santa Margherita, ferry to Portofino, boat to hidden coves, train to the Cinque Terre. ~7 days by rail.</p>
           <div class="opt-tags"><span class="opt-tag">Coastal</span><span class="opt-tag">Chilled</span><span class="opt-tag">Villages</span></div>
@@ -378,6 +400,7 @@
           <span class="opt-label">Carcassonne &amp;<br>the Languedoc</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">A fairy-tale fortress &amp; the warm south-west</div>
           <p class="opt-blurb">Sleep inside a storybook walled city, then Cathar castles, the Canal du Midi under plane trees, red-brick Albi and the Mediterranean an hour down the line. ~9 days, mostly by rail.</p>
           <div class="opt-tags"><span class="opt-tag">History</span><span class="opt-tag">Countryside</span><span class="opt-tag">Coast</span></div>
@@ -393,6 +416,7 @@
           <span class="opt-label">Istria &amp;<br>the Adriatic</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">The quiet, green side of Croatia</div>
           <p class="opt-blurb">A Venetian old town on the sea for a base, Roman Pula, gold mosaics, truffle hill towns and wild swimming — reached by rail then catamaran from Venice. ~9 days.</p>
           <div class="opt-tags"><span class="opt-tag">Coast</span><span class="opt-tag">History</span><span class="opt-tag">Chilled</span></div>
@@ -408,6 +432,7 @@
           <span class="opt-label">Atlantic France &amp;<br>the Basque coast</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">Beaches, dunes &amp; the Basque sea</div>
           <p class="opt-blurb">Golden Bordeaux and the tallest dune in Europe, then a perfect Basque bay — Biarritz, Bayonne and a hop across to San Sebastián. All by rail. ~9 days.</p>
           <div class="opt-tags"><span class="opt-tag">Coast</span><span class="opt-tag">Beaches</span><span class="opt-tag">Rail</span></div>
@@ -423,6 +448,7 @@
           <span class="opt-label">Sardinia &amp;<br>Forte Village</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">The luxury switch-off — no flights</div>
           <p class="opt-blurb">Ikos-level luxury without a plane: trains then an overnight ferry to a five-star beach resort on Sardinia's turquoise south coast. Spa, sand, do-nothing days. 7 nights.</p>
           <div class="opt-tags"><span class="opt-tag">Luxury</span><span class="opt-tag">Beach</span><span class="opt-tag">Resort</span></div>
@@ -438,6 +464,7 @@
           <span class="opt-label">The Cap &amp;<br>the Côte d'Azur</span>
         </div>
         <div class="opt-body">
+          <span class="movebadge movebadge--one">1 base</span>
           <div class="opt-meta">Riviera glamour, all on one train</div>
           <p class="opt-blurb">Hôtel Welcome vibes turned all the way up: a deep-blue bay to call home, with Èze, Monaco, Menton and Nice strung along the little coastal train. ~8 days.</p>
           <div class="opt-tags"><span class="opt-tag">Riviera</span><span class="opt-tag">Sea</span><span class="opt-tag">Glamour</span></div>
