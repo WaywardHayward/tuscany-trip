@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Portofino & the Italian Riviera · Helen & Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#37583F 0%,#26412F 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE — the signature: a line that greens as you head south */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#37583F,#1F9B8C);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZP__zgUg2DakrjBRNAEvJt6T-yPTBw8VGAgT8fqj8kg_vP-rl_Pbbg1fSnfFPbq8Y_g1ks7jCaTsrWlZ_Gy9yzGqGFo-MxFXaMIQ88ujwQDpqWL3EZfMa9hfvvldLIGaYtjeYjm9q00-r1Pu0M=w1600-h1000" alt="Your Riviera, over the border" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option five · Portofino & the Italian Riviera</div>
+    <h1>Your Riviera, over the border</h1>
+    <p>The Côte d'Azur carried into Italy: pastel harbours, coastal paths, coves, and pesto on everything.</p>
+    <div class="meta"><span>~7 days</span><span>By rail and boat</span><span>One calm coastal base</span><span>Coves, villages & pesto</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">Basically your beloved Côte d'Azur, carried over the border into Italy: <em>pastel harbours, coastal paths, and pesto on everything.</em></p>
+    <p class="body">Base in calm Santa Margherita and let the coast come to you: ferry round to Portofino's famous little harbour, boat to the abbey at San Fruttuoso, train down to the Cinque Terre, and graze on focaccia, farinata and trofie al pesto the whole way. Colourful perched villages like home, coast like the south of France, and warm but bearable in summer with the sea breeze. A vegetarian's dream and easy off the booze.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">calm Santa Margherita, right on the rail line</div></div><div class="fact"><div class="k">5 villages</div><div class="v">the Cinque Terre, a train ride south</div></div><div class="fact"><div class="k">boat & train</div><div class="v">the whole coast, no car needed</div></div><div class="fact"><div class="k">high-20s</div><div class="v">warm but coastal, easy in summer</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Your Riviera, over the border</h2>
+    <p class="sub reveal">The Côte d'Azur carried into Italy: pastel harbours, coastal paths, coves, and pesto on everything.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to the Riviera</h3><p class="t-blurb">Eurostar to Paris, high-speed to Genoa, then a short hop along the coast to Santa Margherita. Kinder than the deep south.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">easy</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Into Santa Margherita</h3><p class="t-blurb">Settle on the palm-lined seafront, find the passeggiata, and start as you mean to go on: focaccia and trofie al pesto.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">pesto</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Portofino</h3><p class="t-blurb">Ferry round to the famous little harbour, up to the castle and lighthouse, a swim at Paraggi. Or walk the coast path over.</p><div class="t-chips"><span class="chip">coast</span><span class="chip">village</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Camogli &amp; San Fruttuoso</h3><p class="t-blurb">The quieter painted town of Camogli, then a boat to the abbey tucked in its cove for a swim. The hike over is a beauty.</p><div class="t-chips"><span class="chip">coast</span><span class="chip">walk</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">The Cinque Terre</h3><p class="t-blurb">Train down to the five villages, the easy stretches of the coastal path, Vernazza and Manarola at golden hour.</p><div class="t-chips"><span class="chip">villages</span><span class="chip">rail</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">A garden &amp; a slow day</h3><p class="t-blurb">The Villa Durazzo gardens above town, then a cove, a long lunch, and a sea-air run for whoever fancies it.</p><div class="t-chips"><span class="chip">garden</span><span class="chip">rest</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then pick a finale below,</strong> and roll the trains home with sea air and pesto in your hair.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">One calm base on the gulf</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNpcebREBMH4gBjGW6Me-xwsEMFJM9a-FMfs4Q5tEJJ35QchDfXeAw3jX1e8C90W6L3xu0Ij-w1Zyi6PjmTgBPrFvJpcqiHS_XfnpCrbZULTfuF47R48rNWj8DtDKTugFzwHabDG6SH6nUzOS0=w1200-h900" alt="The seafront of Santa Margherita Ligure" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>One calm base on the gulf</h2>
+        <p>No need to move bases: Santa Margherita Ligure sits right on the coastal railway with ferries to everywhere, so Portofino, Camogli, San Fruttuoso and the Cinque Terre are all easy days out. It's the quiet, elegant counterweight to showy Portofino, and lovely to come home to.</p>
+        <div class="stays"><a class="stay" href="https://maps.google.com/?cid=3108241548237799211" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNpcebREBMH4gBjGW6Me-xwsEMFJM9a-FMfs4Q5tEJJ35QchDfXeAw3jX1e8C90W6L3xu0Ij-w1Zyi6PjmTgBPrFvJpcqiHS_XfnpCrbZULTfuF47R48rNWj8DtDKTugFzwHabDG6SH6nUzOS0=s4800-w800-h600" alt="Santa Margherita Ligure" onerror="this.style.visibility='hidden'"><span><span class="nm">Santa Margherita Ligure</span><br><span class="ds">Elegant seafront hub, on the line, ferries everywhere</span></span></a><a class="stay" href="https://maps.google.com/?cid=16784174478862432242" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZO6xS-pTNcITFYc7nQ5FPRZNCvfMIjBOtIt1gjQbbzKM6WcoIr6DrnD-knAT--bbfzpfJN7LvFvDlUmZz-Io-s8kx45xI3Pq7A7ExqCh0qsKB7R5YcjHG4raYN8baTBkfeCQIMmYYW3y3YsDA=s4800-w800-h600" alt="Camogli" onerror="this.style.visibility='hidden'"><span><span class="nm">Camogli</span><br><span class="ds">Quieter, taller, painted-house alternative next door</span></span></a></div>
+        <p class="spark">Prefer the Cinque Terre on your doorstep? You could split a couple of nights down there too, though one base keeps it simplest.</p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. It's all boat-and-train country, so very little driving.</p>
+    <div class="grid"><a class="card" href="https://maps.google.com/?cid=11644394175832496854" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZP__zgUg2DakrjBRNAEvJt6T-yPTBw8VGAgT8fqj8kg_vP-rl_Pbbg1fSnfFPbq8Y_g1ks7jCaTsrWlZ_Gy9yzGqGFo-MxFXaMIQ88ujwQDpqWL3EZfMa9hfvvldLIGaYtjeYjm9q00-r1Pu0M=s4800-w741-h421" alt="Portofino" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Portofino</span></div><div class="card-body"><div class="card-meta">The famous harbour</div><h3 class="card-name">Portofino</h3><p class="card-blurb">Pastel houses round a tiny port of bobbing boats. Walk up to the castle and lighthouse, and go early before the crowds.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=3108241548237799211" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZNpcebREBMH4gBjGW6Me-xwsEMFJM9a-FMfs4Q5tEJJ35QchDfXeAw3jX1e8C90W6L3xu0Ij-w1Zyi6PjmTgBPrFvJpcqiHS_XfnpCrbZULTfuF47R48rNWj8DtDKTugFzwHabDG6SH6nUzOS0=s4800-w800-h600" alt="Santa Margherita Ligure" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Santa Margherita Ligure</span></div><div class="card-body"><div class="card-meta">Your base</div><h3 class="card-name">Santa Margherita Ligure</h3><p class="card-blurb">Elegant, palm-lined and calm, right on the rail line with ferries to everywhere. The easy place to come home to.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=16784174478862432242" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZO6xS-pTNcITFYc7nQ5FPRZNCvfMIjBOtIt1gjQbbzKM6WcoIr6DrnD-knAT--bbfzpfJN7LvFvDlUmZz-Io-s8kx45xI3Pq7A7ExqCh0qsKB7R5YcjHG4raYN8baTBkfeCQIMmYYW3y3YsDA=s4800-w800-h600" alt="Camogli" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Camogli</span></div><div class="card-body"><div class="card-meta">Quieter charm</div><h3 class="card-name">Camogli</h3><p class="card-blurb">A taller, sleepier town of painted houses and a pebble beach. Fewer crowds, brilliant focaccia.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.fondoambiente.it/luoghi/abbazia-di-san-fruttuoso" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPHXRpIRnOCoPTO3GIX7uVUYh9XGaWppBXUQ5lanoTH_ljn7ybs8vzv2eLkGBSLd2U02-s_0I_b-HmgW7LMgfO25MBhyvx0eizW68Tq6oaOEL_gjiOj0VgfebHLytYInSh1I8sKSs1s4PMqAA=s4800-w800-h600" alt="Abbey of San Fruttuoso" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Abbey of San Fruttuoso</span></div><div class="card-body"><div class="card-meta">Cove · boat or foot</div><h3 class="card-name">Abbey of San Fruttuoso</h3><p class="card-blurb">A medieval abbey in a hidden cove, reachable only by boat or on foot. Swim off the rocks. The Camogli walk is glorious.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=8601030811608382250" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZN3V9LnstHsdw3JBLgNE23DoDRE4xALNxVfUkHcbQ1IqfsNyzwlo3YQ7JF8VpDv2p3lXWWAUCYmFer4hYl_x3PJP-5foXZvnwwCTCSt0awfpCAJg332zAUKFIEMHIsZtvAwkRxOurndNVKQcg=s4800-w800-h600" alt="Vernazza, Cinque Terre" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Vernazza, Cinque Terre</span></div><div class="card-body"><div class="card-meta">Villages · by train</div><h3 class="card-name">Vernazza, Cinque Terre</h3><p class="card-blurb">The prettiest of the five villages, stacked above its harbour. Walk the easy path stretches, stay for golden hour.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="http://www.villadurazzo.it/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZM3OjIOcgtBvnWfSCtE5n_LPgF048idklAHG4SaYDg6mzTfv9glVhrBpIMMIJ-pvGbIfK0xCAoVE_mF_gzfVS9mEhdsGaHhQ0-frdt9TRgBucswQc2KKNvLJN3YtI78OX4Y-31-5GC_kcVo=s4800-w800-h600" alt="Villa Durazzo gardens" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Villa Durazzo gardens</span></div><div class="card-body"><div class="card-meta">Garden · your fix</div><h3 class="card-name">Villa Durazzo gardens</h3><p class="card-blurb">Italianate gardens of statues, palms and sea views right above Santa Margherita. Free to wander, a lovely slow morning.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Pick your finale</span></div>
+    <h2 class="reveal">One more for the last day</h2>
+    <p class="sub reveal">Choose whichever sings, then we turn for home.</p>
+    <div class="grid"><a class="card" href="https://maps.google.com/?cid=3125940758176934682" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPJ5kdapPROdDvdRc7vaouo3YvfQL-IdbvS8g-dERdsTOfYfIQ_jOUA48Jj59H60dBXkRpmEvibIBdXRJn_8grO5A2BQtuvSpYioUVqalNvdx7PaBi2isx4kvR0mgHnKsTZx4VvP0SS8BaxKg=s4800-w800-h600" alt="Manarola, Cinque Terre" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Manarola, Cinque Terre</span></div><div class="card-body"><div class="card-meta">The classic view</div><h3 class="card-name">Manarola, Cinque Terre</h3><p class="card-blurb">The postcard village, best at dusk from the Nessun Dorma terrace. Pair it with Vernazza for the full five.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=2551998309891924490" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZP3LmhKjXl1BuBEIdUH6eMH_g1VFOsU-odNsQedgiRxdAj4AdZzRE5YGkbGlybeCx-c4jLZyZ-0o0cw9a6CoPOp1TPoAqvLqBRSVJdOIOY9HaCwxgC8dDuZzMrcGNmqShhMTQv3GmORtn2Ry5s=s4800-w800-h600" alt="Genoa" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Genoa</span></div><div class="card-body"><div class="card-meta">The grand port city</div><h3 class="card-name">Genoa</h3><p class="card-blurb">UNESCO palaces on Via Garibaldi, a tangle of medieval lanes, and the birthplace of pesto and focaccia. 40 min by train.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=12019012303724792856" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZNmL4lq4tmBVpUrpUwgBYWqV-uFRnOCNv6fDfnzVJFL-QnA3t50CGB4QMCfmI707wo7Z4KXdZya9obf0XTyoFcJMMjXKcGVVCtklo_0fDZB7T48hfAdD-2MUsL-rnmJ3iRXBB44fdm7wLrTEA=s4800-w800-h600" alt="Sestri Levante" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Sestri Levante</span></div><div class="card-body"><div class="card-meta">The Bay of Silence</div><h3 class="card-name">Sestri Levante</h3><p class="card-blurb">A perfect sheltered crescent of sand a little down the coast. A gentle day with a long swim.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=16058299055863491730" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZOnUHx71CizdnHCbxTXCUnXynegao2FRvUdeseSF1-NwqkpBJ35N2zjVC5-FLJciw5oXqE1T1J_FFlWBTQqpOwAXvjTwX6Po59KVMUCX3EYEHwckr4afY2BPAD6kX3vB4n08_VoYpSoOs46ZL0=s4800-w800-h600" alt="Rapallo" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Rapallo</span></div><div class="card-body"><div class="card-meta">Belle-époque neighbour</div><h3 class="card-name">Rapallo</h3><p class="card-blurb">A grand old seaside town with a castle in the water and a cable car to a hilltop sanctuary. One stop along.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there</h3><p>A kinder rail trip than the deep south: Eurostar to Paris, high-speed down to Genoa, then 30 to 40 minutes along the coast to Santa Margherita. A night in Paris or Turin breaks it nicely.</p></div><div class="box reveal"><h3>Around the coast</h3><p>This is boat-and-train heaven. The coastal railway links Camogli, Santa Margherita, Rapallo, the Cinque Terre and Genoa, and ferries hop you to Portofino and San Fruttuoso. Portofino has no station, so it's bus, boat or the lovely coast path. Cinque Terre trails can close after rain, so check on the day.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>Liguria is a vegetarian's dream:</p><ul><li>Pesto alla genovese with trofie or trenette</li><li>Focaccia, focaccia di Recco, and farinata</li><li>Minestrone alla genovese, stuffed veg</li><li>Gelato and a lemon granita in the heat</li></ul></div><div class="box reveal"><h3>Lovely without a drink</h3><p>Coffee on the seafront, lemon granita, gelato, and a Crodino at aperitivo hour. The long passeggiata and a swim off the rocks do the rest, no wine list required.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Worth a flutter?</div>
+  <p>A pastel harbour by morning, a hidden cove by lunch, a clifftop village at dusk, and the sea the whole way. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and high-speed down to Genoa.", chips:["rail","start"] },
+  { coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break in Paris, then the TGV through to Genoa the next morning. A kinder haul than the deep south.", chips:["city","overnight"] },
+  { coords:[44.407,8.934], zoom:12, title:"Genoa", eyebrow:"Day 2 · Almost there", desc:"Into Genoa, birthplace of pesto and focaccia. Then a short coastal hop to your base.", chips:["rail","pesto"] },
+  { coords:[44.333,9.213], zoom:14, title:"Santa Margherita Ligure", eyebrow:"Day 2 · Arrive", desc:"Settle on the palm-lined seafront, find the passeggiata, and start with focaccia and trofie al pesto.", chips:["arrive","base"] },
+  { coords:[44.303,9.210], zoom:15, title:"Portofino", eyebrow:"Day 3 · The harbour", desc:"Ferry round to the famous little harbour, up to the castle and lighthouse, a swim at Paraggi cove.", chips:["coast","village"] },
+  { coords:[44.351,9.156], zoom:14, title:"Camogli & San Fruttuoso", eyebrow:"Day 4 · Coast", desc:"The quieter painted town of Camogli, then a boat to the medieval abbey tucked in its hidden cove.", chips:["coast","walk"] },
+  { coords:[44.127,9.710], zoom:13, title:"The Cinque Terre", eyebrow:"Day 5 · Villages", desc:"Train down to the five villages, the easy stretches of the coastal path, Vernazza and Manarola at golden hour.", chips:["villages","rail"] },
+  { coords:[44.335,9.212], zoom:15, title:"A garden & a slow day", eyebrow:"Day 6 · Rest", desc:"The Villa Durazzo gardens above town, then a cove, a long lunch, and the sea breeze.", chips:["garden","rest"] },
+  { coords:[44.117,9.684], zoom:14, title:"Manarola at dusk", eyebrow:"Day 7 · Finale", desc:"The postcard village, best at dusk from the Nessun Dorma terrace. A final swim, then trains for home.", chips:["coast","sunset"] }
+]);
+</script>
+</body>
+</html>

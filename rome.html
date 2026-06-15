@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rome & the gardens of Lazio · Helen & Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#37583F 0%,#26412F 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE — the signature: a line that greens as you head south */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#37583F,#1F9B8C);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNMv4pszsf10lq4e_M21j7-SgC8UtAUtqQEt54Unfwf3kZOaZYUgk_ZEFt3K8w1kHH06AJdycg23p1SRMdRPHZ5PvEx_dZNfYNFpoY0_zQeHX81TMtNRJoDYYnB7c0nWi7P3sM_JILUbEf4gw=w1600-h1000" alt="The eternal city, with gardens to match" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option four · Rome & the Lazio gardens</div>
+    <h1>The eternal city, with gardens to match</h1>
+    <p>Rome you already loved, with a green twist: the ancient sights and the art, then the great gardens of Lazio by train.</p>
+    <div class="meta"><span>~8 days</span><span>By rail, the romantic haul</span><span>Rome base</span><span>Ruins, art & great gardens</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">Rome you already loved, with a green twist: <em>the ancient city by day, the great gardens of Lazio by train.</em></p>
+    <p class="body">Base in Rome for the big-hitters — the Colosseum, the Pantheon, the Borghese, the Vatican — then day-trip out to some of the finest gardens on earth: Tivoli's hundred fountains, the romantic ruin-garden of Ninfa, the monsters of Bomarzo. History and art like nowhere else, perched stone, vegetarian heaven, easy without a drink. One honest note: Rome bakes in July and August, so spring or autumn is the kinder choice.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">2 nights+</div><div class="v">in Rome for the ancient city &amp; the art</div></div><div class="fact"><div class="k">3 gardens</div><div class="v">Tivoli, Ninfa, Bomarzo within reach</div></div><div class="fact"><div class="k">35 min</div><div class="v">Rome to Tivoli's fountains by train</div></div><div class="fact"><div class="k">spring/autumn</div><div class="v">kindest seasons, summer bakes</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">The eternal city, with gardens to match</h2>
+    <p class="sub reveal">Rome you already loved, with a green twist: the ancient sights and the art, then the great gardens of Lazio by train.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to Rome</h3><p class="t-blurb">Eurostar to Paris, then high-speed south through Turin or Milan. It's a haul, so break it with a night on the way.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">city</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Into Rome</h3><p class="t-blurb">Settle into Trastevere, find the evening passeggiata, and christen the trip with supplì and pizza al taglio.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">pizza</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Ancient Rome</h3><p class="t-blurb">Colosseum, Forum and Palatine in the morning, then the Pantheon and a gelato-fuelled wander through the centro storico.</p><div class="t-chips"><span class="chip">history</span><span class="chip">art</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Art &amp; the Vatican</h3><p class="t-blurb">The Borghese in its park (book well ahead), or St Peter's and the Vatican Museums. One big art day, however you split it.</p><div class="t-chips"><span class="chip">art</span><span class="chip">gardens</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">Tivoli's fountains</h3><p class="t-blurb">Train out to Villa d'Este, a whole hillside of fountains, with Hadrian's Villa nearby. The garden showstopper.</p><div class="t-chips"><span class="chip">garden</span><span class="chip">rail</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">Into the garden country</h3><p class="t-blurb">The romantic ruin-garden of Ninfa (weekends, book ahead) or the carved monsters of Bomarzo. A dreamy day in the Lazio countryside.</p><div class="t-chips"><span class="chip">garden</span><span class="chip">easy</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Ostia Antica, or a slow day</h3><p class="t-blurb">Rome's own seaside ruins, quieter than Pompeii. Or just Trastevere, Testaccio and one last gelato.</p><div class="t-chips"><span class="chip">history</span><span class="chip">rest</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then pick a finale below,</strong> and point the trains home with a head full of fountains and frescoes.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">One base: Rome, with garden days out</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOQJ0zha_t93Mr-Z7AONVAf4E2sVl5X4MVL0bBDwtMA9pImJ_KUxD9CuTP1At-LTvisuqDPz47l5ziqZFclbcMxNJo13EMYbrRFjxZsgAE9qCWA5d2NI-dhElRa8lfxhthh_MzIKSYFv_MOdw=w1200-h900" alt="The lanes of Trastevere in Rome" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>One base: Rome, with garden days out</h2>
+        <p>No need to move: base in Rome for the lot. Trastevere puts the evenings, the lanes and the pizza on your doorstep, with the ancient sites and the train stations an easy walk or metro ride. The gardens of Lazio are all day trips from here.</p>
+        <div class="stays"><a class="stay" href="https://maps.google.com/?cid=11790177703383004723" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOQJ0zha_t93Mr-Z7AONVAf4E2sVl5X4MVL0bBDwtMA9pImJ_KUxD9CuTP1At-LTvisuqDPz47l5ziqZFclbcMxNJo13EMYbrRFjxZsgAE9qCWA5d2NI-dhElRa8lfxhthh_MzIKSYFv_MOdw=s4800-w800-h600" alt="Trastevere" onerror="this.style.visibility='hidden'"><span><span class="nm">Trastevere</span><br><span class="ds">Village-in-the-city lanes, best for evenings</span></span></a><a class="stay" href="https://maps.google.com/?cid=14614574390750662188" target="_blank" rel="noopener"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZN1Ikpk9rsSZ_96XmBflM8V7o72C_i8farwIu2_xcqUUhk_bWpPteW_lur8eakmQViVRf6w1TWJwrbw_cWhQHN1X-ezHEs81OG0BKwsp4tWphRmFZfvMa7KMfi6xAIKbyX22qgcDB9kNuqlG4c=s4800-w800-h600" alt="Centro storico" onerror="this.style.visibility='hidden'"><span><span class="nm">Centro storico</span><br><span class="ds">Steps from the Pantheon and the piazzas</span></span></a></div>
+        <p class="spark">Rome's walkable and well-connected, so a single base does the whole trip with no packing up.</p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. A few shut on Mondays, and the Borghese needs booking well ahead.</p>
+    <div class="grid"><a class="card" href="https://colosseo.it/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZNMv4pszsf10lq4e_M21j7-SgC8UtAUtqQEt54Unfwf3kZOaZYUgk_ZEFt3K8w1kHH06AJdycg23p1SRMdRPHZ5PvEx_dZNfYNFpoY0_zQeHX81TMtNRJoDYYnB7c0nWi7P3sM_JILUbEf4gw=s4800-w800-h600" alt="Colosseum & Forum" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Colosseum & Forum</span></div><div class="card-body"><div class="card-meta">Ancient Rome</div><h3 class="card-name">Colosseum & Forum</h3><p class="card-blurb">The great arena, with the Forum and Palatine on the same ticket. Book a slot, go early.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://direzionemuseiroma.cultura.gov.it/pantheon/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZN1Ikpk9rsSZ_96XmBflM8V7o72C_i8farwIu2_xcqUUhk_bWpPteW_lur8eakmQViVRf6w1TWJwrbw_cWhQHN1X-ezHEs81OG0BKwsp4tWphRmFZfvMa7KMfi6xAIKbyX22qgcDB9kNuqlG4c=s4800-w800-h600" alt="Pantheon" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Pantheon</span></div><div class="card-body"><div class="card-meta">Ancient Rome</div><h3 class="card-name">Pantheon</h3><p class="card-blurb">The best-preserved building of antiquity, open to the sky through its oculus. Slip in early.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://galleriaborghese.cultura.gov.it/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPTfdtVc7sJECPE5XcHSUdOfXs4cY1UugBdzC7gwiMIZsOWSbwO-KCzVF9RG-W_d9U0aFKeD5LRnv6uOUugZb7jaGdTkhEaj4cLkvt1iU0BDHYb1u0QETh_KxaCYW2lGB1zjaKXMKUpjLTE3A=s4800-w800-h600" alt="Galleria Borghese" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Galleria Borghese</span></div><div class="card-body"><div class="card-meta">Art · shut Mondays</div><h3 class="card-name">Galleria Borghese</h3><p class="card-blurb">Bernini and Caravaggio in a villa set in a green park. Tickets sell out fast, so book ahead.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.basilicasanpietro.va/it/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZMM_OFEpHqtoT-ouzPuBAfpGzr8B59QRVNrlc8z7QYX3Pi6oMmqqxPTfBL9afmpgt2GOlomNYDEd_f_rEm8gnG3EKOdSEuqZ7OaWWgDfeC2XSvbaMrhYwsNx_FBQ5DaZ9mP79lWaQjYUpNkJQ=s4800-w800-h600" alt="St Peter's & the Vatican" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">St Peter's & the Vatican</span></div><div class="card-body"><div class="card-meta">Art & awe</div><h3 class="card-name">St Peter's & the Vatican</h3><p class="card-blurb">The vast basilica (free, but queue early) and the Vatican Museums and Sistine Chapel next door.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=18202177186971035237" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZOkUQPSgrNh3q9tsl4_9icXBMEeubk4eXQMU9eZy54NxtLZ5vNL9BVSM4SsSks9vbF3qrO4bcuyIiSwAXNHdsx1Lpig4IwtafA28zCEOqBFpz5jEwgbhYwsag8GEYklr2zsOHXgX0_kgS3_6KkCjx6_AQ=s4800-w800-h600" alt="Villa d'Este, Tivoli" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Villa d'Este, Tivoli</span></div><div class="card-body"><div class="card-meta">Garden · the star</div><h3 class="card-name">Villa d'Este, Tivoli</h3><p class="card-blurb">A hillside of a hundred fountains, one of the great gardens of the world. Easy train from Rome.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.ostiaantica.beniculturali.it/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPyjVoPRPhFhdTWuuQEnM3ciQSwDoDPhMLpxHt6ouv9_l7iJHRg46PNhWtJcYJ3LwfSc5QHIICUaEhCjYavSdYgbmzxnmUo0vf3ngFyWOqPe-K3tIDJcwoD4s9yK6q1MqDBsDjlTFBJkH2Qec8=s4800-w800-h600" alt="Ostia Antica" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Ostia Antica</span></div><div class="card-body"><div class="card-meta">Ruins · shut Mondays</div><h3 class="card-name">Ostia Antica</h3><p class="card-blurb">Rome's own Pompeii, the old port city, beautifully preserved and blessedly quiet. 30 min by train.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Pick your finale</span></div>
+    <h2 class="reveal">One more for the last day</h2>
+    <p class="sub reveal">Choose whichever sings, then we turn for home.</p>
+    <div class="grid"><a class="card" href="http://www.giardinodininfa.eu/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZN2pGNxT7XPaa0OAXcKJoI4Jmr5OeIYBvdT_39Uqvb8uNsOGTE1ptE5d39GfmEAoMwX9IZbDgqcH485-XVhi6WFge4Mc0bPKwqQDpLvLU1wpP-ugnJXiNAErFz9UUSpxEkVmcdaHk6Av7oUIw=s4800-w800-h600" alt="Gardens of Ninfa" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Gardens of Ninfa</span></div><div class="card-body"><div class="card-meta">Garden · weekends only</div><h3 class="card-name">Gardens of Ninfa</h3><p class="card-blurb">A dream garden grown through a ruined medieval village, with a river running through. Open weekends, by tour, book ahead.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.sacrobosco.it/" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPs_7kX5bKzydFwxzEu1GYEWcGIuuuYXPreqnwI8TAPcenWTII1V3Ne1DlJZ94Skm9lhGWvGfppTf_LubqOAam0kCRqWLipGhEFeIFd_ZdYH_zkK1ft59-WD7O8sLB8UrZenv2VqmmX0Hrpaec=s4800-w800-h600" alt="Park of the Monsters" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Park of the Monsters</span></div><div class="card-body"><div class="card-meta">Garden · Bomarzo</div><h3 class="card-name">Park of the Monsters</h3><p class="card-blurb">A surreal 16th-century sculpture garden of giants carved from the bedrock. Gloriously strange.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=6911892634246203589" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZOa2fRozRyVccQCQOA9r75n7R4LBhswj5js7_qH2_xS3CXC2jSL-G-cLzXB5e__U3GAQ7Y6q1GXggJRYBoAK1vEi4lzlYmmmG16BCUXLSUEjhn7qhi1OK3dKYjzgNqqBy_GtGLUjECbjTtS=s4800-w800-h600" alt="Villa Lante, Bagnaia" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Villa Lante, Bagnaia</span></div><div class="card-body"><div class="card-meta">Garden · Renaissance</div><h3 class="card-name">Villa Lante, Bagnaia</h3><p class="card-blurb">A perfect small Renaissance garden of terraces and water tricks. For the serious garden day out.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there, honestly</h3><p>Rome's a fair way south, so by train it's a two-dayer each way, broken with an overnight in Turin, Milan or Florence. Lovely if you lean in. If time's tight, a flight is the obvious saver.</p></div><div class="box reveal"><h3>Around Rome &amp; Lazio</h3><p>Rome's walkable with a handy metro, and Tivoli and Ostia are easy on regional trains. A couple of the gardens (Ninfa, Bomarzo) are simpler with a hire car or an organised tour. Note: the Borghese, Ostia and Villa Lante shut Mondays; Ninfa opens weekends only.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>Roman cooking is a vegetarian's friend:</p><ul><li>Cacio e pepe and pasta alla gricia (skip the guanciale)</li><li>Carciofi alla romana — those famous artichokes</li><li>Pizza al taglio, supplì, fiori di zucca</li><li>Maritozzi and gelato to finish</li></ul></div><div class="box reveal"><h3>Lovely without a drink</h3><p>The coffee is taken very seriously and the gelato more so. Aperitivo works dry with a Crodino or anything <em>analcolico</em>, and an evening passeggiata past the floodlit ruins costs nothing at all.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Tempting, eh?</div>
+  <p>Ruins by morning, a fountain-filled garden by afternoon, pizza by night, and two thousand years underfoot the whole time. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar across to Paris. The long romantic haul south begins.", chips:["rail","start"] },
+  { coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, stretch your legs along the Seine, eat well, sleep early.", chips:["city","overnight"] },
+  { coords:[45.070,7.687], zoom:11, title:"Turin or Milan", eyebrow:"Day 2 · Over the Alps", desc:"High-speed south through the Alps. Break here or press on — either way, you wake up closer to Rome.", chips:["rail","transit"] },
+  { coords:[41.898,12.473], zoom:13, title:"Into Rome", eyebrow:"Day 3 · Arrive", desc:"Settle into Trastevere, find the evening passeggiata, christen the trip with supplì and pizza al taglio.", chips:["arrive","pizza"] },
+  { coords:[41.890,12.492], zoom:14, title:"Ancient Rome", eyebrow:"Day 4 · History", desc:"Colosseum, Forum and Palatine in the morning, then the Pantheon and a gelato-fuelled wander through the centro storico.", chips:["history","art"] },
+  { coords:[41.902,12.454], zoom:14, title:"Art & the Vatican", eyebrow:"Day 5 · Art", desc:"The Borghese in its park, or St Peter's and the Vatican Museums. One big art day.", chips:["art","gardens"] },
+  { coords:[41.963,12.774], zoom:13, title:"Tivoli's fountains", eyebrow:"Day 6 · Garden star", desc:"Train out to Villa d'Este, a whole hillside of a hundred fountains. Hadrian's Villa nearby. The garden showstopper.", chips:["garden","rail"] },
+  { coords:[41.551,13.020], zoom:12, title:"The garden country", eyebrow:"Day 7 · Gardens", desc:"The romantic ruin-garden of Ninfa or the carved monsters of Bomarzo. A dreamy day in the Lazio countryside.", chips:["garden","easy"] },
+  { coords:[41.757,12.293], zoom:13, title:"Ostia Antica", eyebrow:"Day 8 · Finale", desc:"Rome's own seaside ruins, quieter than Pompeii, beautifully preserved and blessedly quiet. 30 min by train. Then homeward.", chips:["history","rest"] }
+]);
+</script>
+</body>
+</html>
