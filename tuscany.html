@@ -169,6 +169,8 @@
   @media(max-width:460px){.grid{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
 </head>
 <body>
 
@@ -190,6 +192,10 @@
   <section class="intro reveal">
     <p class="lead">The plan is simple: find a pool tucked into a garden, <em>sink into it</em>, and let Tuscany come to us at walking pace.</p>
     <p class="body">We loved the south of France for the perched stone villages, the art and the green calm. Tuscany has all of that with a different accent: a farmhouse-and-pool to come home to, two of the great garden villas down the road, Florence for the art, and a string of hill towns that feel like Saint-Paul's Italian cousins. Vegetarian heaven, brilliant without a drink, and reachable on lovely long trains the whole way.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
   </section>
 
   <section class="facts reveal">
@@ -489,6 +495,25 @@
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar across to Paris. The adventure begins on the rails.", chips:["rail","start"], image:"https://images.unsplash.com/photo-1506377585622-bedcbb5f6789?auto=format&fit=crop&w=800&q=70" },
+  { coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"A night in town to stretch your legs and eat well. The city of light as a palate cleanser before heading south.", chips:["city","food"], image:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" },
+  { coords:[45.070,7.687], zoom:12, title:"Over the Alps to Turin", eyebrow:"Day 2 · The crossing", desc:"Five and a half hours over the Alps on the reopened line. Turin is all arcades and grand cafés, perfect for a long evening passeggiata.", chips:["rail","café"], image:"https://images.unsplash.com/photo-1529260830199-42c24126f198?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.843,10.503], zoom:13, title:"Arriving in the Lucca hills", eyebrow:"Day 3 · The base", desc:"On to Florence, then the short hop out to the farmhouse. Drop the bags, first swim, early night. Home for the next week.", chips:["arrive","pool"], image:"https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.843,10.505], zoom:14, title:"A day of absolutely nothing", eyebrow:"Day 4 · Rest", desc:"Garden, pool, books, repeat. This is the whole point. The Buddha-and-white-drapes day you came for.", chips:["rest","garden"], image:"https://images.unsplash.com/photo-1572331165267-854da2b021b1?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.844,10.505], zoom:14, title:"Lucca's walls", eyebrow:"Day 5 · Lucca", desc:"Walk or cycle the full circuit of the tree-topped ramparts, climb the Guinigi tower with the oaks on its roof, gelato-paced the whole way.", chips:["walk","town"], image:"https://images.unsplash.com/photo-1594735529236-d6357c8c3d53?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.850,10.530], zoom:13, title:"Two great gardens", eyebrow:"Day 6 · Gardens", desc:"Villa Reale di Marlia in the morning, Villa Torrigiani and its lemon gardens in the afternoon. A day with your name on it.", chips:["gardens"], image:"https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.770,11.256], zoom:13, title:"Florence in a day", eyebrow:"Day 7 · Art", desc:"Pre-book the Uffizi or the Accademia, then Boboli and Bardini gardens and a slow wander through the Oltrarno. One big art hit, home by dark.", chips:["art","gardens"], image:"https://images.unsplash.com/photo-1543429258-4921025f3e66?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.723,10.402], zoom:13, title:"Pisa, then the pool", eyebrow:"Day 8 · Easy day", desc:"The Field of Miracles first thing, before the coaches roll in. Then straight back to the water.", chips:["easy","rail"], image:"https://images.unsplash.com/photo-1544207916-8f0e8e2b0b7a?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.319,11.331], zoom:12, title:"A hill town", eyebrow:"Day 9 · Siena", desc:"San Gimignano for the towers and the galleries, or Siena for the shell-shaped Campo and the striped cathedral. Best early or late.", chips:["town","art"], image:"https://images.unsplash.com/photo-1539037116893-712aeaaab122?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.076,11.679], zoom:13, title:"Down to the Val d'Orcia", eyebrow:"Day 10 · Optional extension", desc:"Swap the journey home for three more days near Pienza. Perched towns, pecorino, cypress hills rolling in every direction.", chips:["drive","views"], image:"https://images.unsplash.com/photo-1469827160215-9d29e96e72f4?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.078,11.680], zoom:14, title:"Pienza & Montepulciano", eyebrow:"Day 11 · Hill towns", desc:"Two of the loveliest perched towns in Italy, a short hop apart. Cheese, views, and not a great deal else to do.", chips:["town","views"], image:"https://images.unsplash.com/photo-1467269204594-9661b134dd2b?auto=format&fit=crop&w=800&q=70" },
+  { coords:[43.029,11.620], zoom:14, title:"Bagno Vignoni", eyebrow:"Day 12 · Finale", desc:"A village built around a steaming thermal pool where the square should be. A gloriously non-boozy send-off.", chips:["thermal","garden"], image:"https://images.unsplash.com/photo-1515859005217-8a1f08870f59?auto=format&fit=crop&w=800&q=70" }
+]);
 </script>
 </body>
 </html>

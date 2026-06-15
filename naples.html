@@ -162,6 +162,8 @@
   @media(max-width:460px){.grid{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
 </head>
 <body>
 <header class="hero">
@@ -180,6 +182,10 @@
   <section class="intro reveal">
     <p class="lead">A change of pace from Tuscany: <em>two thousand years of history</em>, a volcano, and a bay that's all blue and lemon.</p>
     <p class="body">Naples is loud, chaotic and gloriously alive, the home of pizza and the keeper of everything dug out of Pompeii. We'd give it two nights, then drop down to Sorrento for the calm: cliff-top lemon groves, the ruins a short train away, Capri across the water, and gardens with views that go forever. History and art like Rome, perched stone like Saint-Paul, vegetarian heaven, and just as good without a drink.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
   </section>
 
   <section class="facts reveal">
@@ -350,6 +356,19 @@
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"A long, romantic haul south begins: Eurostar to Paris, then high-speed down through Italy.", chips:["rail","start"], image:"https://images.unsplash.com/photo-1506377585622-bedcbb5f6789?auto=format&fit=crop&w=800&q=70" },
+  { coords:[48.856,2.352], zoom:10, title:"Through Paris", eyebrow:"Day 1 · En route", desc:"Eurostar deposits you at Gare du Nord. Cross to Gare de Lyon for the overnight or a night in town.", chips:["rail","city"], image:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" },
+  { coords:[40.852,14.268], zoom:13, title:"Into Naples", eyebrow:"Day 2 · Arrival", desc:"Drop the bags, find the lungomare for the evening passeggiata, and christen the trip with a proper pizza margherita.", chips:["arrive","pizza"], image:"https://images.unsplash.com/photo-1534308983496-4fabb1a015ee?auto=format&fit=crop&w=800&q=70" },
+  { coords:[40.853,14.253], zoom:14, title:"Naples old town", eyebrow:"Day 3 · Treasures", desc:"The MANN museum for Pompeii's actual treasures, then Spaccanapoli and the Veiled Christ. Sfogliatella and the best espresso of your life.", chips:["art","town"], image:"https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=800&q=70" },
+  { coords:[40.746,14.499], zoom:14, title:"Pompeii", eyebrow:"Day 4 · Ruins", desc:"Early little train to Pompeii, a few hours among the ancient streets with Vesuvius looming behind, then south to Sorrento.", chips:["history","ruins"], image:"https://images.unsplash.com/photo-1585893079780-91e5b89c5b5c?auto=format&fit=crop&w=800&q=70" },
+  { coords:[40.626,14.376], zoom:14, title:"Sorrento slows you down", eyebrow:"Day 5 · Coast", desc:"Lemon groves, the colourful Marina Grande for a long lunch, a seafront wander, and sea-air calm.", chips:["rest","coast"], image:"https://images.unsplash.com/photo-1633321702518-7fafe1bfbf3b?auto=format&fit=crop&w=800&q=70" },
+  { coords:[40.551,14.222], zoom:14, title:"Capri across the water", eyebrow:"Day 6 · Island", desc:"Ferry over early, up to the Gardens of Augustus for the Faraglioni view and the chairlift up Monte Solaro. Back before the day boats clog it up.", chips:["island","garden"], image:"https://images.unsplash.com/photo-1533656338878-c0c3a0ed5329?auto=format&fit=crop&w=800&q=70" }
+]);
 </script>
 </body>
 </html>

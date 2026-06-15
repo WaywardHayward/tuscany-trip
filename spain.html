@@ -162,6 +162,8 @@
   @media(max-width:460px){.grid{grid-template-columns:1fr}}
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
 </style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
 </head>
 <body>
 <header class="hero">
@@ -180,6 +182,10 @@
   <section class="intro reveal">
     <p class="lead">The Côte d'Azur with a Spanish accent: <em>warm and Mediterranean, minus the southern furnace.</em></p>
     <p class="body">Barcelona is the smart way to do warm Spain in summer: high-20s with a sea breeze, gardens and art in spades, and a direct train from Paris. A few days of Gaudí, markets and the Gothic Quarter, then up to Girona and the Costa Brava for whitewashed artist villages, medieval stone towns, clifftop gardens and Dalí. Coast like the south of France, perched stone like Saint-Paul, vegetarian heaven, and easy enough off the booze.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
   </section>
 
   <section class="facts reveal">
@@ -337,6 +343,21 @@
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Eurostar to Paris, then a single direct high-speed train straight down to Barcelona. The easiest arrival of the three.", chips:["rail","start"], image:"https://images.unsplash.com/photo-1506377585622-bedcbb5f6789?auto=format&fit=crop&w=800&q=70" },
+  { coords:[48.856,2.352], zoom:10, title:"Through Paris", eyebrow:"Day 1 · En route", desc:"One change in Paris — Gare du Nord to Gare de Lyon — and then the direct TGV south to Barcelona.", chips:["rail","city"], image:"https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=800&q=70" },
+  { coords:[41.387,2.169], zoom:13, title:"Barcelona", eyebrow:"Day 2 · Arrival", desc:"Drop the bags in the Gothic Quarter. Evening tapas wander through the narrow lanes, the cathedral lit gold above.", chips:["arrive","city"], image:"https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=800&q=70" },
+  { coords:[41.414,2.153], zoom:15, title:"Gaudí's Barcelona", eyebrow:"Day 3 · Art", desc:"Sagrada Família's forest of stained-glass light, then Park Güell's mosaic terraces. Book both well ahead.", chips:["art","city"], image:"https://images.unsplash.com/photo-1564507004663-b6dfb3c824d5?auto=format&fit=crop&w=800&q=70" },
+  { coords:[41.364,2.160], zoom:14, title:"Markets & Montjuïc", eyebrow:"Day 4 · Gardens", desc:"Graze the Boqueria, then up Montjuïc for the Miró, the gardens and the city laid out below. A beach evening if the legs fancy it.", chips:["art","garden"], image:"https://images.unsplash.com/photo-1579282240050-352db0a14c21?auto=format&fit=crop&w=800&q=70" },
+  { coords:[41.979,2.821], zoom:14, title:"Up to Girona", eyebrow:"Day 5 · Move", desc:"A short hop north to your calmer base: a walled medieval old town of stepped lanes, painted riverhouses and a soaring cathedral.", chips:["rail","town"], image:"https://images.unsplash.com/photo-1563284223-333497472e88?auto=format&fit=crop&w=800&q=70" },
+  { coords:[42.201,2.697], zoom:13, title:"The Empordà stone villages", eyebrow:"Day 6 · Villages", desc:"Besalú's fortified bridge, then the medieval lanes of Pals and Peratallada. Saint-Paul, in Catalan.", chips:["village","history"], image:"https://images.unsplash.com/photo-1558618666-fcd25c85f82e?auto=format&fit=crop&w=800&q=70" },
+  { coords:[42.288,3.276], zoom:14, title:"Cadaqués & the Costa Brava", eyebrow:"Day 7 · Coast", desc:"Whitewashed Cadaqués on its rocky bay, Dalí's house at Portlligat, and a swim in a hidden cove. The Côte d'Azur with a Spanish accent.", chips:["coast","art"], image:"https://images.unsplash.com/photo-1562883676-8c7feb83f09b?auto=format&fit=crop&w=800&q=70" },
+  { coords:[41.867,3.192], zoom:14, title:"A clifftop garden day", eyebrow:"Day 8 · Finale", desc:"The Jardins de Cap Roig tumbling to a turquoise sea, then the Camí de Ronda coast path for a walk or a sea-air run.", chips:["garden","coast"], image:"https://images.unsplash.com/photo-1530841377377-3ff06c0ca713?auto=format&fit=crop&w=800&q=70" }
+]);
 </script>
 </body>
 </html>
