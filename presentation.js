@@ -20,37 +20,43 @@
     for (let i = 0; i < stops.length; i++) if (stops[i] && stops[i].base) return i;
     return -1;
   }
+  // Nearest base at or before stop i (supports trips with more than one base,
+  // e.g. a two-centre holiday). Falls back to the first base, then -1.
+  function baseFor(i) {
+    for (let j = i; j >= 0; j--) if (stops[j] && stops[j].base) return j;
+    return baseIdx();
+  }
   function isDaytrip(i) {
-    const b = baseIdx();
-    if (b < 0) return false;
-    if (i === b) return false;
+    if (baseIdx() < 0) return false;
+    if (stops[i] && stops[i].base) return false;     // a base is not its own day trip
+    if (stops[i] && stops[i].kind === 'travel') return false;
+    const b = baseFor(i);
+    if (b < 0 || i <= b) return false;               // nothing before its base
     if (stops[i] && stops[i].kind === 'daytrip') return true;
-    // Default: any stop AFTER the base that isn't explicitly a travel leg is a day trip.
-    return i > b && !(stops[i] && stops[i].kind === 'travel');
+    return true;                                     // any other post-base stop arcs
   }
   // Where the leg arriving at toIdx should START.
   function sameCoords(a, b) {
     return a && b && Math.abs(a[0]-b[0]) < 1e-6 && Math.abs(a[1]-b[1]) < 1e-6;
   }
   function legFrom(toIdx) {
-    const b = baseIdx();
-    if (b < 0) return toIdx - 1;                     // no base: ordinary chain
-    if (isDaytrip(toIdx)) return b;                  // spoke out from the base
-    // A non-daytrip stop that sits AT the base (rest day / pause) anchors from
-    // the base too, so it draws as a no-op at home rather than a line in from
-    // the previous excursion.
-    if (toIdx > b && sameCoords(stops[toIdx].coords, stops[b].coords)) return b;
-    return toIdx - 1;                                // ordinary chain step
+    if (baseIdx() < 0) return toIdx - 1;             // no base: ordinary chain
+    if (isDaytrip(toIdx)) return baseFor(toIdx);     // spoke out from its base
+    // A non-daytrip stop sitting AT its base (rest day / pause) anchors from the
+    // base too, so it draws as a no-op at home, not a line in from the last trip.
+    const b = baseFor(toIdx);
+    if (b >= 0 && toIdx > b && sameCoords(stops[toIdx].coords, stops[b].coords)) return b;
+    return toIdx - 1;                                // ordinary chain step (incl. base->base hops)
   }
   // Curve magnitude for a leg (0 = straight). Day-trip spokes bow outward; we
   // fan successive spokes with alternating sign so they don't sit on top of
   // each other.
   function legCurve(toIdx) {
     if (!isDaytrip(toIdx)) return 0;
-    const b = baseIdx();
-    // index of this day trip among day trips (for a gentle fanned spread)
+    const b = baseFor(toIdx);
+    // index of this day trip among THIS base's day trips (fan resets per base)
     let n = 0;
-    for (let i = b + 1; i <= toIdx; i++) if (isDaytrip(i)) n++;
+    for (let i = b + 1; i <= toIdx; i++) if (baseFor(i) === b && isDaytrip(i)) n++;
     const sign = (n % 2 === 0) ? 1 : -1;
     return 0.22 * sign; // perpendicular offset as a fraction of the chord
   }
@@ -97,7 +103,7 @@
       // After a spoke, draw the line back home so each excursion reads as its
       // own out-and-back from the base (a clean fan, "we always come home").
       if (isDaytrip(i)) {
-        const back = legPoints(stops[i].coords, stops[b].coords, -legCurve(i), 40);
+        const back = legPoints(stops[i].coords, stops[baseFor(i)].coords, -legCurve(i), 40);
         for (let k = 1; k < back.length; k++) out.push(back[k]);
       }
     }
@@ -116,7 +122,7 @@
       // Return home after each completed spoke (except the one we are sitting
       // on right now, so the marker stays out at the current day trip).
       if (isDaytrip(i) && i < upToIdx) {
-        const back = legPoints(stops[i].coords, stops[b].coords, -legCurve(i), 40);
+        const back = legPoints(stops[i].coords, stops[baseFor(i)].coords, -legCurve(i), 40);
         for (let k = 1; k < back.length; k++) out.push(back[k]);
       }
     }
