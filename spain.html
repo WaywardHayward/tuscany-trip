@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Barcelona & the Costa Brava · Helen & Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#37583F 0%,#26412F 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE — the signature: a line that greens as you head south */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#37583F,#1F9B8C);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+</head>
+<body>
+<header class="hero">
+  <img src="https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1600&q=70" alt="Park Güell mosaic terraces overlooking Barcelona" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option three · Somewhere in Spain</div>
+    <h1>Gaudí, the coast &amp; villages like home</h1>
+    <p>Barcelona and the Costa Brava: art and markets in the city, then whitewashed villages, medieval stone and clifftop gardens up the coast.</p>
+    <div class="meta"><span>~9 days</span><span>Direct train from Paris</span><span>Two easy bases</span><span>Art, gardens &amp; coast</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+
+  <section class="intro reveal">
+    <p class="lead">The Côte d'Azur with a Spanish accent: <em>warm and Mediterranean, minus the southern furnace.</em></p>
+    <p class="body">Barcelona is the smart way to do warm Spain in summer: high-20s with a sea breeze, gardens and art in spades, and a direct train from Paris. A few days of Gaudí, markets and the Gothic Quarter, then up to Girona and the Costa Brava for whitewashed artist villages, medieval stone towns, clifftop gardens and Dalí. Coast like the south of France, perched stone like Saint-Paul, vegetarian heaven, and easy enough off the booze.</p>
+  </section>
+
+  <section class="facts reveal">
+    <div class="fact"><div class="k">3 nights</div><div class="v">in Barcelona for Gaudí, markets &amp; the old town</div></div>
+    <div class="fact"><div class="k">4 nights</div><div class="v">up the coast in Girona &amp; the Empordà</div></div>
+    <div class="fact"><div class="k">1 train</div><div class="v">Paris to Barcelona, direct and high-speed</div></div>
+    <div class="fact"><div class="k">high-20s</div><div class="v">coastal warmth, kinder than the interior</div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Day by day, city to coast</h2>
+    <p class="sub reveal">A few days of Barcelona buzz, then the line eases out to medieval stone and turquoise coves.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div>
+  <div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to Barcelona</h3>
+  <p class="t-blurb">Eurostar to Paris, then a single direct high-speed train straight down to Barcelona. The easiest arrival of the three: one change and you're there.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">easy</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div>
+  <div class="t-card"><div class="t-num">02</div><h3 class="t-title">Gaudí's Barcelona</h3>
+  <p class="t-blurb">Sagrada Família's forest of stained-glass light, then Park Güell's mosaic terraces. Book both well ahead. Evening tapas wander through the Gothic Quarter.</p><div class="t-chips"><span class="chip">art</span><span class="chip">city</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div>
+  <div class="t-card"><div class="t-num">03</div><h3 class="t-title">Markets &amp; Montjuïc</h3>
+  <p class="t-blurb">Graze the Boqueria, then up Montjuïc for the Miró, the gardens and the city laid out below. A beach evening if the legs fancy it.</p><div class="t-chips"><span class="chip">art</span><span class="chip">garden</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div>
+  <div class="t-card"><div class="t-num">04</div><h3 class="t-title">Up to Girona</h3>
+  <p class="t-blurb">A short hop north to your calmer base: a walled medieval old town of stepped lanes, painted riverhouses and a soaring cathedral.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">town</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div>
+  <div class="t-card"><div class="t-num">05</div><h3 class="t-title">The Empordà stone villages</h3>
+  <p class="t-blurb">Besalú's fortified bridge, then the medieval lanes of Pals and Peratallada. Saint-Paul, in Catalan.</p><div class="t-chips"><span class="chip">village</span><span class="chip">history</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div>
+  <div class="t-card"><div class="t-num">06</div><h3 class="t-title">Cadaqués &amp; the Costa Brava</h3>
+  <p class="t-blurb">Whitewashed Cadaqués on its rocky bay, Dalí's house at Portlligat, and a swim in a hidden cove. The Côte d'Azur with a Spanish accent.</p><div class="t-chips"><span class="chip">coast</span><span class="chip">art</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div>
+  <div class="t-card"><div class="t-num">07</div><h3 class="t-title">A clifftop garden day</h3>
+  <p class="t-blurb">The Jardins de Cap Roig tumbling to a turquoise sea, then the Camí de Ronda coast path for a walk or a sea-air run.</p><div class="t-chips"><span class="chip">garden</span><span class="chip">coast</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then pick a finale below,</strong> and point the trains home with a head full of mosaics and sea air.</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">Two bases: city, then coast</h2>
+    <p class="sub reveal">Barcelona first for the art and the buzz, then Girona and the Empordà for the calm.</p>
+    <div class="base reveal">
+      <div class="base-grid">
+        <div class="base-img"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZPRpZ6MD5PuRgz4-mPlVLAJ3M_ilWcSj9qP9236GF9iiHK6y1zCAlS6wumnMAqaYifmtmGM-K2pvGZ7Q_eNcDP6apxHYHyN95fRrhq1xTbkE6fLDfPr7Nx4MgxTYtRgkEc6UczOw9Fhkiz18A=w1200-h900" alt="The whitewashed bay of Cadaqués on the Costa Brava" onerror="this.style.display='none'"></div>
+        <div class="base-txt">
+          <div class="eyebrow">The plan</div>
+          <h2>Barcelona first, the coast second</h2>
+          <p>Three nights in Barcelona puts Gaudí, the Boqueria and the Gothic Quarter on your doorstep. Then four nights based in Girona (or a Costa Brava town like Begur), with the medieval villages, Cadaqués and the coastal gardens all an easy day out.</p>
+          <div class="stays">
+            <a class="stay" href="https://maps.google.com/?cid=1654528761399433347" target="_blank" rel="noopener">
+              <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZOFWWroHpeU55fTv_4zBNvWmQ6Q1nvnJLl3fb3JdSzfipSM7_uWnPUjwhMs2TomEEiDwhCs34dPqvVEw3CjS1O32NMaPSvUC-k51gk-1sNAjp5-KnN1Tn9fng7e_j8T_zzd2f2_-a99oce2dG4kQviFcA=s4800-w800-h600" alt="Barcelona old town" onerror="this.style.visibility='hidden'">
+              <span><span class="nm">Barcelona · Gothic Quarter</span><br><span class="ds">In the old town, walk to everything, metro for the rest</span></span></a>
+            <a class="stay" href="https://maps.google.com/?cid=8020890586326876230" target="_blank" rel="noopener">
+              <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNmL_33Q8cY6SxtZQUWJgOKT5S-Xlom6sXWfo0qy8FZm37I0IJX7js5bkDWmXdQP0AhphPwfAFfOqbMSqCj9jlPqbU2FejvLNnSlxmo1t6M5BiZGWBALxeE9gmxQsJdS0wuVSPdCvdiwzildmOoDkIjGw=s4800-w800-h600" alt="Girona" onerror="this.style.visibility='hidden'">
+              <span><span class="nm">Girona / the Empordà</span><br><span class="ds">Calm medieval base for the coast and the villages</span></span></a>
+          </div>
+          <p class="spark">Prefer to stay put? Barcelona alone, with day trips out by train, still covers a huge amount.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Art, gardens and the coast</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. Book Gaudí ahead, the Boqueria shuts Sundays.</p>
+    <div class="grid">
+      <a class="card" href="https://sagradafamilia.org/home" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZMLaMy7qZsqDRGzv0XZPnRF95MCUaFMx-YU7LH-M0f0aSpr0jkBVTFrh0Xu2kD_6Z6LEhLlorN_Ox4aNRgHr3BPwwSamrUQ3vN24uc1Se4KBDkm0Q1KND6LLFirO8QZEjUCJO6F9Bgk6Tos04p_6jZu8w=s4800-w800-h600" alt="Sagrada Família" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Sagrada Família</span></div>
+  <div class="card-body"><div class="card-meta">Gaudí · book ahead</div><h3 class="card-name">Sagrada Família</h3>
+  <p class="card-blurb">A basilica like a petrified forest, lit by walls of coloured glass. Still being finished after 140 years. Unforgettable.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://parkguell.barcelona/" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZOgHZYk03u92p-p8kjDRB5SErNnrfu_FyByp_tg0E7biJYrU_h57gfJB6xRC4RnpTDTSY4si9g1hmeKztApEWyRjRfexd6ErT1Vd3iQFpRS2jREBVk3bOweAYDG0VRj5lLlDSwxvPH6L1emi9c=s4800-w800-h600" alt="Park Güell" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Park Güell</span></div>
+  <div class="card-body"><div class="card-meta">Gaudí · garden park</div><h3 class="card-name">Park Güell</h3>
+  <p class="card-blurb">Mosaic terraces, gingerbread gatehouses and views over the city to the sea. Part garden, part dream. Timed tickets.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.boqueria.barcelona/" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZN-Le9TE0zWhkc3taZ16pMFlNkAkUuBk2kcCeT5XiL1FFrWRSvUKypmaYRlR0GfwctN-Mmpid_loLjVTWHpH3bEOJkDdZob6FwQ7SQJW3zfcbsy2OyoSHKjDp3b957eKpGcUv_zASMWlqAd=s4800-w800-h600" alt="La Boqueria" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">La Boqueria</span></div>
+  <div class="card-body"><div class="card-meta">Market · shut Sundays</div><h3 class="card-name">La Boqueria</h3>
+  <p class="card-blurb">A riot of colour off La Rambla: fruit, juices, veg and cheese. A vegetarian's grazing paradise.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=8020890586326876230" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZNmL_33Q8cY6SxtZQUWJgOKT5S-Xlom6sXWfo0qy8FZm37I0IJX7js5bkDWmXdQP0AhphPwfAFfOqbMSqCj9jlPqbU2FejvLNnSlxmo1t6M5BiZGWBALxeE9gmxQsJdS0wuVSPdCvdiwzildmOoDkIjGw=s4800-w800-h600" alt="Girona old town" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Girona old town</span></div>
+  <div class="card-body"><div class="card-meta">Your calm base</div><h3 class="card-name">Girona old town</h3>
+  <p class="card-blurb">Stepped medieval lanes, a vast cathedral, and the famous painted houses lining the river. Walkable and lovely.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=7796145809009536112" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPRpZ6MD5PuRgz4-mPlVLAJ3M_ilWcSj9qP9236GF9iiHK6y1zCAlS6wumnMAqaYifmtmGM-K2pvGZ7Q_eNcDP6apxHYHyN95fRrhq1xTbkE6fLDfPr7Nx4MgxTYtRgkEc6UczOw9Fhkiz18A=s4800-w800-h600" alt="Cadaqués" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Cadaqués</span></div>
+  <div class="card-body"><div class="card-meta">Coast · artist village</div><h3 class="card-name">Cadaqués</h3>
+  <p class="card-blurb">Whitewashed houses on a rocky bay, with Dalí's house next door at Portlligat. The most Saint-Paul thing in Spain.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=13389647301483877573" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZM7_M-pWhyAcytsbDgpFDNZdRaJ4LuVhlprX_iQzZBCY2NpmDjk0QzP_YBYfZT9VY4Mhl9bMnMd5_oOI5xdRqRM0HqVqHPhOqJxKVojRzCKUb6jQOkxi8-a3n8FhIyPhC2m7u1GzaoXQ9oe3js=s4800-w800-h570" alt="Jardins de Cap Roig" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Jardins de Cap Roig</span></div>
+  <div class="card-body"><div class="card-meta">Garden · clifftop</div><h3 class="card-name">Jardins de Cap Roig</h3>
+  <p class="card-blurb">A botanical garden terracing down to a turquoise sea near Calella de Palafrugell. Quiet corners and endless views.</p><span class="card-link">Have a look →</span></div></a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Pick your finale</span></div>
+    <h2 class="reveal">One more for the last day</h2>
+    <p class="sub reveal">Choose whichever sings on the day, then we turn for home.</p>
+    <div class="grid">
+      <a class="card" href="https://maps.google.com/?cid=808779254592593196" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZMTFL9JwXHgaj_HrL6tHXMOevf6CQKiR_NBRlZkuWT_gVu59P3kyclEr9EC0Ia1r8jNK34vNeR12Tmcc5O6cIpT61akvezSaV4ut1QafYdcRtWYAEQcrkb7nGnuN8tT3jAFYnNmGKjK90zY2pOM6Q4L=s4800-w800-h600" alt="Besalú" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Besalú</span></div>
+  <div class="card-body"><div class="card-meta">Medieval stone</div><h3 class="card-name">Besalú</h3>
+  <p class="card-blurb">A perfectly preserved old town with a fortified bridge. Pair it with the Empordà villages of Pals and Peratallada.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://maps.google.com/?cid=17557355558866209521" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZNWNWb77G8A0zMFl268dLpIucYP3HR-EYXCSi2XMwDGWPbNW9U2kSVobSzJ1I_ZRxjaPVUeV9sAb_zsag7Kwr3_7tC5Jv37IxU9sNdTTDXzoS_xhkxmqqXEmxEEOsHaAZxBb3vxvJCIbwDXMtg=s4800-w800-h600" alt="Montserrat" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Montserrat</span></div>
+  <div class="card-body"><div class="card-meta">Mountain monastery</div><h3 class="card-name">Montserrat</h3>
+  <p class="card-blurb">A monastery wedged into a jagged ridge, reached by rack railway from Barcelona. Easy trails and huge views for an outdoors day.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.salvador-dali.org/ca/museus/teatre-museu-dali-de-figueres/" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZP7EmZ3i3E36x7t7lqwqAqwEJJJLV27RxlAvCe26myZqvXYn4e2N_xagNn-vSiNT2f24CICztG0wNZno1vanUOtFW5euMmGkwjF1u4BheqE4efJrPtWgNwVfFxjRTj_dhRKSIUAjzSRBiyiRKfTjY_M=s4800-w800-h600" alt="Dalí Theatre-Museum" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Dalí Theatre-Museum</span></div>
+  <div class="card-body"><div class="card-meta">Art · shut Mondays</div><h3 class="card-name">Dalí Theatre-Museum</h3>
+  <p class="card-blurb">Surrealism's funhouse in Figueres, designed by Dalí himself, on the train line north. As bonkers as you'd hope.</p><span class="card-link">Have a look →</span></div></a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know">
+      <div class="box reveal">
+        <h3>Getting there, the easy way</h3>
+        <p>This is the best rail story of the three: Eurostar to Paris, then a single direct high-speed train (~6.5 hrs) straight to Barcelona. A night in Paris and you're on La Rambla the next afternoon.</p>
+      </div>
+      <div class="box reveal">
+        <h3>Getting around</h3>
+        <p>Barcelona's metro is excellent, and Girona and Figueres sit on the high-speed line. The Costa Brava coast and the Empordà villages (Cadaqués, Besalú, Pals) are best with a short car hire or local buses. Montserrat is train plus rack railway from the city.</p>
+      </div>
+      <div class="box reveal">
+        <h3>Eating well, meat-free</h3>
+        <p>Catalan cooking loves its veg:</p>
+        <ul>
+          <li>Pa amb tomàquet (tomato-rubbed bread) with everything</li>
+          <li>Escalivada, grilled veg, wild mushrooms</li>
+          <li>Patatas bravas, padrón peppers, tortilla</li>
+          <li>The Boqueria for fruit, juices and grazing</li>
+        </ul>
+      </div>
+      <div class="box reveal">
+        <h3>Lovely without a drink</h3>
+        <p>The vermut and cava are everywhere but easy to skip. Order an <em>orxata</em> (horchata), a granissat or a cafè amb gel, and the long Mediterranean evenings do the rest. No-one bats an eyelid.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Worth a flutter?</div>
+    <p>Gaudí in the morning, a medieval village at lunch, a clifftop garden in the afternoon, and the sea the whole way. Back to <a href="index.html">the other options</a> whenever.</p>
+    <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
