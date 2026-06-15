@@ -122,6 +122,7 @@
   }
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.opt{transition:none}}
 </style>
+<link rel="stylesheet" href="enhance.css">
 </head>
 <body>
 
@@ -253,5 +254,6 @@
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
 </script>
+<script src="enhance.js"></script>
 </body>
 </html>

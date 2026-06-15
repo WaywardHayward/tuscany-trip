@@ -1,0 +1,187 @@
+/* ============================================================
+   enhance.css — modern look layered over the base design
+   Aurora backgrounds · glassmorphism · gradient text ·
+   micro-interactions · scroll polish. Loaded last so it wins.
+   ============================================================ */
+
+:root{
+  --fx-jade:#1F9B8C;
+  --fx-jade-deep:#157065;
+  --fx-green:#37583F;
+  --fx-lemon:#D69B3C;
+  --fx-slate:#5E7689;
+  --glass:rgba(255,255,255,.62);
+  --glass-brd:rgba(255,255,255,.55);
+  --glass-shadow:0 1px 1px rgba(28,42,33,.05),0 18px 40px -22px rgba(28,42,33,.45);
+}
+
+/* ---- Living aurora background -------------------------------- */
+html{background:#E9EAE2}
+body{background:transparent}
+
+.fx-aurora{
+  position:fixed;inset:0;z-index:-2;overflow:hidden;pointer-events:none;
+  background:
+    radial-gradient(120% 90% at 50% -10%, #F2F3EC 0%, #E8EAE0 45%, #E2E6DA 100%);
+}
+.fx-aurora .blob{
+  position:absolute;border-radius:50%;filter:blur(70px);opacity:.55;
+  will-change:transform;
+}
+.fx-aurora .b1{width:48vmax;height:48vmax;left:-12vmax;top:-14vmax;
+  background:radial-gradient(circle at 30% 30%, rgba(31,155,140,.55), transparent 62%);
+  animation:fxFloat1 26s ease-in-out infinite alternate}
+.fx-aurora .b2{width:42vmax;height:42vmax;right:-12vmax;top:-6vmax;
+  background:radial-gradient(circle at 60% 40%, rgba(214,155,60,.45), transparent 62%);
+  animation:fxFloat2 30s ease-in-out infinite alternate}
+.fx-aurora .b3{width:52vmax;height:52vmax;right:-8vmax;bottom:-22vmax;
+  background:radial-gradient(circle at 50% 50%, rgba(55,88,63,.42), transparent 62%);
+  animation:fxFloat3 34s ease-in-out infinite alternate}
+.fx-aurora .b4{width:40vmax;height:40vmax;left:-10vmax;bottom:-18vmax;
+  background:radial-gradient(circle at 50% 50%, rgba(94,118,137,.40), transparent 62%);
+  animation:fxFloat4 28s ease-in-out infinite alternate}
+
+@keyframes fxFloat1{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(8vmax,6vmax,0) scale(1.15)}}
+@keyframes fxFloat2{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-7vmax,8vmax,0) scale(1.2)}}
+@keyframes fxFloat3{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(-9vmax,-7vmax,0) scale(1.1)}}
+@keyframes fxFloat4{from{transform:translate3d(0,0,0) scale(1)}to{transform:translate3d(7vmax,-6vmax,0) scale(1.18)}}
+
+/* fine film grain for richness */
+.fx-grain{
+  position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Top scroll-progress bar --------------------------------- */
+.fx-progress{
+  position:fixed;left:0;top:0;height:3px;width:0;z-index:9999;
+  background:linear-gradient(90deg,var(--fx-jade),var(--fx-lemon));
+  box-shadow:0 0 12px rgba(31,155,140,.6);transition:width .1s linear;
+}
+
+/* ---- Hero polish: legibility + life -------------------------- */
+.hero img{animation:fxKenburns 30s ease-out infinite alternate;transform-origin:60% 40%}
+@keyframes fxKenburns{from{transform:scale(1.02)}to{transform:scale(1.16)}}
+
+.hero-glow{
+  position:absolute;inset:0;z-index:1;pointer-events:none;mix-blend-mode:soft-light;
+  background:
+    radial-gradient(45% 55% at 18% 28%, rgba(31,155,140,.55), transparent 70%),
+    radial-gradient(50% 60% at 86% 72%, rgba(214,155,60,.45), transparent 70%);
+  animation:fxHeroSheen 16s ease-in-out infinite alternate;
+}
+@keyframes fxHeroSheen{from{transform:translate3d(0,0,0)}to{transform:translate3d(-4%,-3%,0) scale(1.08)}}
+
+.hero h1{text-shadow:0 2px 34px rgba(8,18,12,.5),0 1px 3px rgba(8,18,12,.35)}
+.hero p{text-shadow:0 1px 16px rgba(8,18,12,.55)}
+.hero .eyebrow{text-shadow:0 1px 10px rgba(8,18,12,.7)}
+.hero .meta span{backdrop-filter:blur(8px) saturate(1.2)}
+
+/* gentle entrance for hero content */
+.hero-in>*{animation:fxRiseIn .9s cubic-bezier(.2,.7,.2,1) both}
+.hero-in>*:nth-child(1){animation-delay:.05s}
+.hero-in>*:nth-child(2){animation-delay:.14s}
+.hero-in>*:nth-child(3){animation-delay:.22s}
+.hero-in>*:nth-child(4){animation-delay:.30s}
+.hero-in>*:nth-child(5){animation-delay:.38s}
+@keyframes fxRiseIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+
+/* ---- Gradient text accents ----------------------------------- */
+.sec h2,.decide h2{
+  background:linear-gradient(100deg,var(--fx-green) 0%,var(--fx-jade-deep) 55%,var(--fx-jade) 100%);
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+.intro .lead em{
+  background:linear-gradient(100deg,var(--fx-jade-deep),var(--fx-jade));
+  -webkit-background-clip:text;background-clip:text;color:transparent;font-style:normal;
+}
+
+/* ---- Glassmorphism on cards / panels ------------------------- */
+.opt,
+.card,
+.fact,
+.know .box,
+.t-card,
+.facts .fact{
+  background:var(--glass)!important;
+  backdrop-filter:blur(14px) saturate(1.25);
+  -webkit-backdrop-filter:blur(14px) saturate(1.25);
+  border:1px solid var(--glass-brd)!important;
+  box-shadow:var(--glass-shadow)!important;
+}
+
+/* option cards (hub) — gradient ring + lift */
+.opt{
+  position:relative;border-radius:22px;overflow:hidden;
+  transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease;
+}
+.opt::after{
+  content:"";position:absolute;inset:0;border-radius:inherit;padding:1px;pointer-events:none;
+  background:linear-gradient(135deg,rgba(31,155,140,.7),rgba(214,155,60,.55),transparent 70%);
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .35s ease;
+}
+.opt:hover::after{opacity:1}
+.opt:hover{transform:translateY(-7px);box-shadow:0 30px 60px -28px rgba(28,42,33,.6)!important}
+.opt-ph img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.opt:hover .opt-ph img{transform:scale(1.07)}
+
+/* explore cards (trip pages) */
+.card{transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s ease}
+.card:hover{transform:translateY(-6px)}
+.card-ph img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.card:hover .card-ph img{transform:scale(1.08)}
+
+.fact{transition:transform .3s ease,box-shadow .3s ease}
+.fact:hover{transform:translateY(-3px)}
+.fact .k{
+  background:linear-gradient(100deg,var(--fx-green),var(--fx-jade-deep));
+  -webkit-background-clip:text;background-clip:text;color:transparent;
+}
+
+/* timeline node glow + card hover */
+.t-node{box-shadow:0 0 0 4px rgba(237,238,231,.9),0 0 14px rgba(31,155,140,.5)!important}
+.t-card{transition:transform .3s ease,box-shadow .3s ease}
+.t-card:hover{transform:translateX(4px)}
+
+/* ---- Play-journey button: glow + shine ----------------------- */
+.play-journey-btn{position:relative;overflow:hidden;isolation:isolate;
+  box-shadow:0 8px 24px -8px rgba(31,155,140,.55);animation:fxBtnPulse 3.4s ease-in-out infinite}
+.play-journey-btn::before{
+  content:"";position:absolute;inset:0;z-index:-1;border-radius:inherit;
+  background:linear-gradient(120deg,transparent 20%,rgba(255,255,255,.4) 50%,transparent 80%);
+  transform:translateX(-120%);
+}
+.play-journey-btn:hover::before{animation:fxShine 1s ease}
+@keyframes fxShine{to{transform:translateX(120%)}}
+@keyframes fxBtnPulse{0%,100%{box-shadow:0 8px 24px -8px rgba(31,155,140,.45)}50%{box-shadow:0 10px 34px -6px rgba(31,155,140,.75)}}
+
+/* ---- Smoother scroll reveals --------------------------------- */
+.reveal{transition:opacity .7s cubic-bezier(.2,.7,.2,1),transform .7s cubic-bezier(.2,.7,.2,1)!important;
+  transform:translateY(22px) scale(.985)}
+.reveal.in{transform:none}
+
+/* ---- Backlink shimmer ---------------------------------------- */
+.backlink{transition:background .25s ease,transform .25s ease}
+.backlink:hover{transform:translateX(-3px)}
+
+/* ---- Nicer scrollbar ----------------------------------------- */
+*{scrollbar-width:thin;scrollbar-color:rgba(31,155,140,.5) transparent}
+*::-webkit-scrollbar{width:10px;height:10px}
+*::-webkit-scrollbar-thumb{background:linear-gradient(var(--fx-jade),var(--fx-jade-deep));border-radius:10px;border:2px solid transparent;background-clip:content-box}
+
+/* ---- 3D tilt helper (set by JS) ------------------------------ */
+.fx-tilt{transform-style:preserve-3d;will-change:transform}
+
+/* ---- Respect reduced motion ---------------------------------- */
+@media(prefers-reduced-motion:reduce){
+  .fx-aurora .blob,.hero img,.hero-glow,.play-journey-btn,.hero-in>*{animation:none!important}
+  .reveal{transition:opacity .3s ease!important;transform:none}
+}
+
+/* ---- Mobile tuning ------------------------------------------- */
+@media(max-width:760px){
+  .fx-aurora .blob{filter:blur(54px);opacity:.5}
+  .opt:hover,.card:hover,.fact:hover,.t-card:hover{transform:none}
+  .hero-glow{opacity:.85}
+}
