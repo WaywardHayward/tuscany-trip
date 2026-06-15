@@ -1,0 +1,494 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>A slow green fortnight — Tuscany for Helen & Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#37583F 0%,#26412F 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE — the signature: a line that greens as you head south */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#37583F,#1F9B8C);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  /* BACKLINK */
+  .backlink{display:inline-flex;align-items:center;gap:7px;color:#cfe9e2;text-decoration:none;
+    font-family:"Bricolage Grotesque",sans-serif;font-weight:600;font-size:13.5px;letter-spacing:.02em;
+    background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.26);backdrop-filter:blur(4px);
+    padding:8px 14px;border-radius:999px;margin-bottom:20px;transition:background .2s ease}
+  .backlink:hover{background:rgba(255,255,255,.22)}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZN32gENQQYnm8a8hJjFoXGZb7f9E8rVIysCA2Q2_94fU6DbcjSujHujAx2uDSofN1uoeccJBViI3bBbxwpeqXtSMcxcm8HCabXCiy1cI_i8fz3jG8X3STeQBJSflGqPUyDgw54Qxpe2jjdbSik=w1600-h1000" alt="The tree-topped Renaissance walls of Lucca, the calm green heart of the trip" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <a class="backlink" href="index.html">&larr; All summer 2026 options</a>
+    <div class="eyebrow">Option one &middot; for Helen &amp; Alex &middot; summer 2026</div>
+    <h1>A slow green fortnight in Tuscany</h1>
+    <p>Same hidden-garden feeling as Saint-Paul, all the way there by train, and not a hangover in sight.</p>
+    <div class="meta">
+      <span>~12 days</span><span>Edinburgh to the hills by rail</span><span>One garden base</span><span>Gardens &amp; hill towns</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+
+  <section class="intro reveal">
+    <p class="lead">The plan is simple: find a pool tucked into a garden, <em>sink into it</em>, and let Tuscany come to us at walking pace.</p>
+    <p class="body">We loved the south of France for the perched stone villages, the art and the green calm. Tuscany has all of that with a different accent: a farmhouse-and-pool to come home to, two of the great garden villas down the road, Florence for the art, and a string of hill towns that feel like Saint-Paul's Italian cousins. Vegetarian heaven, brilliant without a drink, and reachable on lovely long trains the whole way.</p>
+  </section>
+
+  <section class="facts reveal">
+    <div class="fact"><div class="k">3 days</div><div class="v">gentle rail journey down, broken in Paris &amp; Turin</div></div>
+    <div class="fact"><div class="k">6 nights</div><div class="v">one garden base in the hills above Lucca</div></div>
+    <div class="fact"><div class="k">2 villas</div><div class="v">great gardens within a short hop</div></div>
+    <div class="fact"><div class="k">+3 days</div><div class="v">optional Val d'Orcia finale</div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Day by day, and the line that greens as we go south</h2>
+    <p class="sub reveal">The spine starts cool and northern for the travel days, then turns to pool-water green once we reach the hills. That's roughly how it'll feel too.</p>
+
+    <ul class="timeline">
+      <li class="t-item t-item--travel">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">01</div>
+    <h3 class="t-title">Edinburgh → Paris</h3>
+    <p class="t-blurb">Morning train to London, then the Eurostar across to Paris. A night in town to stretch your legs and eat well.</p>
+    <div class="t-chips"><span class="chip">rail</span><span class="chip">city</span></div>
+  </div>
+</li>
+<li class="t-item t-item--travel">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">02</div>
+    <h3 class="t-title">Paris → Turin</h3>
+    <p class="t-blurb">Five and a half hours over the Alps on the reopened line. Turin is all arcades and grand cafés, perfect for a long, dry evening passeggiata.</p>
+    <div class="t-chips"><span class="chip">rail</span><span class="chip">café</span></div>
+  </div>
+</li>
+<li class="t-item t-item--travel">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">03</div>
+    <h3 class="t-title">Turin → the Lucca hills</h3>
+    <p class="t-blurb">On to Florence, then the short hop out to the farmhouse. Drop the bags, first swim, early night.</p>
+    <div class="t-chips"><span class="chip">rail</span><span class="chip">arrive</span></div>
+  </div>
+</li>
+<li class="t-item t-item--base">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">04</div>
+    <h3 class="t-title">A day of absolutely nothing</h3>
+    <p class="t-blurb">Garden, pool, books, repeat. This is the whole point. The Buddha-and-white-drapes day you came for.</p>
+    <div class="t-chips"><span class="chip">rest</span><span class="chip">garden</span></div>
+  </div>
+</li>
+<li class="t-item t-item--base">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">05</div>
+    <h3 class="t-title">Lucca's walls</h3>
+    <p class="t-blurb">Walk or cycle the full circuit of the tree-topped ramparts, climb the Guinigi tower with the oaks on its roof, gelato-paced the whole way.</p>
+    <div class="t-chips"><span class="chip">walk</span><span class="chip">town</span></div>
+  </div>
+</li>
+<li class="t-item t-item--base">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">06</div>
+    <h3 class="t-title">Two great gardens</h3>
+    <p class="t-blurb">Villa Reale di Marlia in the morning, Villa Torrigiani and its lemon gardens in the afternoon. A day with your name on it.</p>
+    <div class="t-chips"><span class="chip">gardens</span></div>
+  </div>
+</li>
+<li class="t-item t-item--base">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">07</div>
+    <h3 class="t-title">Florence in a day</h3>
+    <p class="t-blurb">Pre-book the Uffizi or the Accademia, then Boboli and Bardini gardens and a slow wander through the Oltrarno. One big art hit, home by dark.</p>
+    <div class="t-chips"><span class="chip">art</span><span class="chip">gardens</span></div>
+  </div>
+</li>
+<li class="t-item t-item--base">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">08</div>
+    <h3 class="t-title">Pisa, then the pool</h3>
+    <p class="t-blurb">The Field of Miracles first thing, before the coaches roll in. Then straight back to the water. Or just don't move all day.</p>
+    <div class="t-chips"><span class="chip">easy</span><span class="chip">rail</span></div>
+  </div>
+</li>
+<li class="t-item t-item--base">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">09</div>
+    <h3 class="t-title">A hill town</h3>
+    <p class="t-blurb">San Gimignano for the towers and the galleries, or Siena for the shell-shaped Campo and the striped cathedral. Best early or late.</p>
+    <div class="t-chips"><span class="chip">town</span><span class="chip">art</span></div>
+  </div>
+</li>
+      <li class="t-branch reveal"><strong>From here, two endings.</strong> Either reverse the rails home with another easy night in Paris, or steal three more days south in the Val d'Orcia.</li>
+      <li class="t-item t-item--optional">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">10</div>
+    <h3 class="t-title">Down to the Val d'Orcia</h3>
+    <p class="t-blurb">Swap the journey home for three more days near Pienza. Perched towns, pecorino, cypress hills rolling in every direction.</p>
+    <div class="t-chips"><span class="chip">drive</span><span class="chip">views</span></div>
+  </div>
+</li>
+<li class="t-item t-item--optional">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">11</div>
+    <h3 class="t-title">Pienza & Montepulciano</h3>
+    <p class="t-blurb">Two of the loveliest perched towns in Italy, a short hop apart. Cheese, views, and not a great deal else to do, which is the idea.</p>
+    <div class="t-chips"><span class="chip">town</span><span class="chip">views</span></div>
+  </div>
+</li>
+<li class="t-item t-item--optional">
+  <div class="t-node"></div>
+  <div class="t-card">
+    <div class="t-num">12</div>
+    <h3 class="t-title">Bagno Vignoni</h3>
+    <p class="t-blurb">A village built around a steaming thermal pool where the square should be, plus the Horti Leonini gardens nearby. A gloriously non-boozy send-off.</p>
+    <div class="t-chips"><span class="chip">thermal</span><span class="chip">garden</span></div>
+  </div>
+</li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Home base</span></div>
+    <h2 class="reveal">A hidden farmhouse with a pool</h2>
+    <p class="sub reveal">Not a hotel. A <em>casale</em> or small agriturismo with its own garden and water, the closest thing to those photos from Saint-Paul.</p>
+
+    <div class="base reveal">
+      <div class="base-grid">
+        <div class="base-img"><img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNVo-fvrI2o5HSBtRwpPfb7LLKONT78W_c_cv1GpgA-AqmM2ixc5fUqRPr8k1SESM6XPYOJc5wEN4vb5MmWzgXduy_Rk0Ls74DVa6qZlmoZ21PNgf4RwE0bFUdznjPXgKGCpNUZnF7kV2w_FA=w1200-h900" alt="A Tuscan villa with pools and gardens in the hills above Lucca" onerror="this.style.display='none'"></div>
+        <div class="base-txt">
+          <div class="eyebrow">Two to reference</div>
+          <h2>Pick the vibe, then book the feeling</h2>
+          <p>On Airbnb, filter for an entire place with a pool around Capannori, Segromigno or Camigliano and you'll land right back in these pictures. Two real starting points:</p>
+          <div class="stays">
+            <a class="stay" href="http://www.acasadeltosi.it/" target="_blank" rel="noopener">
+              <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZN2jPNK6Cc36efjbNPn__yikE-mluaWTdZtBsVD4-AgFLJ8wTPOQHbSxNwvChEXrJg17wyqsD4K0Joj93kXfzTEpNwbs0g_dn61HHgmJ_ZoONQDFVBRI4AlEOUBzI_aqXSqwS9OIlOMlGAAjg=s4800-w800-h600" alt="A Casa Del Tosi" onerror="this.style.visibility='hidden'">
+              <span><span class="nm">A Casa Del Tosi</span><br><span class="ds">Intimate, homely farmstay with pool &amp; lovely hosts</span></span>
+            </a>
+            <a class="stay" href="http://www.fattoriamansibernardini.it/" target="_blank" rel="noopener">
+              <img src="https://lh3.googleusercontent.com/place-photos/AJRVUZNVo-fvrI2o5HSBtRwpPfb7LLKONT78W_c_cv1GpgA-AqmM2ixc5fUqRPr8k1SESM6XPYOJc5wEN4vb5MmWzgXduy_Rk0Ls74DVa6qZlmoZ21PNgf4RwE0bFUdznjPXgKGCpNUZnF7kV2w_FA=s4800-w800-h600" alt="Fattoria Mansi Bernardini" onerror="this.style.visibility='hidden'">
+              <span><span class="nm">Fattoria Mansi Bernardini</span><br><span class="ds">Grander villa with views over Lucca, whole-house feel</span></span>
+            </a>
+          </div>
+          <p class="spark">The original spark: <a href="https://www.airbnb.co.uk/rooms/3103487" target="_blank" rel="noopener">the artist's house in Saint-Paul-de-Vence</a> we stayed in back in the day.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Within easy reach</span></div>
+    <h2 class="reveal">Gardens, art and hill towns</h2>
+    <p class="sub reveal">All doable as day trips from the base. Tap any of them for photos, hours and directions.</p>
+    <div class="grid">
+      <a class="card" href="https://maps.google.com/?cid=3014103695340255641" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZN32gENQQYnm8a8hJjFoXGZb7f9E8rVIysCA2Q2_94fU6DbcjSujHujAx2uDSofN1uoeccJBViI3bBbxwpeqXtSMcxcm8HCabXCiy1cI_i8fz3jG8X3STeQBJSflGqPUyDgw54Qxpe2jjdbSik=s4800-w800-h600" alt="Lucca's walls" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Lucca's walls</span></div>
+  <div class="card-body">
+    <div class="card-meta">Your calm anchor town</div>
+    <h3 class="card-name">Lucca's walls</h3>
+    <p class="card-blurb">Walk or cycle the 4km of tree-topped ramparts, flat and green, ringing the whole old town.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+<a class="card" href="https://villarealedimarlia.it/" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZMHAwIO9UUGgyS42APJzThVzCynqeTWjhexsTYLKG72FBF7kZJG33jwq5gRoWkqy4mL_d-oNi00lr4I-maSp_9v-6F7sSoP3peKn0BfOcmzVjS1gI3SYkSV1f27u6k56MsfgKzJYuVbFhVwyg=s4800-w800-h600" alt="Villa Reale di Marlia" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Villa Reale di Marlia</span></div>
+  <div class="card-body">
+    <div class="card-meta">Garden · 1 bus from Lucca</div>
+    <h3 class="card-name">Villa Reale di Marlia</h3>
+    <p class="card-blurb">Beautifully restored gardens you can happily lose two hours in. There's a little café in the grounds.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+<a class="card" href="https://maps.google.com/?cid=1319962902095022479" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZP79Us1aCrSb5PRjBkTCzMSo2KeqLGROMk-2aVnVBNnr9_jzmEXAAumcPepLTM_4yrV8ytmJJg4j18h_ifCUfkDv7s8xn--udqEaxBSJzLAU7M6A58XjzhvHmC7CIqw9VniGR3qlB43QK-VJhE=s4800-w800-h600" alt="Villa Torrigiani" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Villa Torrigiani</span></div>
+  <div class="card-body">
+    <div class="card-meta">Garden · Camigliano</div>
+    <h3 class="card-name">Villa Torrigiani</h3>
+    <p class="card-blurb">A baroque garden of lemon trees and water tricks. Pair it with Marlia for one perfect garden day.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+<a class="card" href="https://www.uffizi.it/giardino-boboli/" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZN57xOu_3M8zT8pwH7xu99uhj7_cZ4PMh39LnSxMBFyzIk7YF1OAYxYozOyVXdfIC0JZSYsgdE4VLDGpUjxYWcpapO1ryE78W0hpp-NEA0FcduVdlnc4NjhjBRAgnrWPSjIiYPh7It-adPmkA=s4800-w800-h600" alt="Boboli & Bardini, Florence" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Boboli & Bardini, Florence</span></div>
+  <div class="card-body">
+    <div class="card-meta">Art day · 1h20 by train</div>
+    <h3 class="card-name">Boboli & Bardini, Florence</h3>
+    <p class="card-blurb">Florence done in a day: the big galleries, then these two hillside gardens looking back over the rooftops.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+<a class="card" href="https://www.opapisa.it/visita/torre-pendente/" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZMYsWoPQ168ZIByT7yt5Bb1qglHZ4xQp00yG8nPN38eyO-X12MNdAoZUBhro7dPUw2vXdrwTxXcp6euDrhfs3aavFrJbAVasrRlTgPSZ34mRtUbkOO_28RrLe-Aa6TLhr_515pfsviGLm5w=s4800-w800-h600" alt="Leaning Tower of Pisa" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Leaning Tower of Pisa</span></div>
+  <div class="card-body">
+    <div class="card-meta">30 min by train</div>
+    <h3 class="card-name">Leaning Tower of Pisa</h3>
+    <p class="card-blurb">Go first thing for the empty Field of Miracles, then back to the pool by lunch.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+<a class="card" href="https://maps.google.com/?cid=5498601937583817873" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZNk4T3jFzvLarDWAvtJy2dFLbBzj7jKQKW6MWChzSRN2TE0znCx5jEDSX6NM9azij1JWsR0VUY26CvJdPdyfU-jbiEcofre270PvaK6RGG9OqjETlKp5MVkru-vZpNzA4JtGXfB8Y6mSbeEruY=s4800-w800-h600" alt="San Gimignano" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">San Gimignano</span></div>
+  <div class="card-body">
+    <div class="card-meta">The town of towers</div>
+    <h3 class="card-name">San Gimignano</h3>
+    <p class="card-blurb">The most Saint-Paul of the hill towns: stone lanes, little galleries, and big views.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+<a class="card" href="https://visitsienaofficial.it/87-piazza-del-campo/" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZMTJJuBSo-fJgdCeyiwUuS13UZvTxSFWOFezyEXGYfEsVZu1alsCZtZo-2wqrnolAB_9khZuWW8VW3KuzcMQ3YNaiNRFwry-1wpG7qWeYvyy_xyYwZdD2EWwoJJVnzQJ1FOc9hUtnsp1x9ZMBfpBcrf_w=s4800-w800-h600" alt="Siena" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Siena</span></div>
+  <div class="card-body">
+    <div class="card-meta">Piazza del Campo</div>
+    <h3 class="card-name">Siena</h3>
+    <p class="card-blurb">The great shell-shaped square and a cathedral striped like a humbug. Medieval drama, very walkable.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">If we've still got energy</span></div>
+    <h2 class="reveal">The Val d'Orcia finale</h2>
+    <p class="sub reveal">The postcard Tuscany of cypress hills, three days down south to round it off before the long ride home.</p>
+    <div class="grid">
+      <a class="card" href="https://maps.google.com/?cid=4522611970158680791" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPHjAHd6OSxafZB-JHllay18pGH_vs90k94bpcB03-vdgBfO2CgaHCzICLBx1CV3fWRf3JF6SigZVf95M1xyrAlKeWu3jxhqBFqjXCW241DiwLmDScIJc7Tj5-S7MR1xUL56Wxu0l8qZ40uslE=s4800-w800-h600" alt="Pienza" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Pienza</span></div>
+  <div class="card-body">
+    <div class="card-meta">Val d'Orcia</div>
+    <h3 class="card-name">Pienza</h3>
+    <p class="card-blurb">A tiny Renaissance jewel of a town, all pecorino and postcard views.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+<a class="card" href="https://maps.google.com/?cid=2740489378937272033" target="_blank" rel="noopener">
+  <div class="card-ph"><img loading="lazy" src="https://lh3.googleusercontent.com/place-photos/AJRVUZPnmIiIwZ5PxdqG8A4--LrNyb8K1Lc692X7rTI_tSTwmngbllsvZDxOyjDc5vWsl8MUdKx_3ny6_J78Pvz0woeVuLrQRRJ4ekPid4omMxXh9oU0UHcFgzbcyOszGHQTqEareYZzwBWBFz2Ddw=s4800-w800-h600" alt="Bagno Vignoni" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Bagno Vignoni</span></div>
+  <div class="card-body">
+    <div class="card-meta">Thermal village</div>
+    <h3 class="card-name">Bagno Vignoni</h3>
+    <p class="card-blurb">Where the main piazza should be, there's a steaming thermal pool instead. Wonderfully odd, wonderfully calm.</p>
+    <span class="card-link">Have a look →</span>
+  </div>
+</a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know">
+      <div class="box reveal">
+        <h3>Getting there on rails</h3>
+        <p>Edinburgh &rarr; London &rarr; Eurostar to Paris &rarr; high-speed down through Turin &rarr; Florence &rarr; the hills. <span class="warn">One thing to dodge:</span> the Paris&ndash;Milan line fully closes for works from 14 Sept to 13 Oct 2026, so travel before mid-September or after mid-October.</p>
+        <div class="links">
+          <a href="https://www.eurostar.com/" target="_blank" rel="noopener">Eurostar</a>
+          <a href="https://www.sncf-connect.com/" target="_blank" rel="noopener">SNCF Connect</a>
+          <a href="https://www.seat61.com/trains-and-routes/paris-to-florence-by-train.htm" target="_blank" rel="noopener">Seat61 route guide</a>
+        </div>
+      </div>
+      <div class="box reveal">
+        <h3>The car question</h3>
+        <p>Lucca, Florence and Pisa are dead easy by train. The hidden base, the villa gardens and the deep hill towns really want a car, though. Cleanest answer: keep the long haul on rails and hire a small car just for the Tuscan leg, dropping it before the train home.</p>
+      </div>
+      <div class="box reveal">
+        <h3>Eating well, meat-free</h3>
+        <p>Tuscany is a vegetarian's happy place. Reliable joys to look for:</p>
+        <ul>
+          <li>Ribollita and pappa al pomodoro</li>
+          <li>Pici with cacio e pepe or garlic</li>
+          <li>Panzanella, white beans in good oil</li>
+          <li>Pecorino, fresh focaccia, proper tomatoes</li>
+        </ul>
+      </div>
+      <div class="box reveal">
+        <h3>Lovely without a drink</h3>
+        <p>Italy is built for this. The evening ritual works perfectly dry: order a Crodino, a Sanbitt&egrave;r or anything marked <em>analcolico</em> and you get the bitter-orange aperitivo and the little snacks, minus the booze. Coffee culture, gelato and the thermal pool at Bagno Vignoni do the rest.</p>
+      </div>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">So. Shall we?</div>
+    <p>A garden to disappear into, a few perfect days out, and the whole thing rolling past a train window. Exactly what a threadbare pair ordered.</p>
+    <div class="fine">Made for Helen &amp; Alex &middot; flex it shorter or longer any time</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+</body>
+</html>
