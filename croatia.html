@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Istria & the Adriatic · Helen & Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#37583F 0%,#26412F 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#37583F,#1F9B8C);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rovinj%2C_Croatia.jpg" alt="The old town of Rovinj rising from the Adriatic" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option seven · Istria &amp; the Adriatic</div>
+    <h1>The quiet, green side of Croatia</h1>
+    <p>A Venetian old town on the sea for a base, Roman ruins and hill towns inland, truffles and olive oil on everything, and warm clear water to swim in.</p>
+    <div class="meta"><span>~9 days</span><span>Rail then catamaran</span><span>One coastal base</span><span>Sea, hill towns &amp; ruins</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">Croatia without the crowds: Istria, the green peninsula up north, where it feels a little like <em>Italy crossed with the south of France</em> — and you can still get there by sea.</p>
+    <p class="body">Base in Rovinj, a honey-and-ochre Venetian old town that climbs out of the water to a single bell-tower, and let the peninsula come to you. Roman Pula with its great amphitheatre, the gold mosaics of Poreč, hilltop towns like Motovun and Grožnjan in truffle country, the islands of Brijuni, and wild swimming off Cape Kamenjak. Warm, clear water; cobbled lanes like home; food that's a vegetarian's dream of truffle, olive oil, fresh pasta and garden veg. The romantic way in is the rail spine through France and Italy, then a fast catamaran across from Venice.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">Venetian Rovinj, right on the sea</div></div><div class="fact"><div class="k">boat in</div><div class="v">catamaran across from Venice</div></div><div class="fact"><div class="k">sea &amp; hill towns</div><div class="v">coast, ruins &amp; truffle country</div></div><div class="fact"><div class="k">high-20s</div><div class="v">warm, with a cooling Adriatic breeze</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Across France &amp; Italy, then over the water</h2>
+    <p class="sub reveal">One coastal base in Rovinj, with Istria's coast, ruins and hill towns all within an easy day.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to the Adriatic</h3><p class="t-blurb">Eurostar to Paris, then the high-speed run down to Milan — a night there to break the journey, with a stroll and an early supper.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Across to Venice &amp; the catamaran</h3><p class="t-blurb">A morning train to Venice, then the summer high-speed catamaran straight across the top of the Adriatic to Rovinj — about three hours on the water, no car needed.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">boat</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Into Rovinj</h3><p class="t-blurb">Settle into the old town, climb the lanes to the St Euphemia bell-tower for the sunset, and start as you mean to go on: fresh pasta with truffle and the day's catch of vegetables.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">old town</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Roman Pula</h3><p class="t-blurb">Down the coast to Pula and its astonishingly complete Roman amphitheatre, the forum and the triumphal arch. A swim off the rocks on the way back.</p><div class="t-chips"><span class="chip">history</span><span class="chip">swim</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">Poreč &amp; the gold mosaics</h3><p class="t-blurb">North to Poreč for the 6th-century Euphrasian Basilica, its apse glittering with Byzantine mosaics — one of the great survivals, and a UNESCO treasure. Old town and a beach to finish.</p><div class="t-chips"><span class="chip">mosaics</span><span class="chip">UNESCO</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">The hill towns &amp; truffle country</h3><p class="t-blurb">Inland to green, vine-striped hills and the walled hilltop towns of Motovun and Grožnjan — the artists' village of galleries and music. Truffle and olive-oil tastings, big views, cool air.</p><div class="t-chips"><span class="chip">hill towns</span><span class="chip">truffles</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">The Brijuni islands</h3><p class="t-blurb">A boat from Fažana out to the Brijuni national park: Roman and Byzantine ruins, parkland, a little safari herd, and clear water all around. A gentle, green island day.</p><div class="t-chips"><span class="chip">islands</span><span class="chip">nature</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">08</div><h3 class="t-title">Wild swimming at Kamenjak</h3><p class="t-blurb">The wild nature reserve at the peninsula's southern tip: white rock, hidden coves, juniper and the clearest water of the trip. A long swim, then turn the boats and trains for home.</p><div class="t-chips"><span class="chip">swim</span><span class="chip">nature</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then turn for home,</strong> back across the water to Venice and the long, easy rails north with salt in your hair.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">One Venetian old-town base</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rovinj%2C_Croatia.jpg" alt="The harbour and old town of Rovinj" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>One base, on the prettiest harbour</h2>
+        <p>No need to move on: Rovinj sits in the middle of Istria with everything an easy day out — Pula and Poreč down the coast, the hill towns just inland, the islands a short boat away. It's the loveliest old town on this coast, all sea-worn ochre and Venetian shutters, and a joy to come home to each evening.</p>
+        <div class="stays"><a class="stay" href="https://www.maistra.com/properties/hotel-adriatic/" target="_blank" rel="noopener"><span><span class="nm">Hotel Adriatic</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;170&ndash;400</span><span class="ds">A small heritage boutique right on Rovinj's seafront square, full of contemporary art and steps from the harbour and the old-town lanes. Intimate and characterful &mdash; the pick for that Hotel Welcome feel.</span></span></a><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=Spirito%20Santo%20Palazzo%20Storico%20Rovinj" target="_blank" rel="noopener"><span><span class="nm">Spirito Santo Palazzo Storico</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;220&ndash;400</span><span class="ds">A trio of restored 1920s houses in the heart of the old town, romantic and quiet, some rooms with private terraces over the rooftops and sea. Heritage Istrian charm and warm service.</span></span></a><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=Grand%20Park%20Hotel%20Rovinj" target="_blank" rel="noopener"><span><span class="nm">Grand Park Hotel Rovinj</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;350&ndash;600</span><span class="ds">The splurge: a sleek, low-slung modern hotel facing the old town across the harbour, with the best views in town, tiered pools, a big spa and a swimming park below. Quietly spectacular.</span></span></a></div>
+        <p class="spark">Fancy a night inland? You could tuck a night into a stone house at Motovun for the truffle hills, though one seaside base keeps it simplest.</p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. It's all coast-road, boat and a little inland driving — short hops from Rovinj.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Rovinj%20old%20town" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rovinj%2C_Croatia.jpg" alt="Rovinj old town" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Rovinj old town</span></div><div class="card-body"><div class="card-meta">Your base</div><h3 class="card-name">Rovinj old town</h3><p class="card-blurb">A Venetian fishing town that rises straight from the sea to the St Euphemia bell-tower. Ochre houses, washing-lined lanes, artists' studios and rocks to swim from at the edge of town.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Pula%20Arena" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/24/Pula_Arena_%282024-10-10_1%29.jpg" alt="The Roman amphitheatre at Pula" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Pula Arena</span></div><div class="card-body"><div class="card-meta">Roman · down the coast</div><h3 class="card-name">Pula Arena</h3><p class="card-blurb">One of the best-preserved Roman amphitheatres anywhere, its full outer ring still standing by the sea. Wander the arena and the vaults below, then the forum and the triumphal arch.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Euphrasian%20Basilica%20Pore%C4%8D" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/7/76/2025_Atrium_Euphrasius-Basilika.jpg" alt="The Euphrasian Basilica in Poreč" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Euphrasian Basilica, Poreč</span></div><div class="card-body"><div class="card-meta">UNESCO mosaics</div><h3 class="card-name">Euphrasian Basilica</h3><p class="card-blurb">A 6th-century church in Poreč whose apse blazes with gold Byzantine mosaics, among the finest outside Ravenna. Climb the campanile for the rooftops and sea. A UNESCO site.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Motovun%20Istria" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Aerial_view_to_Motovun.jpg" alt="The hilltop town of Motovun" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Motovun</span></div><div class="card-body"><div class="card-meta">Hill town · truffle country</div><h3 class="card-name">Motovun</h3><p class="card-blurb">A walled town crowning a vineyard hill above the Mirna valley, the heart of Istria's truffle country. Walk the ramparts for a 360° view over the green, and taste the famous oils and truffle.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Gro%C5%BEnjan" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c6/Gro%C5%BEnjan_aerial_view.jpg" alt="The hill town of Grožnjan" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Grožnjan</span></div><div class="card-body"><div class="card-meta">The artists' village</div><h3 class="card-name">Grožnjan</h3><p class="card-blurb">A tiny medieval hill town saved by artists and musicians — now all galleries, studios and summer concerts among the stone lanes. Sleepy, lovely, and full of music in season.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Brijuni%20National%20Park" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/09/Brijuni_20170415.jpg" alt="The Brijuni islands" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">The Brijuni islands</span></div><div class="card-body"><div class="card-meta">Island national park</div><h3 class="card-name">The Brijuni islands</h3><p class="card-blurb">A green archipelago of parkland and clear water, with Roman and Byzantine ruins, dinosaur footprints and a little safari herd. A short boat from Fažana, and a gentle day on the water.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Pick your day on the water</span></div>
+    <h2 class="reveal">One more for the last day</h2>
+    <p class="sub reveal">Choose whichever sings, then we turn for home.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Cape%20Kamenjak%20Premantura" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Kap_Kamenjak_Panorama_%2864572495%29.jpeg" alt="Cape Kamenjak nature reserve" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Cape Kamenjak</span></div><div class="card-body"><div class="card-meta">Wild swimming</div><h3 class="card-name">Cape Kamenjak</h3><p class="card-blurb">A protected wilderness at Istria's southern tip: white-rock coves, juniper and wildflowers, and the clearest, bluest water of the trip. Hire bikes, find a cove, swim all day.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Lim%20Bay%20Istria" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/d7/Aerial_view_to_Motovun.jpg" alt="The Lim Bay" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Lim Bay</span></div><div class="card-body"><div class="card-meta">A green fjord</div><h3 class="card-name">Lim Bay</h3><p class="card-blurb">A deep green inlet that cuts inland between wooded cliffs, like a little fjord. A boat trip from Rovinj, a walk along the rim, and quiet water below.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Rovinj%20St%20Euphemia" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rovinj%2C_Croatia.jpg" alt="St Euphemia, Rovinj" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">St Euphemia &amp; a slow Rovinj day</span></div><div class="card-body"><div class="card-meta">A slow last day</div><h3 class="card-name">A slow Rovinj day</h3><p class="card-blurb">No travel at all: the St Euphemia bell-tower, the morning market, the Grisia art lane, and the rocks below town for a last long swim before the catamaran north.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Rovinj%20archipelago%20islands%20boat" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Kap_Kamenjak_Panorama_%2864572495%29.jpeg" alt="The Rovinj archipelago" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">The Rovinj islands</span></div><div class="card-body"><div class="card-meta">Just offshore</div><h3 class="card-name">The Rovinj islands</h3><p class="card-blurb">A taxi-boat out to St Catherine or Red Island, just minutes offshore: pine shade, a swim platform and a long lunch looking back at the bell-tower.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there on rails (then the boat)</h3><p>The long romantic way: rails across France and Italy, then a fast catamaran over the top of the Adriatic.</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h10 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Milan</strong> &middot; Frecciarossa ~7h &middot; overnight in Milan</li><li><strong>Milan &rarr; Venice</strong> &middot; ~2h25, then catamaran <strong>Venice &rarr; Rovinj</strong> ~3h</li></ul></div><div class="box reveal"><h3>Around Istria</h3><p>Rovinj is the hub. The summer catamaran (Venezia Lines / Kompas, roughly May&ndash;October, foot passengers) crosses from Venice's San Basilio terminal. <span class="warn">It runs only a few days a week, so we'd build the trip around a sailing.</span> Within Istria, buses link Rovinj with Pula (~45&ndash;60&nbsp;min) and Poreč (~45&nbsp;min); the hill towns, Brijuni (boat from Fažana) and Kamenjak are easiest with a day's car hire or a small-group tour.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>Istria is a vegetarian's dream:</p><ul><li>Fuži and pljukanci pasta with truffle or wild asparagus</li><li>Maneštra — the hearty Istrian bean-and-veg soup</li><li>Local olive oils, sheep's cheese, ripe tomatoes and figs</li><li>Gelato on the harbour and a cooling watermelon in the heat</li></ul></div><div class="box reveal"><h3>Sea, shade &amp; siesta</h3><p>The Adriatic is warm and wonderfully clear by summer, so build the days around a swim and keep the hottest hours for shade — the old-town lanes, a cool basilica, or a hill town where the air moves. Croatia uses the euro now, and most of Istria speaks Italian as readily as Croatian.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Tempted east?</div>
+  <p>A Venetian old town by morning, a Roman arena by lunch, a truffle-scented hill town at dusk, and the clearest water to swim in. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and the high-speed run down towards Italy.", chips:["rail","start"] },
+  { coords:[45.464,9.190], zoom:12, title:"A night in Milan", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Milan with a stroll and an early supper, then on to Venice in the morning.", chips:["city","overnight"] },
+  { coords:[45.438,12.327], zoom:12, title:"Venice & the catamaran", eyebrow:"Day 2 · Over the water", desc:"A morning train to Venice, then the summer high-speed catamaran straight across the top of the Adriatic to Istria.", chips:["boat","crossing"] },
+  { coords:[45.0810,13.6387], zoom:15, title:"Rovinj", eyebrow:"Day 2 · Arrive", desc:"Into the Venetian old town. Climb the lanes to the St Euphemia bell-tower for sunset, then fresh pasta with truffle.", chips:["arrive","old town"] },
+  { coords:[44.8730,13.8500], zoom:15, title:"Roman Pula", eyebrow:"Day 4 · History", desc:"Down the coast to Pula's astonishingly complete Roman amphitheatre, the forum and the arch — and a swim on the way back.", chips:["history","swim"] },
+  { coords:[45.2289,13.5940], zoom:15, title:"Poreč", eyebrow:"Day 5 · Gold mosaics", desc:"North to the 6th-century Euphrasian Basilica, its apse glittering with Byzantine mosaics. A UNESCO treasure by the sea.", chips:["mosaics","UNESCO"] },
+  { coords:[45.3369,13.8276], zoom:13, title:"Motovun & Grožnjan", eyebrow:"Day 6 · Hill towns", desc:"Inland to the walled hilltop towns of truffle country — ramparts, galleries, big green views and cool air.", chips:["hill towns","truffles"] },
+  { coords:[44.9090,13.7560], zoom:13, title:"The Brijuni islands", eyebrow:"Day 7 · Islands", desc:"A boat from Fažana to the Brijuni national park: Roman ruins, parkland and clear water all around.", chips:["islands","nature"] },
+  { coords:[44.7700,13.9180], zoom:13, title:"Cape Kamenjak", eyebrow:"Day 8 · Wild swimming", desc:"The wild reserve at Istria's southern tip — white rock, hidden coves and the clearest water of the trip. Then trains for home.", chips:["swim","sunset"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
