@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Cap · Côte d'Azur · Helen &amp; Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#1B3A52;
+    --green:#27557A;
+    --jade:#1F8C9B;
+    --jade-deep:#156575;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#27557A 0%,#1B3A52 55%,#156575 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(15,30,45,.18) 0%,rgba(15,30,45,.05) 38%,rgba(13,28,42,.62) 78%,rgba(11,24,38,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#a9dcea}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a8e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#27557A,#1F8C9B);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fcfdb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CCDDE6;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#1f3e54}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B7CCD7}
+  .spark{margin-top:16px;font-size:14px;color:#A6C2CF}
+  .spark a{color:#8fcfdb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7ED;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B0C6D2;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7d99a7}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Villefranche-sur-Mer.jpg" alt="The deep-blue bay and old town of Villefranche-sur-Mer" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option ten · Côte d'Azur</div>
+    <h1>The Cap, with the volume up</h1>
+    <p>Hôtel Welcome vibes turned all the way up: a deep-blue Riviera bay to call home, and the whole glamorous coast strung along a little train line.</p>
+    <div class="meta"><span>~8 days</span><span>All by rail</span><span>A Riviera headland base</span><span>Sea, villages &amp; glamour</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">You already love the Hôtel Welcome at Villefranche — so let's make a whole trip of it: <em>one perfect bay to come home to, and the most beautiful coast in France out the door.</em></p>
+    <p class="body">The Côte d'Azur is the original glamour coast, and the loveliest thing about it is that you barely need a car. Base yourself on the Cap — buttercup-yellow Villefranche-sur-Mer, or the green peninsula of Saint-Jean-Cap-Ferrat next door — and the little coastal train threads the whole show together: the Rothschild gardens, the eagle's-nest village of Èze, the harbour and casino of Monaco, lemon-coloured Menton on the Italian line, and old Nice with its markets and pebble beach. Deep-blue water for swimming, a coastal path for walking, and somewhere wonderful for dinner every single night.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">a bay on the Cap</div></div><div class="fact"><div class="k">all by rail</div><div class="v">the coastal train does the work</div></div><div class="fact"><div class="k">5 towns</div><div class="v">all within ~30 min by train</div></div><div class="fact"><div class="k">deep blue</div><div class="v">swimming coves &amp; coastal paths</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">One bay, the whole coast on a train</h2>
+    <p class="sub reveal">Settle into the Cap, then ride the little coastal line east and west — a different jewel each day, home to the same harbour each night.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to the Riviera</h3><p class="t-blurb">Eurostar to Paris and, if you like, a night in the city, then the TGV south to Nice — out of the grey and into the light, the sea suddenly there as the train curves along the coast.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Villefranche-sur-Mer</h3><p class="t-blurb">Settle into the buttercup harbour town: one of the deepest, bluest bays on the coast, the tunnelled Rue Obscure in the old town, and a swim straight off the beach before a first supper by the water.</p><div class="t-chips"><span class="chip">base</span><span class="chip">swim</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Saint-Jean-Cap-Ferrat</h3><p class="t-blurb">The green millionaires' peninsula next door: the pink Villa Ephrussi de Rothschild and its nine gardens, the coastal sentier du littoral all the way round the point, and a swim at Paloma or Passable.</p><div class="t-chips"><span class="chip">gardens</span><span class="chip">coast path</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Èze, the eagle's nest</h3><p class="t-blurb">A short hop and a climb to the medieval village pinned to a crag high above the sea, with its cactus-and-aloe garden at the very top — then the old footpath winding back down to the shore.</p><div class="t-chips"><span class="chip">village</span><span class="chip">views</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">Monaco &amp; Monte-Carlo</h3><p class="t-blurb">Twenty minutes along the line: the yacht-packed harbour, the Casino square and its gardens, the Belle Époque opera house, and the dramatic Oceanographic Museum on its cliff above the sea.</p><div class="t-chips"><span class="chip">glamour</span><span class="chip">harbour</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">Menton, on the border</h3><p class="t-blurb">To the very end of France: the warmest town on the coast, a tumble of lemon-and-apricot Italianate houses above the sea, with sub-tropical gardens and the Italian frontier a stroll away.</p><div class="t-chips"><span class="chip">old town</span><span class="chip">gardens</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Nice &amp; the Cap d'Antibes</h3><p class="t-blurb">Old Nice for the market on the Cours Saleya, the view from the Colline du Château and a wander of Vieux Nice; or west to the Cap d'Antibes for its millionaires' coastal path and the Picasso museum.</p><div class="t-chips"><span class="chip">city</span><span class="chip">art</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then turn for home,</strong> back up the line through Paris with sun on your face and the blue of that bay still in your eyes.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">A bay on the Cap to call home</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3d/Pointe_Sainte-Hospice.jpg" alt="A turquoise cove on the Cap-Ferrat peninsula" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>Villefranche-sur-Mer &amp; Cap-Ferrat</h2>
+        <p>Base in Villefranche or on the Cap-Ferrat peninsula and you're right on the coastal train line, with a swimmable bay at your feet and the whole Riviera — Èze, Monaco, Menton, Nice — strung out in either direction in minutes. Pretty, walkable, and exactly that Hôtel Welcome feeling.</p>
+        <div class="stays"><a class="stay" href="https://welcomehotel.com/en/" target="_blank" rel="noopener"><span><span class="nm">Hôtel Welcome</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;200&ndash;400</span><span class="ds">Your benchmark, on its own terms: the buttercup-yellow hotel right on the Villefranche harbour where Cocteau stayed, with balconies hanging over the bluest bay on the coast. The pick.</span></span></a><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Voile%20d%27Or%20Saint-Jean-Cap-Ferrat" target="_blank" rel="noopener"><span><span class="nm">La Voile d'Or</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;380&ndash;600</span><span class="ds">An intimate five-star above the little port of Saint-Jean-Cap-Ferrat, with two sea-water pools terraced over the harbour and that golden, hidden-away Riviera feel. The splurge.</span></span></a><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=Cap%20Estel%20%C3%88ze-sur-Mer" target="_blank" rel="noopener"><span><span class="nm">Cap Estel</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;450&ndash;650</span><span class="ds">A whole private headland between Èze and the sea, right by its own little train halt: infinity pools, gardens running down to the water, and proper seclusion. The dream-splurge alternative.</span></span></a></div>
+        <p class="spark">For the icon, the Grand-Hôtel du Cap-Ferrat (a Four Seasons) is the legendary palace on the peninsula tip — well over budget, but worth a look for the daydream.</p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. It's all on the coastal train, so leave the car at home entirely.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Villa%20Ephrussi%20de%20Rothschild" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/b/bf/868_VER7006.jpg" alt="Villa Ephrussi de Rothschild and its gardens" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Saint-Jean-Cap-Ferrat</span></div><div class="card-body"><div class="card-meta">Next door · by train + walk</div><h3 class="card-name">Saint-Jean-Cap-Ferrat</h3><p class="card-blurb">The green peninsula of villas and pines: the rose-pink Villa Ephrussi with its nine themed gardens, the coastal footpath round the whole point, and the swimming cove at Paloma.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=%C3%88ze%20village" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/%C3%88ze_Alpes_Maritimes_France_%28261171069%29.jpeg" alt="The hilltop village of Èze" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Èze</span></div><div class="card-body"><div class="card-meta">Day trip · 15 min by train</div><h3 class="card-name">Èze</h3><p class="card-blurb">A medieval eagle's-nest village clinging to a crag 400 metres above the sea, all stone lanes and tumbling flowers, crowned by an exotic garden of cactus and aloe with a giddy view.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Monaco%20Monte-Carlo" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Monaco_pano_b.jpg" alt="The harbour of Monaco" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Monaco</span></div><div class="card-body"><div class="card-meta">Day trip · 20 min by train</div><h3 class="card-name">Monaco &amp; Monte-Carlo</h3><p class="card-blurb">The tiny principality of superyachts: the harbour, the Belle Époque casino square and gardens, the cliff-top Oceanographic Museum and the old town of Monaco-Ville above it all.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Menton%20old%20town" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/2/26/Menton_february_13.jpg" alt="The Italianate old town of Menton" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Menton</span></div><div class="card-body"><div class="card-meta">Day trip · 35 min by train</div><h3 class="card-name">Menton</h3><p class="card-blurb">The last, warmest town before Italy: a stack of lemon, apricot and rose houses rising from the sea to a baroque church, with sub-tropical gardens and the gentlest light on the coast.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Vieux%20Nice" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/62/Nice_from_Castle_Hill_01.jpg" alt="Nice from Castle Hill" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Nice</span></div><div class="card-body"><div class="card-meta">Day trip · 6 min by train</div><h3 class="card-name">Nice</h3><p class="card-blurb">The grand old capital of the coast: the curve of the Promenade des Anglais, the market and ochre lanes of Vieux Nice, and the waterfall-and-view park up on the Colline du Château.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Cap%20d%27Antibes" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e4/Antibes_Port_Vauban_01.jpg" alt="Antibes and Port Vauban" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Antibes &amp; the Cap</span></div><div class="card-body"><div class="card-meta">Day trip · 35 min by train</div><h3 class="card-name">Antibes &amp; the Cap</h3><p class="card-blurb">West along the coast: the ramparts and yacht harbour of old Antibes, the Picasso museum in its seafront castle, and the legendary millionaires' coastal path round the wooded Cap.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there on rails</h3><p>All the way by train, the easy way south:</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h20 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Nice</strong> &middot; direct TGV ~5h50 from Gare de Lyon, or a little quicker via Marseille</li><li><strong>Nice &rarr; the Cap</strong> &middot; coastal TER to Villefranche ~6&nbsp;min / Beaulieu (for Cap-Ferrat) ~9&nbsp;min</li></ul></div><div class="box reveal"><h3>The coastal train</h3><p>This is the magic carpet of the trip &mdash; the TER line hugs the shore and runs every 20&ndash;30 minutes. From the base: Nice ~6&nbsp;min, Èze-sur-Mer ~13&nbsp;min, Monaco ~20&nbsp;min, Menton ~35&nbsp;min, Antibes ~35&nbsp;min. Buses (the 15/80) climb to hilltop Èze village and round Cap-Ferrat. No car needed anywhere.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>The sunny Niçois and Ligurian table:</p><ul><li>Socca, the chickpea pancake, hot from the griddle</li><li>Pan-bagnat and salade niçoise (hold the anchovy)</li><li>Ratatouille, courgette-flower beignets, pissaladière</li><li>Menton lemon tart, and gelato on every corner</li></ul></div><div class="box reveal"><h3>Heat, sea &amp; when to go</h3><p>July and August are hot, busy and dear on this coast. <span class="warn">June or September are the sweet spot</span> &mdash; warm sea, lighter crowds, kinder prices. Do the gardens and the Èze climb in the morning, save the middle of the day for a shaded café or a swim off the rocks, and let the evenings be for the harbour.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Glamorous enough?</div>
+  <p>A blue bay to call home, an eagle's-nest village, a casino harbour and a lemon-coloured town on the Italian line &mdash; all on one little train. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and a night in the city before the run down to the coast.", chips:["rail","start"] },
+  { coords:[48.856,2.352], zoom:11, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, then take the TGV south to Nice — out of the grey and into the Mediterranean light.", chips:["city","overnight"] },
+  { coords:[43.7038,7.3110], zoom:14, title:"Villefranche-sur-Mer", eyebrow:"Day 2 · The base", desc:"The buttercup harbour town and one of the deepest, bluest bays on the coast — the old town, the beach, and the Hôtel Welcome on the quay.", chips:["base","swim"] },
+  { coords:[43.6940,7.3286], zoom:15, title:"Saint-Jean-Cap-Ferrat", eyebrow:"Day 3 · Gardens & coast", desc:"The green peninsula next door: the Villa Ephrussi's nine gardens, the coastal footpath round the point, and a swim at Paloma.", chips:["gardens","coast"] },
+  { coords:[43.7278,7.3619], zoom:14, title:"Èze", eyebrow:"Day 4 · The eagle's nest", desc:"A medieval village pinned to a crag high above the sea, with a cactus garden at the top and the old path winding back down.", chips:["village","views"] },
+  { coords:[43.7384,7.4246], zoom:14, title:"Monaco & Monte-Carlo", eyebrow:"Day 5 · Glamour", desc:"The yacht harbour, the casino square and gardens, and the cliff-top Oceanographic Museum in the tiny principality.", chips:["harbour","glamour"] },
+  { coords:[43.7765,7.5046], zoom:14, title:"Menton", eyebrow:"Day 6 · On the border", desc:"The warmest town on the coast: lemon-and-apricot Italianate houses, sub-tropical gardens, and Italy a stroll away.", chips:["old town","gardens"] },
+  { coords:[43.6953,7.2790], zoom:13, title:"Nice", eyebrow:"Day 7 · The old capital", desc:"The Promenade des Anglais, the market and ochre lanes of Vieux Nice, and the view from the Colline du Château.", chips:["city","market"] },
+  { coords:[43.5500,7.1200], zoom:13, title:"Cap d'Antibes", eyebrow:"Day 7 · West along the coast", desc:"Old Antibes and its ramparts, the Picasso museum, and the legendary millionaires' coastal path round the wooded cape — then home.", chips:["art","coast path"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>

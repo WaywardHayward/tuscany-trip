@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sardinia · Forte Village · Helen &amp; Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#1F9B8C 0%,#157065 55%,#26412F 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#1F9B8C,#157065);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Tuaredda.jpg" alt="The turquoise water and white sand of Tuerredda beach, southern Sardinia" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option nine · Sardinia</div>
+    <h1>Caribbean water, no planes at all</h1>
+    <p>The grand switch-off: rails to the Mediterranean, an overnight cabin across the sea, then a five-star beach resort on the most turquoise coast in Europe.</p>
+    <div class="meta"><span>7 nights</span><span>Rail + an overnight ferry</span><span>5-star beach resort</span><span>The luxury switch-off</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">This is the one where we don't plan a thing: <em>fall asleep on a ferry, wake up to white sand and water the colour of a swimming pool, and let a great resort do the rest.</em></p>
+    <p class="body">You asked for Ikos-level luxury without ever boarding a plane — so here it is. Forte Village, on Sardinia's soft southern coast, is one of Europe's legendary beach resorts: a gated village of five-star hotels strung along a private white-sand beach, with a thalasso spa, a dozen-plus restaurants, gardens, pools and the bluest sea on the island. Getting there is half the romance — Eurostar to Paris, a fast run south through France and Italy, and then a cabin on an overnight ferry that drops you 40 minutes from the sand. Do nothing for a week, or hop out to Roman ruins, hilltop Cagliari and the turquoise coves whenever the mood takes you.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">Forte Village, all week</div></div><div class="fact"><div class="k">no flights</div><div class="v">trains, then a cabin at sea</div></div><div class="fact"><div class="k">5-star</div><div class="v">private beach, spa &amp; pools</div></div><div class="fact"><div class="k">28&deg;C sea</div><div class="v">the clearest water in Europe</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Get there slowly, then stop</h2>
+    <p class="sub reveal">A romantic land-and-sea journey down, then a whole week of doing gloriously little — with day trips only if you feel like it.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Rails to the Mediterranean</h3><p class="t-blurb">Eurostar to Paris and a night in the city, then the fast trains south through France and down the Italian coast — the landscape turning from vineyard to pine to sea as you go.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">A cabin across the sea</h3><p class="t-blurb">Board an overnight ferry on the Italian coast, dinner on deck as the lights slide by, then sleep in a cabin and wake to the cliffs and coves of Sardinia coming up over the bow. No airports, no queues.</p><div class="t-chips"><span class="chip">ferry</span><span class="chip">cabin</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Settle into Forte Village</h3><p class="t-blurb">A short transfer to the resort, then the bit you came for: the private white-sand beach, a lounger under a parasol, the gardens, the pools, and a long first lunch with your toes more or less in the sea.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">beach</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Do gloriously little</h3><p class="t-blurb">Beach service in the morning, the thalasso spa and its seawater pools in the afternoon, a paddle-board or a swim, then a different restaurant each evening. Repeat for as many days as you like.</p><div class="t-chips"><span class="chip">spa</span><span class="chip">slow</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">Nora &amp; Pula <span style="font-weight:500;color:var(--lemon)">· if restless</span></h3><p class="t-blurb">Ten minutes away, the Roman and Phoenician ruins of Nora sit on a little headland right by the water — columns and mosaics with the sea behind them — then the easy village life of Pula for an ice cream.</p><div class="t-chips"><span class="chip">ruins</span><span class="chip">village</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">The turquoise south <span style="font-weight:500;color:var(--lemon)">· if restless</span></h3><p class="t-blurb">Down the coast to Chia and Tuerredda: dunes, juniper, flamingos in the lagoons and the clearest, palest water on the island — the beaches that look airbrushed but aren't.</p><div class="t-chips"><span class="chip">beaches</span><span class="chip">flamingos</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Cagliari, or further <span style="font-weight:500;color:var(--lemon)">· if restless</span></h3><p class="t-blurb">The honey-stone capital climbs a hill to the Castello quarter and the Bastione terrace; or run east to the Villasimius coves, or inland to the Bronze-Age towers of Su Nuraxi di Barumini.</p><div class="t-chips"><span class="chip">city</span><span class="chip">history</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then home the same beautiful way,</strong> one last swim, the ferry north, and the trains rolling back up through Italy and France.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">One resort, the whole week</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://upload.wikimedia.org/wikipedia/commons/4/45/Villasimius_5_bordercropped.jpg" alt="A turquoise cove with a watchtower on the Sardinian coast" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>Forte Village, Santa Margherita di Pula</h2>
+        <p>A gated resort village on a private white-sand beach 40 minutes from Cagliari: a string of hotels at different grades, a famous thalasso spa, more than twenty restaurants, pools, gardens and sports. You never have to leave — but Roman ruins and turquoise coves are a short hop when you want them.</p>
+        <div class="stays"><a class="stay" href="https://www.fortevillageresort.com/" target="_blank" rel="noopener"><span><span class="nm">Hotel Castello</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;450&ndash;650</span><span class="ds">The polished five-star heart of the resort, steps from the beach and the main pools. Big, cool rooms and the easiest possible access to everything &mdash; the pick for a first stay.</span></span></a><a class="stay" href="https://www.fortevillageresort.com/" target="_blank" rel="noopener"><span><span class="nm">Villa del Parco &amp; Spa</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;550&ndash;750</span><span class="ds">The grown-up enclave: a quieter, leafier corner with its own pool and direct run to the Acquaforte thalasso spa. The splurge, for slow mornings and proper pampering.</span></span></a><a class="stay" href="https://www.fortevillageresort.com/" target="_blank" rel="noopener"><span><span class="nm">Le Palme / Il Borgo</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;320&ndash;480</span><span class="ds">The greener, garden-set hotels a few minutes' stroll back from the sand &mdash; the same resort, the same beach and spa, a touch gentler on the wallet.</span></span></a></div>
+        <p class="spark">Forte Village arranges the port and airport-free transfers; everything inside is walkable or a buggy ride. <a href="https://www.fortevillageresort.com/" target="_blank" rel="noopener">See the resort →</a></p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">If you stir from the lounger</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">All optional. Tap any of them for photos, hours and directions — most are a short transfer or the resort's own excursion.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Tuerredda%20beach%20Sardinia" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/f/f1/Tuaredda.jpg" alt="Tuerredda beach" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">The turquoise beaches</span></div><div class="card-body"><div class="card-meta">On the doorstep</div><h3 class="card-name">The turquoise beaches</h3><p class="card-blurb">The resort's own white-sand beach, and a whole coast of them: Tuerredda, Chia and the Costa del Sud, where the water shades from glass-clear to swimming-pool blue. This is the headline act.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Nora%20archaeological%20site%20Pula%20Sardinia" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/1/12/Nora-pjt.jpg" alt="The Roman ruins of Nora" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Nora</span></div><div class="card-body"><div class="card-meta">10 minutes away</div><h3 class="card-name">Nora &amp; the ruins by the sea</h3><p class="card-blurb">A Phoenician-then-Roman town on a little headland minutes from the resort: standing columns, a theatre and mosaic floors with the Mediterranean lapping right behind them.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Cagliari%20Castello" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/f/f0/Cagliari_panoramica.jpg" alt="The city of Cagliari" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Cagliari</span></div><div class="card-body"><div class="card-meta">40 min · the capital</div><h3 class="card-name">Cagliari</h3><p class="card-blurb">A handsome honey-stone city climbing to the walled Castello quarter and the Bastione terrace, with flamingos in the lagoons below and the long Poetto beach round the bay.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Villasimius%20Sardinia" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/45/Villasimius_5_bordercropped.jpg" alt="A cove near Villasimius" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Villasimius</span></div><div class="card-body"><div class="card-meta">South-east coves</div><h3 class="card-name">Villasimius &amp; the south-east</h3><p class="card-blurb">The other corner of the south: granite headlands, old watchtowers and a string of impossibly clear coves around Capo Carbonara. A longer day, worth it for the colour of the sea.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Pula%20Sardinia" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/3e/Pula_Schirme_06.jpg" alt="A village street in Pula" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Pula</span></div><div class="card-body"><div class="card-meta">Nearest town</div><h3 class="card-name">Pula &amp; village life</h3><p class="card-blurb">The friendly little town behind the resort: a shaded piazza, a passeggiata in the cool of the evening, gelato and proper Sardinian cooking away from the gates.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Su%20Nuraxi%20di%20Barumini" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/96/Barumini-Pano_11.jpg" alt="The nuraghe of Su Nuraxi di Barumini" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Su Nuraxi di Barumini</span></div><div class="card-body"><div class="card-meta">Inland · UNESCO</div><h3 class="card-name">Su Nuraxi di Barumini</h3><p class="card-blurb">Sardinia's mysterious own civilisation: a 3,500-year-old stone tower-fortress, the finest of the island's nuraghi, rising out of the inland plain. A proper bit of deep history.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there — rail &amp; sea</h3><p>The whole point: no planes. Trains to the Mediterranean, then a cabin overnight.</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h20 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; the Italian coast</strong> &middot; TGV south to the Riviera and on to a ferry port (a night en route)</li><li><strong>Civitavecchia &rarr; Cagliari</strong> &middot; overnight ferry ~13h with a cabin, landing ~40&nbsp;min from the resort &middot; or Genoa &rarr; Porto Torres for the north</li></ul></div><div class="box reveal"><h3>The resort &amp; getting around</h3><p>Forte Village handles transfers from the port (or from Cagliari station). Inside, everything's a short walk or a buggy ride &mdash; beach, spa, pools and restaurants all on site. For day trips, take the resort's own excursions or hire a car for the day: Nora ~10&nbsp;min, Chia ~30&nbsp;min, Cagliari ~40&nbsp;min.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>Sardinia's island table, plus the resort's many restaurants:</p><ul><li>Culurgiones &mdash; potato-and-mint pasta parcels</li><li>Fregola with tomato, artichokes, stuffed vegetables</li><li>Pane carasau, pecorino, sun-warm tomatoes and figs</li><li>Seadas with honey, and gelato in Pula</li></ul></div><div class="box reveal"><h3>The splurge, and when</h3><p>This is the indulgent one &mdash; Forte Village is a genuine luxury benchmark, and in peak it sits at the top of the budget. <span class="warn">Aim for June or September</span>: the prices and crowds ease, the sea is still bath-warm, and the southern beaches are at their most ridiculous shade of blue.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Switch off completely?</div>
+  <p>A cabin across the sea, a private beach, a thalasso spa and water like glass &mdash; all of it without ever seeing an airport. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:5, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and a night in the city before the long, lovely run south.", chips:["rail","start"] },
+  { coords:[48.856,2.352], zoom:10, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, then take the fast trains down through France and along the Italian coast.", chips:["city","overnight"] },
+  { coords:[42.094,11.796], zoom:9, title:"The overnight ferry", eyebrow:"Day 2 · A cabin at sea", desc:"Board an overnight ferry on the Italian coast, dinner on deck, then sleep in a cabin and wake to Sardinia rising over the bow.", chips:["ferry","cabin"] },
+  { coords:[38.945,8.987], zoom:14, title:"Forte Village", eyebrow:"Day 3–7 · The base", desc:"A short transfer to the resort: a private white-sand beach, a thalasso spa, gardens and pools — and a week to do gloriously little.", chips:["resort","beach"] },
+  { coords:[38.985,9.017], zoom:15, title:"Nora", eyebrow:"Optional · Ruins by the sea", desc:"Ten minutes away, Roman and Phoenician ruins on a headland — columns and mosaics with the Mediterranean right behind.", chips:["ruins","sea"] },
+  { coords:[38.890,8.880], zoom:13, title:"Chia & Tuerredda", eyebrow:"Optional · The turquoise south", desc:"Dunes, juniper and flamingos, and the clearest, palest water on the island — the beaches that look airbrushed but aren't.", chips:["beaches","flamingos"] },
+  { coords:[39.2238,9.1217], zoom:13, title:"Cagliari", eyebrow:"Optional · The capital", desc:"A honey-stone city climbing to the walled Castello quarter and the Bastione terrace, with the long Poetto beach round the bay.", chips:["city","history"] },
+  { coords:[39.130,9.520], zoom:12, title:"Villasimius", eyebrow:"Optional · South-east coves", desc:"Granite headlands, old watchtowers and impossibly clear coves around Capo Carbonara — the colour of the sea is the whole point.", chips:["coves","swim"] },
+  { coords:[39.705,8.990], zoom:13, title:"Su Nuraxi di Barumini", eyebrow:"Optional · Deep history", desc:"Inland to a 3,500-year-old stone tower-fortress, the finest of Sardinia's mysterious nuraghi, before the slow journey home.", chips:["ancient","inland"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>

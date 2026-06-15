@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Atlantic France · Helen &amp; Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#37583F 0%,#26412F 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#37583F,#1F9B8C);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Biarritz_%28View_from_the_Lighthouse%29.jpg" alt="Biarritz beach and the Rocher de la Vierge from the lighthouse" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option eight · Atlantic France</div>
+    <h1>The Basque coast &amp; the golden south-west</h1>
+    <p>Two easy bases by train: handsome Bordeaux and a perfect Basque bay — with Atlantic surf, the tallest dune in Europe, and Spain just down the line.</p>
+    <div class="meta"><span>~9 days</span><span>All by rail</span><span>Two seaside bases</span><span>Beaches, dunes &amp; food</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">A few stone-and-river days in Bordeaux, then south to a Basque fishing bay for beaches, surf towns and a hop across to Spain: <em>all of it on the train, all of it warm.</em></p>
+    <p class="body">France's Atlantic south-west is made for this trip. Start in Bordeaux — golden squares, the great mirror-pool on the river, oysters and dunes on its doorstep at Arcachon, and the storybook hill of Saint-Émilion among the vines. Then the TGV slips down to the Basque coast: Saint-Jean-de-Luz, a half-moon of a bay with a working harbour and an old town to wander; surfy, elegant Biarritz; chocolate-scented Bayonne; and glittering San Sebastián, a short train over the border. Sea breezes, market tomatoes, gâteau basque, and not a single car needed.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">2 bases</div><div class="v">Bordeaux, then a Basque bay</div></div><div class="fact"><div class="k">Atlantic coast</div><div class="v">surf, sand &amp; Europe's tallest dune</div></div><div class="fact"><div class="k">all by rail</div><div class="v">TGV &amp; TER the whole way, Spain too</div></div><div class="fact"><div class="k">mid-20s</div><div class="v">warm days, kind Atlantic breeze</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">A river city, then the Basque sea</h2>
+    <p class="sub reveal">Open with stone-and-water Bordeaux, then drop south to a seaside base for the whole Basque coast.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to the south-west</h3><p class="t-blurb">Eurostar to Paris and a night in the city, then the morning TGV from Montparnasse to Bordeaux — barely two hours, with the Landes pine forest blurring past.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Bordeaux, the golden city</h3><p class="t-blurb">Drop bags and wander: the vast Place de la Bourse mirrored in the Miroir d'eau, honey-stone façades, the riverside promenade and the buzzy Saint-Pierre lanes for supper. A handsome, walkable opener.</p><div class="t-chips"><span class="chip">city</span><span class="chip">river</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Arcachon &amp; the Dune du Pilat</h3><p class="t-blurb">A 50-minute TER to the bay of Arcachon: climb the Dune du Pilat, the tallest sand dune in Europe, for views over forest and ocean, then a seafood lunch and a swim in the calm basin.</p><div class="t-chips"><span class="chip">dune</span><span class="chip">beach</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Saint-Émilion among the vines</h3><p class="t-blurb">A short hop to the storybook hill-village of Saint-Émilion: a monolithic church carved from the rock, steep cobbled lanes, a bell-tower view over a sea of vineyards. Cycle the green lanes if the legs fancy it.</p><div class="t-chips"><span class="chip">village</span><span class="chip">slow</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">South to the Basque coast</h3><p class="t-blurb">Back to the station and down the coast by train — about two hours to Saint-Jean-de-Luz. Settle into the bay town, then a first evening stroll round the harbour and the half-moon beach.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">arrive</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">Saint-Jean-de-Luz, the perfect bay</h3><p class="t-blurb">A whole gentle day in the loveliest Basque resort: the sheltered, swimmable bay, the red-and-white old town, the covered market and Maison Louis XIV. Gâteau basque from the bakery and feet in the sand.</p><div class="t-chips"><span class="chip">base</span><span class="chip">swim</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Biarritz &amp; Bayonne</h3><p class="t-blurb">Two quick hops up the line: surfy, elegant Biarritz for the Grande Plage and the wave-lashed Rocher de la Vierge, then chocolate-scented Bayonne with its riverside half-timbers and soaring cathedral.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">surf</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">08</div><h3 class="t-title">San Sebastián, across the border</h3><p class="t-blurb">A short train into Spain to glittering Donostia-San Sebastián: the shell-shaped La Concha bay, a funicular up Monte Igueldo, and the old town's pintxos counters — vegetable heaven, plate by plate.</p><div class="t-chips"><span class="chip">Spain</span><span class="chip">food</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then turn for home,</strong> rolling the trains back north with sand in your shoes and a tan from two coasts.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">A Basque bay to come home to</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://upload.wikimedia.org/wikipedia/commons/3/38/San-Juan-de-Luz-Panorama-5000px.jpg" alt="The bay and beach of Saint-Jean-de-Luz" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>Two nights in Bordeaux, the rest by the sea</h2>
+        <p>Open with a couple of nights in Bordeaux for the city, the dune and Saint-Émilion, then base in Saint-Jean-de-Luz for the Basque coast. It sits right on the line, so Biarritz, Bayonne and San Sebastián are all little train hops, and the bay is calm and swimmable when you just want a beach day.</p>
+        <div class="stays"><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=H%C3%B4tel%20de%20la%20Plage%20Saint-Jean-de-Luz" target="_blank" rel="noopener"><span><span class="nm">Hôtel de la Plage</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;190&ndash;360</span><span class="ds">Right on the sand of the bay, with balconies over the beach and the old town behind you. Feet-in-the-sand simplicity and the easiest morning swim &mdash; the pick.</span></span></a><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=La%20Maison%20Tamarin%20Saint-Jean-de-Luz" target="_blank" rel="noopener"><span><span class="nm">La Maison Tamarin</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;230&ndash;360</span><span class="ds">A boutique Basque farmhouse above the surf cove of Lafitenia, with a garden, sea-and-mountain views and a handful of pretty rooms. Intimate and characterful &mdash; that Hôtel Welcome feel.</span></span></a><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=Grand%20H%C3%B4tel%20Thalasso%20Spa%20Saint-Jean-de-Luz" target="_blank" rel="noopener"><span><span class="nm">Grand Hôtel Thalasso &amp; Spa</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;240&ndash;480</span><span class="ds">The splurge: a Belle Époque seafront landmark with panoramic bay views and a serious thalasso spa. Big-windowed rooms, a pool, and the whole promenade at your door.</span></span></a></div>
+        <p class="spark">For the Bordeaux nights, anywhere round the Golden Triangle or Saint-Pierre keeps the squares and river on foot.</p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. It's nearly all train country, so very little driving.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Biarritz%20Rocher%20de%20la%20Vierge" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/5d/Biarritz_%28View_from_the_Lighthouse%29.jpg" alt="Biarritz" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Biarritz</span></div><div class="card-body"><div class="card-meta">Day trip · 12 min by train</div><h3 class="card-name">Biarritz</h3><p class="card-blurb">The grande dame of the Basque coast: the sweeping Grande Plage, the wave-battered Rocher de la Vierge on its iron footbridge, and surfers everywhere. Elegant, salty and fun.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Bayonne%20old%20town" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/39/Bayonne-Centre_historique-20130811.jpg" alt="Bayonne old town" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Bayonne</span></div><div class="card-body"><div class="card-meta">Day trip · 25 min by train</div><h3 class="card-name">Bayonne</h3><p class="card-blurb">Tall riverside half-timbers in red and green, a soaring Gothic cathedral, and the city that made French chocolate its own. Wander the lanes, then a hot chocolate the old way.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=San%20Sebastian%20La%20Concha" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/6a/Panorama_from_Monte_Igueldo_%285106955283%29.jpg" alt="La Concha bay, San Sebastián" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">San Sebastián</span></div><div class="card-body"><div class="card-meta">Over the border · by train</div><h3 class="card-name">San Sebastián</h3><p class="card-blurb">Spain's most beautiful city beach, the shell-curve of La Concha, framed by green headlands. Climb Monte Igueldo for the view, then graze the old town's pintxos counters.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Dune%20du%20Pilat" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/d/d4/DunePyla.JPG" alt="The Dune du Pilat" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Arcachon &amp; the Dune du Pilat</span></div><div class="card-body"><div class="card-meta">From Bordeaux · 50 min by train</div><h3 class="card-name">Arcachon &amp; the Dune du Pilat</h3><p class="card-blurb">A 100-metre mountain of pale sand between forest and sea — Europe's tallest dune — above the oyster bay of Arcachon. Climb it for sunset, swim in the calm basin below.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Saint-%C3%89milion" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/ec/1_Saint-%C3%89milion_aerial_pano_2016.jpg" alt="Saint-Émilion among the vineyards" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Saint-Émilion</span></div><div class="card-body"><div class="card-meta">From Bordeaux · 40 min by train</div><h3 class="card-name">Saint-Émilion</h3><p class="card-blurb">A honey-stone medieval village set on a hill in a sea of vineyards, with a vast church hewn from the living rock and a bell-tower view across the green. One of France's prettiest.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Place%20de%20la%20Bourse%20Bordeaux" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Bordeaux_Place_de_la_Bourse_de_nuit.jpg" alt="Place de la Bourse, Bordeaux" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Bordeaux</span></div><div class="card-body"><div class="card-meta">Your first base</div><h3 class="card-name">Bordeaux</h3><p class="card-blurb">A whole city of golden 18th-century stone on a curve of the Garonne, with the world's biggest reflecting pool mirroring the Place de la Bourse. Walkable, lively and full of good food.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there on rails</h3><p>All the way by train, with one easy night in Paris:</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h20 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Bordeaux</strong> &middot; direct TGV ~2h08, roughly hourly from Montparnasse</li><li><strong>Bordeaux &rarr; Saint-Jean-de-Luz</strong> &middot; TER / Intercités ~2h05&ndash;2h30</li></ul></div><div class="box reveal"><h3>Around the two bases</h3><p>From Bordeaux: Arcachon ~50&nbsp;min and Saint-Émilion ~35&ndash;40&nbsp;min, both frequent TER. From Saint-Jean-de-Luz the Basque coast is tiny hops &mdash; Biarritz ~12&nbsp;min, Bayonne ~25&nbsp;min, Hendaye ~15&nbsp;min, then the Euskotren <em>Topo</em> on to San Sebastián (~35&nbsp;min). No car needed at all; the dune has a shuttle/short walk from Arcachon.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>The Atlantic south-west market table:</p><ul><li>Piperade, stuffed peppers and ratatouille</li><li>Tomato, melon and peach from the morning market</li><li>San Sebastián pintxos &mdash; tortilla, mushrooms, padrón peppers</li><li>Gâteau basque, and Bayonne chocolate the old way</li></ul></div><div class="box reveal"><h3>Sea, surf &amp; sun</h3><p>This is the Atlantic, so the water is bracing and the surf real &mdash; Biarritz and the open beaches get proper waves, while Saint-Jean-de-Luz's bay is sheltered and calm for an easy swim. Days sit comfortably in the mid-20s with a kind sea breeze; do the Dune du Pilat early or for sunset to dodge the midday glare.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Two coasts, one ticket?</div>
+  <p>Golden Bordeaux, the tallest dune in Europe, a perfect Basque bay and a hop into Spain &mdash; all on the train. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and a night in the city before the run down to the south-west.", chips:["rail","start"] },
+  { coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, then take the morning TGV from Montparnasse down to Bordeaux — barely two hours.", chips:["city","overnight"] },
+  { coords:[44.8412,-0.5700], zoom:14, title:"Bordeaux", eyebrow:"Day 2 · The golden city", desc:"Golden 18th-century stone on the Garonne, the great Miroir d'eau mirroring the Place de la Bourse, and lively lanes for supper.", chips:["city","river"] },
+  { coords:[44.5930,-1.2117], zoom:13, title:"The Dune du Pilat", eyebrow:"Day 3 · Sand & sea", desc:"A 50-minute TER to Arcachon: climb Europe's tallest sand dune for forest-and-ocean views, then a swim in the calm bay.", chips:["dune","beach"] },
+  { coords:[44.8978,-0.1556], zoom:14, title:"Saint-Émilion", eyebrow:"Day 4 · Among the vines", desc:"A storybook hill-village in a sea of vineyards, with a church carved from the rock and a bell-tower view across the green.", chips:["village","slow"] },
+  { coords:[43.3880,-1.6590], zoom:14, title:"Saint-Jean-de-Luz", eyebrow:"Day 5–6 · The Basque bay", desc:"South by train to the loveliest Basque resort: a sheltered half-moon bay, a red-and-white old town, and feet-in-the-sand calm.", chips:["base","swim"] },
+  { coords:[43.4842,-1.5663], zoom:14, title:"Biarritz", eyebrow:"Day 7 · Surf & style", desc:"The grande dame of the coast — the Grande Plage, the wave-lashed Rocher de la Vierge, and surfers on every set.", chips:["surf","coast"] },
+  { coords:[43.4929,-1.4748], zoom:14, title:"Bayonne", eyebrow:"Day 7 · Old town & chocolate", desc:"Tall riverside half-timbers, a soaring cathedral, and the city that made French chocolate its own.", chips:["town","food"] },
+  { coords:[43.3155,-1.9890], zoom:13, title:"San Sebastián", eyebrow:"Day 8 · Across the border", desc:"A short train into Spain for the shell-curve of La Concha, the view from Monte Igueldo, and the old town's pintxos counters.", chips:["Spain","sunset"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
