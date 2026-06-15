@@ -127,19 +127,130 @@
   @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.opt{transition:none}}
 </style>
 <link rel="stylesheet" href="enhance.css">
+<style>
+  /* ============================================================
+     hub-fx — index-only flourishes (loaded after enhance.css so
+     it wins). Crossfading hero slideshow, place-name ticker,
+     scroll cue, card glow + shine, animated section underlines.
+     ============================================================ */
+
+  /* taller, more cinematic hero */
+  .hero{min-height:86vh}
+
+  /* --- crossfading destination slideshow --- */
+  .hero .hub-slides{position:absolute;inset:0;z-index:0;overflow:hidden}
+  .hero .hub-slide{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+    opacity:0;will-change:opacity,transform;
+    animation:hubFade 49s linear infinite, hubZoom 49s ease-in-out infinite}
+  .hero .hub-slide:nth-child(1){animation-delay:0s,0s}
+  .hero .hub-slide:nth-child(2){animation-delay:7s,7s}
+  .hero .hub-slide:nth-child(3){animation-delay:14s,14s}
+  .hero .hub-slide:nth-child(4){animation-delay:21s,21s}
+  .hero .hub-slide:nth-child(5){animation-delay:28s,28s}
+  .hero .hub-slide:nth-child(6){animation-delay:35s,35s}
+  .hero .hub-slide:nth-child(7){animation-delay:42s,42s}
+  @keyframes hubFade{0%{opacity:0}3%{opacity:.95}13%{opacity:.95}17%{opacity:0}100%{opacity:0}}
+  @keyframes hubZoom{0%{transform:scale(1.04)}17%{transform:scale(1.13)}100%{transform:scale(1.13)}}
+
+  /* keep the headline crisp over moving photos */
+  .hero h1{text-shadow:0 2px 40px rgba(8,18,12,.6),0 1px 4px rgba(8,18,12,.45)}
+
+  /* --- rotating place-name ticker --- */
+  .hub-rot{display:flex;align-items:center;gap:10px;margin-top:20px;
+    font-family:"Bricolage Grotesque",sans-serif;font-size:1.05rem}
+  .hub-rot-pre{color:#bfe6df;font-weight:600;letter-spacing:.04em;
+    text-shadow:0 1px 10px rgba(8,18,12,.6)}
+  .hub-rot-word{position:relative;display:inline-block;min-width:8.5ch;
+    font-weight:800;font-size:1.5rem;color:#fff;letter-spacing:-.01em;
+    text-shadow:0 1px 16px rgba(8,18,12,.55)}
+  .hub-rot-word::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:3px;border-radius:3px;
+    background:linear-gradient(90deg,#7fe0cf,#D69B3C)}
+  .hub-rot-word.flip{animation:hubFlip .5s cubic-bezier(.2,.7,.2,1)}
+  @keyframes hubFlip{0%{opacity:0;transform:translateY(14px) rotateX(-40deg)}100%{opacity:1;transform:none}}
+
+  /* --- bouncing scroll cue --- */
+  .hub-cue{position:absolute;left:50%;bottom:20px;z-index:3;transform:translateX(-50%);
+    display:flex;flex-direction:column;align-items:center;gap:3px;text-decoration:none;
+    color:#eafff7;opacity:.9;font-family:"Bricolage Grotesque",sans-serif;
+    font-size:11.5px;font-weight:600;letter-spacing:.18em;text-transform:uppercase;
+    animation:hubBob 1.9s ease-in-out infinite}
+  .hub-cue span{text-shadow:0 1px 10px rgba(8,18,12,.7)}
+  .hub-cue svg{filter:drop-shadow(0 1px 6px rgba(8,18,12,.6))}
+  .hub-cue:hover{opacity:1}
+  @keyframes hubBob{0%,100%{transform:translate(-50%,0)}50%{transform:translate(-50%,9px)}}
+
+  /* --- option cards: coloured lift + image shine sweep --- */
+  .opt{--ac:31,155,140}
+  .opt--tuscany{--ac:55,88,63}
+  .opt--naples{--ac:31,155,140}
+  .opt--spain{--ac:214,155,60}
+  .opt--rome{--ac:139,105,20}
+  .opt--portofino{--ac:45,143,168}
+  .opt--france{--ac:176,106,58}
+  .opt--croatia{--ac:45,159,168}
+  .opt--ready:hover{box-shadow:0 26px 60px -24px rgba(var(--ac),.75),
+    0 0 0 1px rgba(255,255,255,.55)!important}
+  .opt-ph::after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;
+    background:linear-gradient(115deg,transparent 32%,rgba(255,255,255,.38) 50%,transparent 68%);
+    transform:translateX(-130%)}
+  .opt--ready:hover .opt-ph::after{transform:translateX(130%);transition:transform .85s ease}
+  /* tags pop in once the card is revealed */
+  .opt-tag{opacity:0;transform:translateY(6px);transition:opacity .5s ease,transform .5s ease}
+  .opt.in .opt-tag{opacity:1;transform:none}
+  .opt.in .opt-tag:nth-child(2){transition-delay:.07s}
+  .opt.in .opt-tag:nth-child(3){transition-delay:.14s}
+
+  /* --- animated underline under section headings --- */
+  .sec h2{position:relative;padding-bottom:14px}
+  .sec h2::after{content:"";position:absolute;left:0;bottom:0;height:4px;width:0;border-radius:4px;
+    background:linear-gradient(90deg,var(--jade),var(--lemon));transition:width .9s cubic-bezier(.2,.7,.2,1) .15s}
+  .sec h2.in::after{width:104px}
+
+  /* --- meta count badge --- */
+  .meta #ideaCount{font-weight:800;font-size:1.05em}
+
+  @media(max-width:760px){
+    .hero{min-height:62vh}
+    .hero-in{padding-bottom:30px}
+    .hub-rot{margin-top:16px}
+    .hub-rot-word{font-size:1.3rem;min-width:7.5ch}
+    .hub-cue{display:none}
+  }
+  @media(prefers-reduced-motion:reduce){
+    .hero .hub-slide{animation:none}
+    .hero .hub-slide:nth-child(1){opacity:.92}
+    .hub-cue,.hub-rot-word.flip{animation:none}
+    .opt-ph::after{display:none}
+    .sec h2::after{transition:none}
+  }
+</style>
 </head>
 <body>
 
 <header class="hero">
-  <img src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=1600&q=70" alt="Sun-drenched Mediterranean coastline" onerror="this.style.display='none'">
+  <div class="hub-slides" aria-hidden="true">
+    <img class="hub-slide" src="https://images.unsplash.com/photo-1469827160215-9d29e96e72f4?auto=format&fit=crop&w=1920&q=72" alt="" onerror="this.style.display='none'">
+    <img class="hub-slide" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Carcassonne_-_Pont_Neuf_-_View_SSE_on_Old_Bridge_%26_Citadel_-_Porte_d%27Aude.jpg" alt="" onerror="this.style.display='none'">
+    <img class="hub-slide" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Rovinj%2C_Croatia.jpg" alt="" onerror="this.style.display='none'">
+    <img class="hub-slide" loading="lazy" src="https://images.unsplash.com/photo-1516483638261-f4dbaf036963?auto=format&fit=crop&w=1920&q=72" alt="" onerror="this.style.display='none'">
+    <img class="hub-slide" loading="lazy" src="https://images.unsplash.com/photo-1583422409516-2895a77efded?auto=format&fit=crop&w=1920&q=72" alt="" onerror="this.style.display='none'">
+    <img class="hub-slide" loading="lazy" src="https://images.unsplash.com/photo-1523531294919-4bcd7c65e216?auto=format&fit=crop&w=1920&q=72" alt="" onerror="this.style.display='none'">
+    <img class="hub-slide" loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Narbonne_Cathedrale_Saint_Just_et_Saint_Pasteur.jpg" alt="" onerror="this.style.display='none'">
+  </div>
+  <div class="hero-glow" aria-hidden="true"></div>
   <div class="hero-in">
     <div class="eyebrow">Helen &amp; Alex &middot; summer 2026</div>
-    <h1>Where shall we disappear to?</h1>
-    <p>A few different shapes for the summer holiday — same idea each time: somewhere warm and green to slow right down. Pick the one that sings.</p>
+    <h1>Where shall we<br>disappear to?</h1>
+    <p>A few different shapes for the summer holiday — same idea each time: somewhere warm and green to slow right down.</p>
+    <div class="hub-rot"><span class="hub-rot-pre">this summer&nbsp;→</span> <b id="rotw" class="hub-rot-word">Tuscany</b></div>
     <div class="meta">
-      <span>7 ideas, so far</span><span>By rail where we can</span><span>Gardens, art &amp; good food</span>
+      <span><b id="ideaCount">7</b>&nbsp;ideas, so far</span><span>By rail where we can</span><span>Gardens, art &amp; good food</span>
     </div>
   </div>
+  <a class="hub-cue" href="#shortlist" aria-label="Scroll to the shortlist">
+    <span>the shortlist</span>
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9l6 6 6-6"/></svg>
+  </a>
 </header>
 
 <div class="wrap">
@@ -149,7 +260,7 @@
     <p class="body">Each one is ready to read: the full day-by-day, home bases, day trips, eating well and the practical bits. Same brief every time: a garden or a view to come home to, a handful of perfect days out, and vegetarian heaven. Pick the one that sings.</p>
   </section>
 
-  <section class="sec">
+  <section class="sec" id="shortlist">
     <div class="sec-head reveal"><span class="eyebrow">The shortlist</span></div>
     <h2 class="reveal">Seven ways to spend the summer</h2>
     <p class="sub reveal">Seven plans ready. Pick the one that sings.</p>
@@ -294,6 +405,48 @@
 <script>
   const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
   document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+  (function(){
+    var reduce = window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    /* rotating place-name ticker, synced loosely to the slideshow */
+    var names=['Tuscany','Carcassonne','Rovinj','Naples','Barcelona','Portofino','Rome'];
+    var w=document.getElementById('rotw'), i=0;
+    if(w && !reduce){
+      setInterval(function(){
+        i=(i+1)%names.length;
+        w.classList.remove('flip');
+        void w.offsetWidth;            /* restart animation */
+        w.textContent=names[i];
+        w.classList.add('flip');
+      },2600);
+    }
+
+    /* count-up the idea tally */
+    var c=document.getElementById('ideaCount');
+    if(c && !reduce){
+      var target=parseInt(c.textContent,10)||7, n=0;
+      c.textContent='0';
+      var t=setInterval(function(){
+        n++; c.textContent=n;
+        if(n>=target) clearInterval(t);
+      },110);
+    }
+
+    /* gentle hero parallax on the slideshow */
+    var slides=document.querySelector('.hub-slides');
+    if(slides && !reduce){
+      var ticking=false;
+      document.addEventListener('scroll',function(){
+        if(ticking) return; ticking=true;
+        requestAnimationFrame(function(){
+          var y=window.scrollY||document.documentElement.scrollTop;
+          slides.style.transform='translateY('+(y*0.18).toFixed(1)+'px)';
+          ticking=false;
+        });
+      },{passive:true});
+    }
+  })();
 </script>
 <script src="enhance.js"></script>
 </body>
