@@ -185,3 +185,24 @@ body{background:transparent}
   .opt:hover,.card:hover,.fact:hover,.t-card:hover{transform:none}
   .hero-glow{opacity:.85}
 }
+
+/* ---- Named hotel stays + price band -------------------------- */
+.stay{position:relative;transition:transform .25s ease,border-color .25s ease,background .25s ease}
+.stay:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.32)}
+.stay .nm{display:inline-flex;align-items:center;gap:6px}
+.stay .nm::after{content:"\2197";font-size:.85em;opacity:.5;transition:opacity .25s ease,transform .25s ease}
+.stay:hover .nm::after{opacity:1;transform:translate(2px,-2px)}
+.stay .px{display:inline-block;margin-left:7px;padding:1px 8px;border-radius:999px;
+  font:600 11.5px/1.55 "Bricolage Grotesque",sans-serif;letter-spacing:.02em;
+  background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);color:#eafff7;
+  vertical-align:middle;white-space:nowrap}
+.stay .star{color:#ffd479;font-size:12px;letter-spacing:1px;margin-left:4px}
+.stay .ds{display:block;margin-top:3px;line-height:1.45}
+
+/* ---- Rail leg lists ------------------------------------------ */
+ul.rails{list-style:none;margin:10px 0 12px;padding:0;display:flex;flex-direction:column;gap:8px}
+ul.rails li{position:relative;padding:9px 12px 9px 14px;border-radius:11px;font-size:14px;line-height:1.5;
+  background:rgba(128,128,128,.09);border:1px solid rgba(128,128,128,.2)}
+ul.rails li::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:3px;
+  background:linear-gradient(180deg,#7fe0cf,#2f9b8c)}
+ul.rails li strong{font-weight:700}
