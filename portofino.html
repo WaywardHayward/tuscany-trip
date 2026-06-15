@@ -261,13 +261,13 @@
 <script src="presentation.js"></script>
 <script>
 TripPresentation.init([
-  { coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and high-speed down to Genoa.", chips:["rail","start"] },
-  { coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break in Paris, then the TGV through to Genoa the next morning. A kinder haul than the deep south.", chips:["city","overnight"] },
-  { coords:[44.407,8.934], zoom:12, title:"Genoa", eyebrow:"Day 2 · Almost there", desc:"Into Genoa, birthplace of pesto and focaccia. Then a short coastal hop to your base.", chips:["rail","pesto"] },
-  { coords:[44.333,9.213], zoom:14, title:"Santa Margherita Ligure", eyebrow:"Day 2 · Arrive", desc:"Settle on the palm-lined seafront, find the passeggiata, and start with focaccia and trofie al pesto.", chips:["arrive","base"] },
+  { kind:"travel", coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and high-speed down to Genoa.", chips:["rail","start"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break in Paris, then the TGV through to Genoa the next morning. A kinder haul than the deep south.", chips:["city","overnight"] },
+  { kind:"travel", coords:[44.407,8.934], zoom:12, title:"Genoa", eyebrow:"Day 2 · Almost there", desc:"Into Genoa, birthplace of pesto and focaccia. Then a short coastal hop to your base.", chips:["rail","pesto"] },
+  { base:true, coords:[44.333,9.213], zoom:14, title:"Santa Margherita Ligure", eyebrow:"Day 2 · Arrive", desc:"Settle on the palm-lined seafront, find the passeggiata, and start with focaccia and trofie al pesto.", chips:["arrive","base"] },
   { coords:[44.303,9.210], zoom:15, title:"Portofino", eyebrow:"Day 3 · The harbour", desc:"Ferry round to the famous little harbour, up to the castle and lighthouse, a swim at Paraggi cove.", chips:["coast","village"] },
   { coords:[44.351,9.156], zoom:14, title:"Camogli & San Fruttuoso", eyebrow:"Day 4 · Coast", desc:"The quieter painted town of Camogli, then a boat to the medieval abbey tucked in its hidden cove.", chips:["coast","walk"] },
-  { coords:[44.335,9.212], zoom:15, title:"A garden & a slow day", eyebrow:"Day 5 · Rest", desc:"The Villa Durazzo gardens above town, then a cove, a long lunch, and the sea breeze.", chips:["garden","rest"] },
+  { kind:"travel", coords:[44.335,9.212], zoom:15, title:"A garden & a slow day", eyebrow:"Day 5 · Rest", desc:"The Villa Durazzo gardens above town, then a cove, a long lunch, and the sea breeze.", chips:["garden","rest"] },
   { coords:[44.127,9.710], zoom:13, title:"The Cinque Terre", eyebrow:"Day 6 · Villages", desc:"Train down to the five villages, the easy stretches of the coastal path, Vernazza and Manarola at golden hour.", chips:["villages","rail"] },
   { coords:[44.117,9.684], zoom:14, title:"Manarola at dusk", eyebrow:"Day 7 · Finale", desc:"The postcard village, best at dusk from the Nessun Dorma terrace. A final swim, then trains for home.", chips:["coast","sunset"] }
 ]);
