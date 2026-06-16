@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x7hxl336a5");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collioure & the Côte Vermeille · Helen & Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFEAE3;
+    --paper-2:#E9E2D8;
+    --ink:#2A2018;
+    --ink-soft:#5C4D42;
+    --green-deep:#7C2E1C;
+    --green:#A8432A;
+    --jade:#1F8FA0;
+    --jade-deep:#15707E;
+    --stone:#E8E0D4;
+    --line:#DBD2C3;
+    --slate:#7A6A5C;
+    --lemon:#D6852E;
+    --shadow:0 1px 2px rgba(42,32,24,.06),0 12px 30px -16px rgba(42,32,24,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#A8432A 0%,#7C2E1C 52%,#15707E 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(38,22,16,.18) 0%,rgba(38,22,16,.05) 38%,rgba(34,20,14,.62) 78%,rgba(30,16,12,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#f4cdae}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#b8552f 30%,var(--lemon) 52%,var(--jade) 78%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#A8432A,#1F8FA0);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#F6ECE2;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#f3c9a6}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#EAD9C8;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#7c3a26}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#E2CDB9}
+  .spark{margin-top:16px;font-size:14px;color:#E0C4AC}
+  .spark a{color:#f3c9a6;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#EDDCCC;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#E0C8B3;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#b8967e}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Carcassonne_-_Pont_Neuf_-_View_SSE_on_Old_Bridge_%26_Citadel_-_Porte_d%27Aude.jpg" alt="The walled Cité de Carcassonne above the old bridge" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option six · Carcassonne & the Languedoc</div>
+    <h1>A fairy-tale fortress &amp; the warm south-west</h1>
+    <p>One double-walled medieval city to come home to, Cathar castles on every crag, a canal under plane trees, and the Mediterranean an hour down the line.</p>
+    <div class="meta"><span>~9 days</span><span>Mostly by rail</span><span>One walled-city base</span><span>Castles, canal &amp; coast</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">A storybook walled city for a base, and the whole sun-baked Languedoc to wander: <em>Cathar castles, a tree-lined canal, and a quick hop to the sea.</em></p>
+    <p class="body">Carcassonne's double ramparts and turrets look drawn by a child — and you can sleep inside them. From that one base it all comes to you by train and towpath: the red-brick cathedral city of Albi, the plane-tree shade of the Canal du Midi, the clifftop Cathar castles, golden villages like Lagrasse and Minerve, and the little Fauvist harbour of Collioure on the Mediterranean. Hot, honeyed and slow, with a sea breeze whenever you want one — and a vegetarian's dream of market veg, olives, tomatoes and tarte.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">walled Carcassonne, right on the line</div></div><div class="fact"><div class="k">Cathar country</div><div class="v">clifftop castles by the handful</div></div><div class="fact"><div class="k">rail &amp; towpath</div><div class="v">canal, castles &amp; coast, no car needed</div></div><div class="fact"><div class="k">high-20s</div><div class="v">hot inland, sea breeze on the coast</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">A fortress, a canal &amp; the coast</h2>
+    <p class="sub reveal">One walled-city base, and the warm south-west unspooling around it by train and towpath.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to the Languedoc</h3><p class="t-blurb">Eurostar to Paris, a night in the city, then the TGV south to Carcassonne the next morning — vineyards and garrigue rolling past the window.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Into the Cité, by night</h3><p class="t-blurb">Drop bags, then walk up to the floodlit ramparts after the day-trippers have gone. The walled city is yours for the evening — turrets, lamplight and a quiet supper inside the walls.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">walls</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">The Cité in full</h3><p class="t-blurb">Walk the full circuit of the double ramparts and the lices between them, the Château Comtal, and the stained glass of the Basilique Saint-Nazaire. Down to the lower town and the market in the afternoon.</p><div class="t-chips"><span class="chip">history</span><span class="chip">slow</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Albi, the red-brick city</h3><p class="t-blurb">Train across to Albi: the vast brick fortress-cathedral of Sainte-Cécile, the Toulouse-Lautrec museum in the old bishops' palace, and the gardens above the Tarn. A UNESCO old town, easily a day.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">art</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">A slow one in the lower town</h3><p class="t-blurb">After two days of ramparts and cathedrals, a day off the sightseeing. A lie-in, the Saturday market on Place Carnot, a long lunch and a wander of the Bastide's lanes — or simply the garden and a book. Nowhere to be.</p><div class="t-chips"><span class="chip">rest</span><span class="chip">market</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">The Canal du Midi</h3><p class="t-blurb">A slow day on the 17th-century canal: walk or hire bikes along the plane-tree towpath, watch the boats work a lock, picnic by the great Pont-canal aqueduct. Shade, water and birdsong.</p><div class="t-chips"><span class="chip">canal</span><span class="chip">walk</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Cathar castles on the crags</h3><p class="t-blurb">Out into the wild Corbières for the vertiginous ruins of Peyrepertuse and Quéribus, or the four towers of Lastours right above Carcassonne. Big skies, big drops, near-empty roads.</p><div class="t-chips"><span class="chip">castles</span><span class="chip">views</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">08</div><h3 class="t-title">Lagrasse &amp; the golden villages</h3><p class="t-blurb">One of France's "plus beaux villages": a humpback bridge, an old abbey and stone lanes in the Corbières hills. Or the gorge-top village of Minerve, clinging above its river canyon.</p><div class="t-chips"><span class="chip">village</span><span class="chip">slow</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">09</div><h3 class="t-title">Down to the sea</h3><p class="t-blurb">An hour or so by train to the Mediterranean: the painted harbour of Collioure that the Fauvists loved, with its bell-tower in the water — or grand Narbonne with its half-built cathedral and Roman road. Swim, then home on the breeze.</p><div class="t-chips"><span class="chip">coast</span><span class="chip">swim</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then turn for home,</strong> rolling the trains back north with sun on your arms and a fortress in the camera roll.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">Sleep inside the walls — or just below them</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Carcassonne_-_Pont_Neuf_-_View_SSE_on_Old_Bridge_%26_Citadel_-_Porte_d%27Aude.jpg" alt="The ramparts of the Cité de Carcassonne" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>One base, the whole region around it</h2>
+        <p>Carcassonne sits right on the main line, so Albi, the Canal du Midi, the Cathar castles and the coast are all easy days out from one bag-drop. The treat is staying in or right beneath the medieval Cité, so the walls are floodlit on your evening stroll and quiet again before the coaches arrive.</p>
+        <div class="stays"><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=H%C3%B4tel%20du%20Ch%C3%A2teau%20%26%20Spa%20Carcassonne" target="_blank" rel="noopener"><span><span class="nm">Hôtel du Château &amp; Spa</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;180&ndash;340</span><span class="ds">A chic little hideaway 30m from the Cité's main gate, with a walled garden, heated pool, hot tub and small spa. The intimate, characterful pick &mdash; that Hotel Welcome feel, with the ramparts on the doorstep.</span></span></a><a class="stay" href="https://www.hoteldelacite.com/en/" target="_blank" rel="noopener"><span><span class="nm">Hôtel de la Cité</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;350&ndash;600</span><span class="ds">The splurge, and a special one: a Neo-Gothic mansion actually inside the walls, with a garden pool against the ramparts and views to the basilica. Sleep where the day-trippers can't.</span></span></a><a class="stay" href="https://www.google.com/maps/search/?api=1&amp;query=Domaine%20d%27Auriac%20Carcassonne" target="_blank" rel="noopener"><span><span class="nm">Domaine d'Auriac</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;250&ndash;450</span><span class="ds">If you'd rather be out of town: a creeper-clad country house in its own green park just outside Carcassonne, with a pool, old trees and total quiet. A short taxi back to the station.</span></span></a></div>
+        <p class="spark">Fancy a night out east? You could tack a night onto Albi or down by the sea in Collioure, though one base keeps it simplest.</p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. It's all train-and-towpath country &mdash; no car at any point.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Cit%C3%A9%20de%20Carcassonne" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Carcassonne_-_Pont_Neuf_-_View_SSE_on_Old_Bridge_%26_Citadel_-_Porte_d%27Aude.jpg" alt="Cité de Carcassonne" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">The Cité de Carcassonne</span></div><div class="card-body"><div class="card-meta">Your base</div><h3 class="card-name">The Cité de Carcassonne</h3><p class="card-blurb">Europe's great walled city: 52 towers, a double ring of ramparts and a castle within. Magic at dusk when the coaches leave. Free to wander; pay for the Château &amp; walls walk.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Cath%C3%A9drale%20Sainte-C%C3%A9cile%20Albi" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/42/PM_117878_F_Albi.jpg" alt="Sainte-Cécile cathedral, Albi" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Albi</span></div><div class="card-body"><div class="card-meta">Day trip · by train</div><h3 class="card-name">Albi</h3><p class="card-blurb">A whole city of warm red brick, crowned by the largest brick cathedral on earth and the Toulouse-Lautrec museum. A UNESCO old town above the Tarn.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Canal%20du%20Midi%20Carcassonne" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Pont-canal_de_l%27Orb004.JPG" alt="The Canal du Midi" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Canal du Midi</span></div><div class="card-body"><div class="card-meta">Walk or cycle</div><h3 class="card-name">The Canal du Midi</h3><p class="card-blurb">A 17th-century engineering wonder, shaded by a tunnel of plane trees. Stroll or bike the towpath, watch a lock fill, picnic by an aqueduct. UNESCO, and blissfully flat.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Ch%C3%A2teau%20de%20Peyrepertuse" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/3/32/Ch%C3%A2teaux_du_Pays_cathare_-_Ch%C3%A2teau_de_Peyrepertuse_-_13.jpg" alt="Château de Peyrepertuse" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Cathar castles</span></div><div class="card-body"><div class="card-meta">Crag-top ruins</div><h3 class="card-name">The Cathar castles</h3><p class="card-blurb">Romantic medieval ruins perched on impossible crags — Peyrepertuse and Quéribus strung along a ridge, or Lastours' four towers right above Carcassonne. Huge views, near-empty.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Lagrasse%20Aude" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e7/Lagrasse_overview.jpg" alt="The village of Lagrasse" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Lagrasse</span></div><div class="card-body"><div class="card-meta">One of les plus beaux villages</div><h3 class="card-name">Lagrasse</h3><p class="card-blurb">A honey-stone village in the Corbières hills, gathered round an ancient abbey and a humpback bridge. Potters, a covered market hall, and lanes made for an idle morning.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Collioure" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Collioure_002.jpg" alt="The harbour of Collioure" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Collioure</span></div><div class="card-body"><div class="card-meta">The coast · by train</div><h3 class="card-name">Collioure</h3><p class="card-blurb">The little Catalan harbour that Matisse and Derain painted into Fauvism — a bell-tower rising from the water, pastel houses, a royal castle and a swimmable cove. The prettiest day at the sea.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Pick your day at the sea</span></div>
+    <h2 class="reveal">One more, down on the Med</h2>
+    <p class="sub reveal">Whichever coast town sings — then we turn for home.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Narbonne" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c4/Narbonne_Cathedrale_Saint_Just_et_Saint_Pasteur.jpg" alt="Narbonne cathedral" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Narbonne</span></div><div class="card-body"><div class="card-meta">Roman roots · 30 min</div><h3 class="card-name">Narbonne</h3><p class="card-blurb">A grand, half-built Gothic cathedral, the old Via Domitia underfoot, and Les Halles — one of France's best covered markets. A proper southern town, half an hour down the line.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Minerve%20H%C3%A9rault" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/cb/Pont_Minerve_34.JPG" alt="The village of Minerve" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Minerve</span></div><div class="card-body"><div class="card-meta">Village in a canyon</div><h3 class="card-name">Minerve</h3><p class="card-blurb">A tiny stone village marooned on a spur above two river gorges, with natural rock bridges below. Dramatic, hushed and improbably photogenic.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Carcassonne%20Bastide%20Saint-Louis" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/Pont-canal_de_l%27Orb004.JPG" alt="The lower town of Carcassonne" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">The Bastide &amp; the locks</span></div><div class="card-body"><div class="card-meta">A slow last day</div><h3 class="card-name">The Bastide &amp; the locks</h3><p class="card-blurb">No train needed: the grid-planned lower town, its Saturday market, and the Canal du Midi locks where it meets the Aude. A gentle final day before the haul home.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Carcassonne%20Ch%C3%A2teau%20Comtal" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Carcassonne_-_Pont_Neuf_-_View_SSE_on_Old_Bridge_%26_Citadel_-_Porte_d%27Aude.jpg" alt="Château Comtal, Carcassonne" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Château Comtal &amp; the walls</span></div><div class="card-body"><div class="card-meta">If you skipped it</div><h3 class="card-name">Château Comtal &amp; the walls</h3><p class="card-blurb">The castle-within-the-city and the rampart walkway: the one paid sight inside the Cité, and worth it for the views down over the lices and out to the Pyrenees.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there on rails</h3><p>All the way by train, with one easy night in Paris:</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h10 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Carcassonne</strong> &middot; direct TGV ~6h31, or ~5h51 via Toulouse</li><li><strong>or Paris &rarr; Toulouse &rarr; Carcassonne</strong> &middot; TGV ~4h25 + TER ~1h (37 trains a day on the last leg)</li></ul></div><div class="box reveal"><h3>Around the region</h3><p>Carcassonne is the hub. The coast and Narbonne are quick TER hops (Narbonne ~30&ndash;35&nbsp;min, frequent); Collioure ~2h30&ndash;3h via Narbonne; Albi ~2h via Toulouse. The Canal du Midi towpath and the lower town are on foot or by hired bike. The Cathar castles and the smaller villages (Lagrasse, Minerve) are reached by a guided minibus day tour from Carcassonne &mdash; the one part that leaves the rails, but still no car of your own.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>The sunny south-west market table:</p><ul><li>Tomato, melon, peach and fig from the morning market</li><li>Ratatouille, pan-fried ceps and girolles, stuffed veg</li><li>Salade catalane, escalivada and tapenade near the coast</li><li>Tarte aux pommes, and a pain au chocolat for the towpath</li></ul></div><div class="box reveal"><h3>Heat, shade &amp; sea air</h3><p>Inland Languedoc gets properly hot at midday, so do the ramparts and castles early or late and save the shaded canal towpath or a swim for the middle of the day. The coast (Collioure, Narbonne-Plage) is a few degrees kinder with its sea breeze &mdash; an easy escape whenever the city bakes.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Storybook enough?</div>
+  <p>A floodlit fortress by night, a castle on a crag by lunch, a tree-shaded canal at your own pace, and the Mediterranean an hour away. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { kind:"travel", coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and a night in the city before the long run south.", chips:["rail","start"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, then take the morning TGV down to Carcassonne through the vineyards and garrigue.", chips:["city","overnight"] },
+  { base:true, coords:[43.2065,2.3640], zoom:15, title:"The Cité de Carcassonne", eyebrow:"Day 2 · Arrive", desc:"Into the floodlit walled city after the day-trippers leave — 52 towers, a double ring of ramparts, and a quiet supper inside the walls.", chips:["arrive","walls"] },
+  { coords:[43.2065,2.3640], zoom:16, title:"The Cité in full", eyebrow:"Day 3 · History", desc:"Walk the full circuit of the ramparts and the lices, the Château Comtal, and the stained glass of the Basilique Saint-Nazaire.", chips:["history","slow"] },
+  { coords:[43.9281,2.1430], zoom:14, title:"Albi", eyebrow:"Day 4 · Red brick & art", desc:"Train across to the red-brick city of Albi: the colossal fortress-cathedral of Sainte-Cécile and the Toulouse-Lautrec museum above the Tarn.", chips:["rail","art"] },
+  { kind:"travel", coords:[43.2130,2.3490], zoom:15, title:"A slow day in Carcassonne", eyebrow:"Day 5 · Rest", desc:"Two days of ramparts earn a day off. A lie-in, the market on Place Carnot, a long lunch and the Bastide lanes — or just the garden and a book.", chips:["rest","market"] },
+  { coords:[43.21,2.30], zoom:13, title:"The Canal du Midi", eyebrow:"Day 6 · Shade & water", desc:"A slow day on the 17th-century canal — walk or bike the plane-tree towpath, watch a lock fill, picnic by an aqueduct.", chips:["canal","walk"] },
+  { coords:[42.8688,2.5556], zoom:13, title:"Cathar castles", eyebrow:"Day 7 · The crags", desc:"Out into the wild Corbières for the vertiginous ruins of Peyrepertuse and Quéribus, big skies and bigger drops.", chips:["castles","views"] },
+  { coords:[43.0925,2.6200], zoom:14, title:"Lagrasse", eyebrow:"Day 8 · Villages", desc:"One of France's plus beaux villages: a humpback bridge, an old abbey and honey-stone lanes in the Corbières hills.", chips:["village","slow"] },
+  { coords:[42.5263,3.0830], zoom:15, title:"Collioure", eyebrow:"Day 9 · The sea", desc:"An hour to the Mediterranean: the little Fauvist harbour with its bell-tower in the water, a swim, then trains for home.", chips:["coast","sunset"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
