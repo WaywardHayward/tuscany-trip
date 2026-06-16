@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x7hxl336a5");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The Atlas, by rail &amp; sail · Helen &amp; Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#F1EBE1;
+    --paper-2:#EAE2D5;
+    --ink:#2A2018;
+    --ink-soft:#5C4D42;
+    --green-deep:#9C3B1B;
+    --green:#C2591F;
+    --jade:#2F86A6;
+    --jade-deep:#1E6480;
+    --stone:#ECE3D5;
+    --line:#DCD2C2;
+    --slate:#7A6A5C;
+    --lemon:#D99323;
+    --shadow:0 1px 2px rgba(42,32,24,.06),0 12px 30px -16px rgba(42,32,24,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#C2591F 0%,#9C3B1B 52%,#1E6480 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(38,22,16,.18) 0%,rgba(38,22,16,.05) 38%,rgba(34,20,14,.62) 78%,rgba(30,16,12,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#f4cdae}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#b8552f 30%,var(--lemon) 52%,var(--jade) 78%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#C2591F,#2F86A6);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#F6ECE2;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#f3c9a6}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#EAD9C8;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#7c3a26}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem;display:block}
+  .stay .star{display:block;color:#f3c9a6;font-size:13px}
+  .stay .px{display:block;color:#f0d8c4;font-size:13px;font-weight:600}
+  .stay .ds{display:block;font-size:13px;color:#E2CDB9}
+  .spark{margin-top:16px;font-size:14px;color:#E0C4AC}
+  .spark a{color:#f3c9a6;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#EDDCCC;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#E0C8B3;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#b8967e}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Crossing_the_High_Atlas_mountains_in_Morocco_-_45020232664.jpg?width=960" alt="A road winding through the High Atlas mountains of Morocco" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option twelve · The Atlas, by rail &amp; sail</div>
+    <h1>All the way to Morocco — without a single flight</h1>
+    <p>Trains down the spine of Europe, one ferry across the Strait of Gibraltar, and a five-star Berber hideaway under Mount Toubkal waiting at the end of it. Gloriously over-engineered. Absolutely worth it.</p>
+    <div class="meta"><span style="display:inline-flex;align-items:center;gap:5px"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:13px;height:13px;flex:none;margin-right:1px"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>8&nbsp;travel days</span><span>~13 days</span><span>Rail + one ferry</span><span>One resort base</span><span>0 flights ✈️🚫</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">The slow road to North Africa: <em>eight days of trains and one ferry, bookending a five-star Berber kasbah with Toubkal looming over the infinity pool.</em></p>
+    <p class="body">This one's a happy lark — the journey <strong>is</strong> the adventure. Eurostar to Paris, the long lovely run down through France into Spain, a night in Algeciras within sight of Africa, then the ferry across the Strait of Gibraltar with two continents shaking hands off the bow. From Tangier the high-speed line whisks you to Marrakech, and a car carries you up into the High Atlas to <strong>Kasbah Tamadot</strong> — Richard Branson's mountain hideaway above Asni, all Berber-chic suites, heated pools, a hammam, and the snow-streaked roof of North Africa filling the windows. Between long lazy resort days, the mountains and the medina come to you: Imlil's walnut groves and mule paths, the souks and gardens of Marrakech, the waterfalls of the Ourika, and the great ruined mosque at Tin Mal. Then you do it all in reverse and arrive home with the smuggest, most low-carbon tan in Edinburgh. Tagines at altitude, no boarding passes, zero shoes removed for security.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">Kasbah Tamadot, above Asni</div></div><div class="fact"><div class="k">rail + sail</div><div class="v">one ferry, no flights at all</div></div><div class="fact"><div class="k">4,167&nbsp;m</div><div class="v">Toubkal — the roof of North Africa</div></div><div class="fact"><div class="k">high-20s</div><div class="v">Atlas air, kinder than the plains</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Four days out, a mountain kasbah, four days back</h2>
+    <p class="sub reveal">A proper expedition there and back — rails the whole way bar one ferry — wrapped around a long, soft stay under Toubkal with the medina and the mountains on tap.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">The long way south begins</h3><p class="t-blurb">Morning train from Edinburgh to London, then the Eurostar to Paris and a night in the city. Dinner, a glass of something, and the satisfying knowledge that you'll reach Africa without ever leaving the ground.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Down the spine of France into Spain</h3><p class="t-blurb">The direct high-speed run Paris → Barcelona, Pyrenees out the window and the Mediterranean at the end of it. A night of vermut and tapas in the Gothic Quarter before the push south.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Across Spain to the strait</h3><p class="t-blurb">AVE high-speed to Madrid, then the long lovely line south through Andalucía to Algeciras. Sleep in the port town with the lights of Africa flickering across the water and a ferry booked for morning.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Two continents before lunch</h3><p class="t-blurb">The ferry across the Strait of Gibraltar — stand on deck and watch Europe hand over to Africa — into Tangier. Then ONCF's gleaming Al Boraq and the connecting train carry you down to Marrakech by nightfall.</p><div class="t-chips"><span class="chip">ferry</span><span class="chip">rail</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">Up into the Atlas</h3><p class="t-blurb">A private car climbs out of Marrakech and up into the mountains to Kasbah Tamadot, above Asni. Check in, swap travel-creased clothes for a robe, and ease into the infinity pool with Toubkal standing guard. You made it — overland.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">pool</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">A day of doing gloriously nothing</h3><p class="t-blurb">Earned, after all those rails. A mountain-view breakfast that drifts into mid-morning, the hammam and a long massage, the heated pools, mint tea on the terrace and an early supper as the peaks turn pink. The whole point of the exercise.</p><div class="t-chips"><span class="chip">rest</span><span class="chip">hammam</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Imlil &amp; a High Atlas walk</h3><p class="t-blurb">A short hop to Imlil, the Toubkal trailhead, and a gentle guided walk past walnut groves, terraced fields and Berber villages — mule bells, apple orchards and snow on the heights. As far up as you fancy, then mint tea on a rooftop and back for a swim.</p><div class="t-chips"><span class="chip">walk</span><span class="chip">villages</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">08</div><h3 class="t-title">Marrakech, down the mountain</h3><p class="t-blurb">Back down to the Red City for a day: the Koutoubia minaret, the cobalt of the Jardin Majorelle, the labyrinth of the souks, and Jemaa el-Fnaa coming alive at dusk with lanterns and orange-juice carts. The kasbah's calm waiting at the top of the hill.</p><div class="t-chips"><span class="chip">medina</span><span class="chip">gardens</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">09</div><h3 class="t-title">The Ourika Valley</h3><p class="t-blurb">Up the other valley to the Ourika: a riverside lunch with your feet near the water, the seven waterfalls above Setti Fatma, and red-earth villages under the snowline. Or swap it for the great ruined mosque at Tin Mal, deeper in the mountains — either way, a slow day among the peaks.</p><div class="t-chips"><span class="chip">river</span><span class="chip">waterfalls</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">10</div><h3 class="t-title">Last morning on the terrace</h3><p class="t-blurb">One more unhurried breakfast over the valley, a final dip, and a last pot of mint tea before the long road home. Then the car back down to Marrakech and the journey north in reverse — refreshed, sun-warmed and quietly smug.</p><div class="t-chips"><span class="chip">slow</span><span class="chip">last swim</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then turn for home,</strong> retracing the rails and the ferry over about four days — Marrakech to Tangier, the boat back to Spain, and the long lines north through France — arriving in Edinburgh with the most low-carbon tan in the city and not one boarding pass to show for it.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">A five-star Berber kasbah under Toubkal</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/My_Toubkal.jpg?width=960" alt="Mount Toubkal towering over the High Atlas above Asni" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>One mountain hideaway, the medina &amp; the peaks on tap</h2>
+        <p>The reward for eight days of trains: unpack once at a proper five-star retreat in the High Atlas, and let Morocco arrive in easy day-trips. Mornings in the heated pool or the hammam, the medina and the mountain valleys a short drive away, and the snow-streaked roof of North Africa over every breakfast. A true Ikos-style all-inclusive doesn't really exist up here — the Atlas does <em>exclusive</em>, not wristbands — so these are the most all-in mountain stays, with a coastal full-board fallback if a swim-up buffet is non-negotiable.</p>
+        <div class="stays"><a class="stay" href="https://www.virginlimitededition.com/kasbah-tamadot/" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Asni-Nicolas_L%C5%93uillet-crop.jpg?width=500" alt="The Asni valley in the High Atlas, near Kasbah Tamadot" onerror="this.style.display='none'"><span><span class="nm">Kasbah Tamadot, Asni</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733; Virgin Limited Edition</span><span class="px">&asymp;&pound;650&ndash;1,100 / night, half-board</span><span class="ds">The headline pick &mdash; Richard Branson's Berber-chic hideaway above Asni: antique-filled suites and Berber tents, heated indoor &amp; outdoor pools, a hammam and spa, guided valley walks and tagine masterclasses, all under Toubkal. Add the fully-inclusive package for the closest thing to all-in up here.</span></span></a><a class="stay" href="https://www.booking.com/searchresults.html?ss=Imlil%2C+Morocco" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Imlil_village%2C_High_Atlas_Mountains.jpg?width=500" alt="Imlil village in the High Atlas" onerror="this.style.display='none'"><span><span class="nm">An Imlil mountain lodge</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733; Kasbah du Toubkal &amp; co.</span><span class="px">&asymp;&pound;180&ndash;320 / night</span><span class="ds">The closer-to-the-trail option: a characterful Berber lodge right at the Toubkal trailhead, hammam and rooftop terraces, walks from the door. Less resort, more mountain &mdash; the right call if hiking matters more than a swim-up bar.</span></span></a><a class="stay" href="https://www.fairmont.com/taghazout-bay/" target="_blank" rel="noopener"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Morocco_-_Essaouira_Part_2_%2831679848385%29.jpg?width=500" alt="The Moroccan Atlantic coast" onerror="this.style.display='none'"><span><span class="nm">The coastal all-inclusive fallback</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733; Fairmont Taghazout / Mazagan</span><span class="px">&asymp;&pound;250&ndash;400 / night, all-in</span><span class="ds">If a genuine wristband-and-buffet all-inclusive is the brief, drop to the Atlantic: proper five-star all-in resorts reachable by ONCF train and a short transfer. Atlas for the views, ocean for the buffet &mdash; or do a few nights of each.</span></span></a></div>
+        <p class="spark">Mountain hideaway or coastal all-in? The Atlas is about the setting, not the wristband &mdash; but the coast has you covered if it's a true all-inclusive you're after. <a href="https://www.virginlimitededition.com/kasbah-tamadot/" target="_blank" rel="noopener">See Kasbah Tamadot &rarr;</a></p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach of the kasbah</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. The journey's all rail and one ferry &mdash; only the mountain roads need a car, and the resort sorts those.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Kasbah%20Tamadot%20Asni" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Asni-Nicolas_L%C5%93uillet-crop.jpg?width=500" alt="The Asni valley near Kasbah Tamadot" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Kasbah Tamadot · Asni</span></div><div class="card-body"><div class="card-meta">Your base</div><h3 class="card-name">Kasbah Tamadot &amp; Asni</h3><p class="card-blurb">The five-star Berber hideaway above the Asni valley: heated pools, a hammam, antique-filled suites and Toubkal over every breakfast. Home for the stay, the saturday souk of Asni just down the hill.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Mount%20Toubkal" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/My_Toubkal.jpg?width=500" alt="Snow-streaked Mount Toubkal, highest peak in North Africa" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Jebel Toubkal</span></div><div class="card-body"><div class="card-meta">The roof of North Africa</div><h3 class="card-name">Jebel Toubkal · 4,167 m</h3><p class="card-blurb">The highest peak in North Africa, snow-streaked into summer. A serious two-day guided climb for the keen — or simply the magnificent backdrop to every pool day and valley walk below.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Imlil%20Morocco" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Imlil_village%2C_High_Atlas_Mountains.jpg?width=500" alt="Imlil village among walnut groves in the High Atlas" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Imlil</span></div><div class="card-body"><div class="card-meta">Day trip · mountain walk</div><h3 class="card-name">Imlil</h3><p class="card-blurb">The Toubkal trailhead village: walnut groves, terraced fields, mule paths and Berber hamlets, with apple orchards and snow on the heights. Gentle valley walks or as far up as your legs fancy, mint tea to finish.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Jemaa%20el-Fnaa%20Marrakech" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Djemaa_el_Fna.jpg?width=500" alt="The square of Jemaa el-Fnaa in Marrakech at dusk" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Jemaa el-Fnaa</span></div><div class="card-body"><div class="card-meta">Day trip · the Red City</div><h3 class="card-name">Marrakech &amp; Jemaa el-Fnaa</h3><p class="card-blurb">The great square at the heart of the medina: storytellers, lanterns, orange-juice carts and the smoke of the food stalls at dusk, with the souks unspooling behind. The whole Red City an hour down the hill.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Jardin%20Majorelle%20Marrakech" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Le_jardin_des_majorelle_40.JPG?width=500" alt="The cobalt-blue villa and cacti of the Jardin Majorelle" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Jardin Majorelle</span></div><div class="card-body"><div class="card-meta">Day trip · gardens</div><h3 class="card-name">Jardin Majorelle</h3><p class="card-blurb">The painter's garden Yves Saint Laurent saved: electric-cobalt walls, bamboo and cacti, lily pools and birdsong &mdash; a cool, calm half-hour out of the Marrakech heat, with the Berber museum alongside.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Koutoubia%20Mosque%20Marrakech" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Marokko0112_%28retouched%29.jpg?width=500" alt="The Koutoubia minaret rising over Marrakech" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Koutoubia Mosque</span></div><div class="card-body"><div class="card-meta">Day trip · the medina</div><h3 class="card-name">Koutoubia Mosque</h3><p class="card-blurb">Marrakech's great twelfth-century minaret, the city's landmark and the template for the Giralda and Rabat's tower. The gardens around it make a fine shaded stroll between souk and square.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Setti%20Fatma%20Ourika%20Valley" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Ourika_Valley.jpg?width=500" alt="The green Ourika Valley below the snowline" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Ourika Valley &amp; Setti Fatma</span></div><div class="card-body"><div class="card-meta">Day trip · river &amp; falls</div><h3 class="card-name">Ourika Valley &amp; Setti Fatma</h3><p class="card-blurb">The greenest of the Atlas valleys: riverside cafés with tables in the shallows, the seven waterfalls above Setti Fatma, and red-earth Berber villages under the peaks. A cool, watery day among the mountains.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Tin%20Mal%20Mosque" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Tin_Mal_Mosque1_%28js%29.jpg?width=500" alt="The roofless ruined Tin Mal Mosque in the High Atlas" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Tin Mal Mosque</span></div><div class="card-body"><div class="card-meta">Day trip · deep in the mountains</div><h3 class="card-name">Tin Mal Mosque</h3><p class="card-blurb">The roofless twelfth-century mosque that launched the Almohad dynasty, set high in the mountains beyond Ouirgane. Honey-coloured arches open to the sky and the peaks &mdash; a spectacular, little-visited detour.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Essaouira" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Morocco_-_Essaouira_Part_2_%2831679848385%29.jpg?width=500" alt="The ramparts and harbour of Essaouira on the Atlantic" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Essaouira</span></div><div class="card-body"><div class="card-meta">Optional · the breezy coast</div><h3 class="card-name">Essaouira</h3><p class="card-blurb">If the sea calls: the windswept Atlantic port of ramparts, gulls and grilled veg, a couple of hours west of Marrakech. The cool, blue-shuttered counterpoint to the heat of the plains &mdash; an easy add-on by coach.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Tangier" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Tanger_cor.jpg?width=500" alt="The white medina of Tangier above the harbour" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Tangier</span></div><div class="card-body"><div class="card-meta">The gateway · off the ferry</div><h3 class="card-name">Tangier</h3><p class="card-blurb">Where Africa begins: the white medina tumbling to the harbour, the cafés of the Petit Socco, and the fast train south. Worth a night on the way out or back to break the journey and ease into Morocco.</p><span class="card-link">Have a look &rarr;</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there on rails (&amp; one ferry)</h3><p>Four unhurried days down, all by train bar the crossing:</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h20 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Barcelona</strong> &middot; direct TGV ~6h40 &middot; overnight</li><li><strong>Barcelona &rarr; Madrid &rarr; Algeciras</strong> &middot; AVE + Andalucía line &middot; overnight by the strait</li><li><strong>Algeciras &rarr; Tangier</strong> &middot; ferry ~1h&ndash;1h30, then ONCF Al Boraq &amp; connection on to Marrakech</li><li><strong>Marrakech &rarr; Kasbah Tamadot</strong> &middot; ~1h private transfer up into the Atlas</li></ul></div><div class="box reveal"><h3>Around the High Atlas</h3><p>The kasbah is the hub, and it arranges the mountain roads &mdash; Imlil, the Ourika, Tin Mal and Marrakech are all easy guided day-trips by car. Marrakech itself is a walkable medina once you're down there. Essaouira and the coast come by coach. <strong>The only non-rail leg of the whole holiday is that single ferry</strong> &mdash; and the short mountain transfers the resort drives for you.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>Morocco is a joy for vegetarians &mdash; the spice does the heavy lifting:</p><ul><li>Vegetable tagines with prunes, apricots and almonds; seven-veg couscous on Fridays</li><li>Zaalouk and taktouka &mdash; smoky aubergine and pepper salads &mdash; with warm khobz</li><li>Harira (ask for the meat-free pot), bissara, and briouats of cheese and herbs</li><li>Mint tea, fresh orange juice, oranges with cinnamon, and almond pastries</li></ul></div><div class="box reveal"><h3>Heat, altitude &amp; the resort</h3><p>Marrakech bakes in high summer &mdash; often nudging 40&deg;C &mdash; which is exactly why you're <span class="warn">based up in the mountains</span>, where the kasbah sits in the high-20s with cool nights. Save the medina and the valleys for mornings and late afternoons, keep the fierce middle of the day for the pool or the hammam, and carry water and sun cover on any walk. The altitude is gentle at the resort; only a Toubkal attempt needs real acclimatising.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Ridiculous? A little. Brilliant? Absolutely.</div>
+  <p>Eight days of trains and one ferry for a kasbah under Toubkal, tagines at altitude and a tan earned entirely on the ground &mdash; not a single flight, and the best story of the summer. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { kind:"travel", coords:[55.953,-3.188], zoom:6, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Skyline_of_Edinburgh.jpg/500px-Skyline_of_Edinburgh.jpg", title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London and the Eurostar to Paris — the start of a no-flights run all the way to North Africa.", chips:["rail","start"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:11, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in the city, then the direct high-speed train down to Barcelona in the morning.", chips:["city","overnight"] },
+  { kind:"travel", coords:[41.3874,2.1686], zoom:11, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Aerial_view_of_Barcelona%2C_Spain_%2851227309370%29_edited.jpg?width=500", title:"Barcelona", eyebrow:"Day 2 · Overnight", desc:"Pyrenees out the window and the Mediterranean at the end of it — vermut and tapas before the push south to the strait.", chips:["rail","tapas"] },
+  { kind:"travel", coords:[40.4168,-3.7038], zoom:11, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Plaza_Mayor_De_Madrid_%28215862629%29_edited.jpeg?width=500", title:"Madrid, in passing", eyebrow:"Day 3 · Change of trains", desc:"AVE high-speed up to Madrid, then the long line south through Andalucía towards the coast and the crossing.", chips:["rail","transit"] },
+  { kind:"travel", coords:[36.1283,-5.4536], zoom:12, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Puerto_de_la_bahia_de_Algeciras.jpg?width=500", title:"Algeciras", eyebrow:"Day 3 · Overnight by the strait", desc:"Sleep in the port town with the lights of Africa flickering across the water and a morning ferry booked.", chips:["port","overnight"] },
+  { kind:"travel", coords:[35.9000,-5.5100], zoom:9, image:"https://commons.wikimedia.org/wiki/Special:FilePath/STS059-238-074_Strait_of_Gibraltar.jpg?width=500", title:"Across the Strait of Gibraltar", eyebrow:"Day 4 · Two continents", desc:"The ferry from Algeciras to Tangier — stand on deck and watch Europe hand over to Africa off the bow.", chips:["ferry","crossing"] },
+  { kind:"travel", coords:[31.6295,-7.9811], zoom:12, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Djemaa_el_Fna.jpg?width=500", title:"Into Marrakech", eyebrow:"Day 4 · By rail to the Red City", desc:"From Tangier, ONCF's gleaming Al Boraq and the connection carry you down to Marrakech by nightfall.", chips:["rail","arrive"] },
+  { base:true, coords:[31.1900,-7.9300], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/My_Toubkal.jpg?width=500", title:"Kasbah Tamadot", eyebrow:"Day 5 · Up into the Atlas", desc:"A car climbs out of Marrakech to the kasbah above Asni — swap travel-creased clothes for a robe and into the infinity pool under Toubkal. You made it, overland.", chips:["arrive","pool"] },
+  { kind:"travel", coords:[31.2450,-7.9780], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Asni-Nicolas_L%C5%93uillet-crop.jpg?width=500", title:"A day doing nothing", eyebrow:"Day 6 · Rest", desc:"The whole point: a mountain-view breakfast, the hammam and a long massage, the heated pools and mint tea as the peaks turn pink.", chips:["rest","hammam"] },
+  { coords:[31.1361,-7.9192], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Imlil_village%2C_High_Atlas_Mountains.jpg?width=500", title:"Imlil", eyebrow:"Day 7 · A High Atlas walk", desc:"A gentle guided walk from the Toubkal trailhead past walnut groves, terraced fields and Berber villages — mule bells and snow on the heights.", chips:["walk","villages"] },
+  { coords:[31.0606,-7.9153], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/My_Toubkal.jpg?width=500", title:"Jebel Toubkal", eyebrow:"Day 7 · The roof of North Africa", desc:"4,167 metres of snow-streaked peak over the valley — a serious two-day climb for the keen, or simply the backdrop to every pool day below.", chips:["peak","views"] },
+  { coords:[31.6258,-7.9891], zoom:14, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Djemaa_el_Fna.jpg?width=500", title:"Marrakech & Jemaa el-Fnaa", eyebrow:"Day 8 · Down the mountain", desc:"The Red City for a day: the Koutoubia minaret, the souks, and the great square coming alive at dusk with lanterns and orange-juice carts.", chips:["medina","dusk"] },
+  { coords:[31.6417,-7.9889], zoom:15, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Le_jardin_des_majorelle_40.JPG?width=500", title:"Jardin Majorelle", eyebrow:"Day 8 · A cool half-hour", desc:"The painter's cobalt-blue garden Yves Saint Laurent saved: bamboo, cacti and lily pools, a calm escape from the Marrakech heat.", chips:["gardens","blue"] },
+  { coords:[31.2247,-7.6940], zoom:12, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Ourika_Valley.jpg?width=500", title:"The Ourika Valley", eyebrow:"Day 9 · River & waterfalls", desc:"The greenest Atlas valley: riverside cafés with tables in the shallows, the seven waterfalls above Setti Fatma, red-earth villages under the snowline.", chips:["river","falls"] },
+  { coords:[30.9886,-8.1539], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Tin_Mal_Mosque1_%28js%29.jpg?width=500", title:"Tin Mal Mosque", eyebrow:"Day 9 · Or, deeper in the peaks", desc:"The roofless twelfth-century mosque that launched the Almohad dynasty — honey-coloured arches open to the sky and the mountains beyond Ouirgane.", chips:["history","mountains"] },
+  { kind:"travel", coords:[31.5085,-9.7595], zoom:12, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Morocco_-_Essaouira_Part_2_%2831679848385%29.jpg?width=500", title:"Essaouira", eyebrow:"Optional · the breezy coast", desc:"If the sea calls before the long road home: the windswept Atlantic port of ramparts, gulls and grilled veg, an easy add-on by coach.", chips:["coast","optional"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
