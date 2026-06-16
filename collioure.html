@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x7hxl336a5");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Collioure & the Côte Vermeille · Helen & Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EFEAE3;
+    --paper-2:#E9E2D8;
+    --ink:#2A2018;
+    --ink-soft:#5C4D42;
+    --green-deep:#7C2E1C;
+    --green:#A8432A;
+    --jade:#1F8FA0;
+    --jade-deep:#15707E;
+    --stone:#E8E0D4;
+    --line:#DBD2C3;
+    --slate:#7A6A5C;
+    --lemon:#D6852E;
+    --shadow:0 1px 2px rgba(42,32,24,.06),0 12px 30px -16px rgba(42,32,24,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#A8432A 0%,#7C2E1C 52%,#15707E 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(38,22,16,.18) 0%,rgba(38,22,16,.05) 38%,rgba(34,20,14,.62) 78%,rgba(30,16,12,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#f4cdae}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#b8552f 30%,var(--lemon) 52%,var(--jade) 78%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#A8432A,#1F8FA0);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#F6ECE2;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#f3c9a6}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#EAD9C8;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#7c3a26}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#E2CDB9}
+  .spark{margin-top:16px;font-size:14px;color:#E0C4AC}
+  .spark a{color:#f3c9a6;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#EDDCCC;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#E0C8B3;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#b8967e}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Collioure_002.jpg" alt="The harbour of Collioure with the Notre-Dame-des-Anges bell-tower rising from the water" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option eleven · Collioure & the Côte Vermeille</div>
+    <h1>A Catalan harbour to call home</h1>
+    <p>One little Fauvist port to come back to each evening, a bell-tower standing in the sea, swimmable coves, and the whole painted Catalan coast strung along the train line — no car, ever.</p>
+    <div class="meta"><span>~12&ndash;13 days</span><span>All by rail</span><span>One harbour base</span><span>Art, coast &amp; swims</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">A painted Catalan harbour for a base, and the whole Côte Vermeille to wander: <em>the coast where Matisse invented Fauvism, coves to swim in, and day-trips that come to you by train.</em></p>
+    <p class="body">Collioure is the little port that Matisse and Derain set on fire with colour in 1905 — pink and ochre houses stacked above a curved bay, a royal castle on the water, and the Notre-Dame-des-Anges bell-tower standing right out in the sea. Take one characterful villa with a pool and let the painted coast unspool around it: Maillol's sculptures and a snorkel trail at Banyuls, the Cubism museum at Céret, the Catalan capital at Perpignan, and Dalí's whitewashed Cadáques over the border — every one reachable on the Côte Vermeille railway, a little bus or a coastal boat. Hot, bright and slow, with the sea always a few steps down — and a vegetarian's run of market peaches, figs, grilled veg and crème catalane.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">Collioure, right on the coast line</div></div><div class="fact"><div class="k">Fauvism</div><div class="v">where Matisse &amp; Derain invented it</div></div><div class="fact"><div class="k">rail · bus · boat</div><div class="v">the whole coast, 100% car-free</div></div><div class="fact"><div class="k">high-20s</div><div class="v">a kind sea-breeze coast, coves to swim</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">A harbour base &amp; the painted coast</h2>
+    <p class="sub reveal">One little Catalan port to come home to, and the whole Côte Vermeille unspooling around it by train, bus and boat.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Down to the Catalan coast</h3><p class="t-blurb">Eurostar to Paris and a night in the city, then the long, lovely TGV run south to Perpignan the next morning and a 19-minute hop on the little coast train into Collioure — the Med opening up at the window.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Into Collioure, at dusk</h3><p class="t-blurb">Drop bags at the villa, then down to the bay as the day-trippers thin out. The bell-tower glows on the water, the castle floodlights come up, and supper is a plate of grilled veg and a market-fruit evening by the harbour.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">harbour</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Collioure in full</h3><p class="t-blurb">The Château Royal on the water, the Fauvism trail with its easels set where Matisse and Derain painted, the steep ochre lanes — and a long swim from the cove below the castle when the heat climbs.</p><div class="t-chips"><span class="chip">art</span><span class="chip">swim</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Banyuls &amp; the marine reserve</h3><p class="t-blurb">A few minutes down the line to Banyuls: Aristide Maillol's home town, his serene bronzes about the seafront, and a marked snorkel trail through the underwater nature reserve. Sculpture in the morning, swimming after lunch.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">snorkel</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">A slow day at home</h3><p class="t-blurb">After three days on the go, a day off the sightseeing. A lie-in, the morning market for peaches and figs, the villa pool through the hot hours, and a cove in the late afternoon. Nowhere to be.</p><div class="t-chips"><span class="chip">rest</span><span class="chip">pool</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">Céret, the Mecca of Cubism</h3><p class="t-blurb">Inland by bus to Céret, where Picasso, Braque and Soutine worked: a lovely Musée d'Art Moderne, plane-tree squares, the great single-arch Pont du Diable, and the famous early cherries if the season's right.</p><div class="t-chips"><span class="chip">bus</span><span class="chip">art</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Perpignan, the Catalan capital</h3><p class="t-blurb">A quick train to the old capital of Roussillon: the Palace of the Kings of Majorca, Le Castillet gate, the Hyacinthe Rigaud museum, and the covered market for lunch. Properly Catalan, sardanes and all.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">city</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">08</div><h3 class="t-title">Port-Vendres &amp; a coastal walk</h3><p class="t-blurb">One stop down to the working fishing harbour of Port-Vendres, then the cliff path out towards Cap Béar — lighthouses, hidden coves and the whole bay of Collioure laid out behind you. An easy half-day on foot, a swim to finish.</p><div class="t-chips"><span class="chip">walk</span><span class="chip">coves</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">09</div><h3 class="t-title">Over the border to Cadáques</h3><p class="t-blurb">Across into Spain by train-and-connection or a coastal boat to Dalí's whitewashed village under Cap de Creus — his house at Portlligat, the wild headland, a Mediterranean cove for a swim. Figueres and its Theatre-Museum are on the same line if the surrealism calls.</p><div class="t-chips"><span class="chip">boat</span><span class="chip">Dalí</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">10</div><h3 class="t-title">A long beach day at Argèles</h3><p class="t-blurb">Next stop north for kilometres of soft sand and shallow warm water — the easy, lazy beach day. Umbrella, a book, a long swim, an ice cream, and the train home along the shore when the light goes gold.</p><div class="t-chips"><span class="chip">beach</span><span class="chip">swim</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">11</div><h3 class="t-title">Collioure encore</h3><p class="t-blurb">The walk up to Fort Saint-Elme for the view back over the red roofs and blue bay, a last potter round the easels and the market, and a final swim from the cove before the harbour lamps come on. The town you came to know.</p><div class="t-chips"><span class="chip">views</span><span class="chip">last swim</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then turn for home,</strong> rolling the coast train back to Perpignan and the long rails north — salt in your hair and a bell-tower in the camera roll.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">Your own place with a pool, in Collioure</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a0/Baie_de_Collioure_%2829364883508%29.jpg" alt="The bay and bell-tower of Collioure" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>One base, the whole coast comes to you</h2>
+        <p>The Alexandra's-villa idea, on the Med: take a characterful place of our own with a private pool in or just above Collioure, unpack once, and let the painted coast arrive by train, bus and boat. Mornings in the pool or a cove, the easels and the market on the doorstep, the day-trips an easy hop and back for supper by the harbour. These three are real, currently-listed Airbnbs — prices are indicative.</p>
+        <div class="stays"><a class="stay" href="https://www.airbnb.co.uk/rooms/1337581153118721690" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/1/14/Collioure_002.jpg" alt="Collioure villa with private pool" onerror="this.style.display='none'"><span><span class="nm">Spacious villa, 4 bedrooms, private pool</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733; 4.94</span><span class="px">&asymp;&pound;1,800&ndash;2,400 / week</span><span class="ds">The headline pick &mdash; a Superhost's roomy four-bedroom villa with its own private pool, sea-and-mountain views and self check-in. Exactly the Alexandra's-villa feel: a private place with a pool, the coast at your door.</span></span></a><a class="stay" href="https://www.airbnb.co.uk/rooms/996298341693822037" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/6/60/150612-Collioure-01.jpg" alt="A cosier Collioure stay" onerror="this.style.display='none'"><span><span class="nm">Villa-Casaroom Collioure &mdash; 2 bedrooms</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733; 5.0</span><span class="px">&asymp;&pound;900&ndash;1,300 / week</span><span class="ds">A cosier, spotless two-bedroom with private bathrooms and a perfect score, a short walk from the bay. The right size if it's just the two of us, with the harbour and the easels minutes away.</span></span></a><a class="stay" href="https://www.airbnb.co.uk/rooms/1186634315187957411" target="_blank" rel="noopener"><img src="https://upload.wikimedia.org/wikipedia/commons/a/a6/097_Collioure_Fort.JPG" alt="A bay-view villa above Collioure" onerror="this.style.display='none'"><span><span class="nm">360&deg; Bay view &mdash; Villa Karma</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;1,500&ndash;2,100 / week</span><span class="ds">The view splurge: a villa set above the water with a sweep right round the Bay of Collioure. Breakfast over the red roofs and the bell-tower, the whole Côte Vermeille glittering below.</span></span></a></div>
+        <p class="spark">Cosier or a bigger view? Three to choose from &mdash; all in Collioure, so it stays one easy base. <a href="https://www.airbnb.co.uk/s/Collioure--France/homes?room_types%5B%5D=Entire%20home%2Fapt&amp;amenities%5B%5D=7" target="_blank" rel="noopener">Browse more pool villas &rarr;</a></p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The big hitters</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. It's all train, bus and boat country &mdash; no car at any point.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Collioure" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/1/14/Collioure_002.jpg" alt="The harbour of Collioure" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Collioure</span></div><div class="card-body"><div class="card-meta">Your base</div><h3 class="card-name">Collioure</h3><p class="card-blurb">The little Catalan harbour Matisse and Derain painted into Fauvism: a bell-tower standing in the water, the Château Royal, easels on the quay, swimmable coves and the walk up to Fort Saint-Elme. Home for the fortnight.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Banyuls-sur-Mer" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/9/9e/66650_Banyuls-sur-Mer%2C_France_-_panoramio.jpg" alt="Banyuls-sur-Mer seafront" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Banyuls-sur-Mer</span></div><div class="card-body"><div class="card-meta">Day trip · by train</div><h3 class="card-name">Banyuls-sur-Mer</h3><p class="card-blurb">The sculptor Aristide Maillol's home town, his serene bronzes along the front, and a marked snorkel trail through the underwater nature reserve. Art on land, swimming in clear water.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=C%C3%A9ret%20mus%C3%A9e%20d%27art%20moderne" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/e/e5/2018-02-24_-_C%C3%A9ret_Pont_du_Diable.jpg" alt="The Pont du Diable at Céret" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Céret</span></div><div class="card-body"><div class="card-meta">Day trip · by bus</div><h3 class="card-name">Céret</h3><p class="card-blurb">"The Mecca of Cubism": Picasso, Braque and Soutine worked here, and the Musée d'Art Moderne holds the proof. Plane-tree squares, the great single-arch Pont du Diable, and famously early cherries.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Palais%20des%20rois%20de%20Majorque%20Perpignan" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/4/4d/64_Perpiny%C3%A0_des_del_Palau_dels_Reis_de_Mallorca%2C_en_primer_terme_Santa_Maria_de_la_Real.jpg" alt="Perpignan and the Palace of the Kings of Majorca" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Perpignan</span></div><div class="card-body"><div class="card-meta">Day trip · by train</div><h3 class="card-name">Perpignan</h3><p class="card-blurb">The old Catalan capital, ~19 minutes up the line: the Palace of the Kings of Majorca, Le Castillet gate, the Hyacinthe Rigaud museum, and a covered market made for a long vegetarian lunch.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Port-Vendres" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/0/04/66660_Port-Vendres%2C_France_-_panoramio_%284%29.jpg" alt="The harbour of Port-Vendres" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Port-Vendres &amp; Cap Béar</span></div><div class="card-body"><div class="card-meta">Day trip · by train &amp; foot</div><h3 class="card-name">Port-Vendres &amp; Cap Béar</h3><p class="card-blurb">The next harbour down, a working fishing port, and the start of the cliff path to the Cap Béar lighthouse — hidden coves, big sea views, and Collioure laid out behind you. A walk-and-swim half-day.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Cadaqu%C3%A9s" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Cadaques_town_view_with_church_2026.jpg" alt="The white village of Cadaqués" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Cadaqués &amp; Cap de Creus</span></div><div class="card-body"><div class="card-meta">Day trip · by boat / bus</div><h3 class="card-name">Cadaqués &amp; Cap de Creus</h3><p class="card-blurb">Over the border into Spain: Dalí's whitewashed village under the wild Cap de Creus headland, his house at Portlligat, and coves of impossibly clear water. Car-free by coastal boat or train-and-connection.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Argel%C3%A8s-sur-Mer%20plage" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/c8/106_Collioure_La_plage.JPG" alt="A sandy Mediterranean beach near Collioure" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Argèles-sur-Mer</span></div><div class="card-body"><div class="card-meta">Day trip · by train</div><h3 class="card-name">Argèles-sur-Mer</h3><p class="card-blurb">The easy beach day: kilometres of soft sand and shallow, warm water one stop north, with a shaded promenade behind. Umbrella, a book, a long swim, an ice cream, and the train home along the shore.</p><span class="card-link">Have a look &rarr;</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Teatre-Museu%20Dal%C3%AD%20Figueres" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/c/ce/130608_Collioure-02.jpg" alt="Towards Figueres and the Dalí Theatre-Museum" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Figueres · Dalí Theatre-Museum</span></div><div class="card-body"><div class="card-meta">Day trip · by train</div><h3 class="card-name">Figueres &amp; the Dalí museum</h3><p class="card-blurb">If the surrealism calls: the Dalí Theatre-Museum — the artist's own dreamlike masterpiece, crowned with giant eggs — sits down the line via Portbou, an easy add-on to a Spanish-side day.</p><span class="card-link">Have a look &rarr;</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there on rails</h3><p>All the way by train, with one easy night in Paris:</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h20 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Perpignan</strong> &middot; direct TGV ~5h down the spine of France</li><li><strong>Perpignan &rarr; Collioure</strong> &middot; a little TER along the shore, ~19 minutes &mdash; the sea on your right as you arrive</li></ul></div><div class="box reveal"><h3>Around the Côte Vermeille</h3><p>Collioure is the hub, and you never need a car. The coast villages string along one TER line &mdash; Port-Vendres, Banyuls and the Spanish border south; Argèles and Perpignan north &mdash; most just minutes apart. Inland Céret is the liO bus (line 540); Cadaqués and Cap de Creus come by seasonal coastal boat or a train-and-connection hop over the border. The whole headland is rail, bus and boat country: <strong>100% car-free, and all the better for it.</strong></p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>The Catalan-coast market table, anchovies politely declined:</p><ul><li>Escalivada and pa amb tomàquet &mdash; smoky roast veg, bread rubbed with tomato</li><li>Socca, grilled vegetables, and salads from the morning market</li><li>Peaches, figs, melon and Céret's famous early cherries</li><li>Crème catalane, and a pain au chocolat for the coast path</li></ul></div><div class="box reveal"><h3>Heat, shade &amp; sea air</h3><p>High summer on the coast sits in the high-20s, but the sea breeze keeps it kind. Take the cliff paths and the climb to Fort Saint-Elme early or late, and save the middle of the day for a shaded café on the quay or a long swim off the coves. There's always a sheltered bit of shore when the sun is at its fiercest.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Storybook enough?</div>
+  <p>A bell-tower standing in the bay, easels where Fauvism was born, a clear cove to swim before lunch, and a different Catalan harbour or hillside down the line each morning &mdash; all of it car-free. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { kind:"travel", coords:[55.953,-3.188], zoom:6, title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and a night in the city before the long run south.", chips:["rail","start"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:12, title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, then the morning TGV down to Perpignan and a 19-minute coast train on to Collioure.", chips:["city","overnight"] },
+  { base:true, coords:[42.5263,3.0830], zoom:15, title:"Into Collioure", eyebrow:"Day 2 · Arrive", desc:"Drop bags at the villa, then down to the bay as the day-trippers thin out — the bell-tower glowing on the water and supper by the harbour.", chips:["arrive","harbour"] },
+  { kind:"travel", coords:[42.5263,3.0830], zoom:16, title:"Collioure in full", eyebrow:"Day 3 · Art & swim", desc:"The Château Royal on the water, the Fauvism trail with its easels set where Matisse and Derain painted, then a long swim from the cove below.", chips:["art","swim"] },
+  { coords:[42.4828,3.1278], zoom:14, title:"Banyuls-sur-Mer", eyebrow:"Day 4 · Maillol & reserve", desc:"A few minutes down the line to Aristide Maillol's home town: his serene bronzes by the seafront and a marked snorkel trail through the marine reserve.", chips:["rail","snorkel"] },
+  { kind:"travel", coords:[42.5263,3.0830], zoom:15, title:"A slow day at home", eyebrow:"Day 5 · Rest", desc:"A day off the sightseeing — a lie-in, the morning market for peaches and figs, the villa pool through the hot hours, a cove in the late afternoon.", chips:["rest","pool"] },
+  { coords:[42.4858,2.7497], zoom:14, title:"Céret", eyebrow:"Day 6 · The Mecca of Cubism", desc:"Inland by bus to Céret, where Picasso, Braque and Soutine worked: a lovely Musée d'Art Moderne, plane-tree squares and the single-arch Pont du Diable.", chips:["bus","art"] },
+  { coords:[42.6986,2.8956], zoom:14, title:"Perpignan", eyebrow:"Day 7 · The Catalan capital", desc:"A quick train to the old capital of Roussillon: the Palace of the Kings of Majorca, Le Castillet, the Rigaud museum and the covered market for lunch.", chips:["rail","city"] },
+  { coords:[42.5197,3.1083], zoom:14, title:"Port-Vendres", eyebrow:"Day 8 · Harbour & cliff path", desc:"One stop down to the working fishing harbour, then the cliff path out towards Cap Béar — lighthouses, hidden coves and the whole bay laid out behind you.", chips:["walk","coves"] },
+  { coords:[42.2888,3.2770], zoom:13, title:"Cadaqués", eyebrow:"Day 9 · Over the border", desc:"Across into Spain by train-and-connection or coastal boat to Dalí's whitewashed village under Cap de Creus — his house at Portlligat and a cove for a swim.", chips:["boat","Dalí"] },
+  { coords:[42.5453,3.0203], zoom:14, title:"Argèles-sur-Mer", eyebrow:"Day 10 · A long beach day", desc:"Next stop north for kilometres of soft sand and shallow warm water — the easy, lazy beach day, then the train home along the shore as the light turns gold.", chips:["beach","swim"] },
+  { kind:"travel", coords:[42.5263,3.0830], zoom:15, title:"Collioure encore", eyebrow:"Day 11 · Last swim", desc:"The walk up to Fort Saint-Elme for the view back over the red roofs and blue bay, a last potter round the easels and market, and a final swim from the cove.", chips:["views","last swim"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
