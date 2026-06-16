@@ -130,6 +130,10 @@
   .movebadge::before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor;opacity:.9}
   .movebadge--one{color:#0f5a3f;background:rgba(31,155,140,.14);border:1px solid rgba(31,155,140,.34)}
   .movebadge--two{color:#8a5a12;background:rgba(214,155,60,.16);border:1px solid rgba(214,155,60,.4)}
+  .badgerow{display:flex;flex-wrap:wrap;gap:6px;align-items:center;margin:0 0 10px}
+  .badgerow .movebadge{margin:0}
+  .travelbadge{display:inline-flex;align-items:center;gap:5px;align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;padding:4px 10px;border-radius:999px;color:#2f6f88;background:rgba(47,143,176,.13);border:1px solid rgba(47,143,176,.32)}
+  .tb-ico{width:13px;height:13px;display:block;opacity:.95;flex:none}
   .movelegend{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;margin:6px 0 2px;
     font-size:13px;color:var(--ink-soft)}
   .movelegend-lead{font-weight:700;color:var(--ink);letter-spacing:.01em}
@@ -309,6 +313,8 @@
       <span class="movelegend-lead">How much you move:</span>
       <span class="movebadge movebadge--one">1 base</span> <span class="movelegend-note">one hotel, unpack once</span>
       <span class="movebadge movebadge--two">2 bases</span> <span class="movelegend-note">a single move part-way</span>
+      <span class="movelegend-lead" style="margin-left:4px">Getting there:</span>
+      <span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>travel days</span> <span class="movelegend-note">days in transit, there &amp; back</span>
     </div>
 
     <div class="options">
@@ -321,7 +327,7 @@
           <span class="opt-label">Tuscany</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">A slow green fortnight</div>
           <p class="opt-blurb">A hidden farmhouse with a pool above Lucca, two great garden villas, Florence for the art, and hill towns by the handful &mdash; one base the whole fortnight, never repack.</p>
           <div class="opt-tags"><span class="opt-tag">Chilled</span><span class="opt-tag">Countryside</span><span class="opt-tag">Gardens</span></div>
@@ -337,7 +343,7 @@
           <span class="opt-label">Naples &amp;<br>Pompeii</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--two">2 bases</span>
+          <div class="badgerow"><span class="movebadge movebadge--two">2 bases</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">The bay, the ruins &amp; the best pizza</div>
           <p class="opt-blurb">Buzzy Naples for the treasures, then calm Sorrento for Pompeii, Capri and a garden or two. ~8 days by rail, the romantic long way.</p>
           <div class="opt-tags"><span class="opt-tag">City &amp; Coast</span><span class="opt-tag">History</span><span class="opt-tag">Foodie</span></div>
@@ -353,7 +359,7 @@
           <span class="opt-label">Barcelona &amp;<br>Costa Brava</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">Gaudí, the coast &amp; villages like home</div>
           <p class="opt-blurb">Art and markets in Barcelona, then whitewashed villages, medieval stone and clifftop gardens up the Costa Brava. ~9 days by rail.</p>
           <div class="opt-tags"><span class="opt-tag">City Break</span><span class="opt-tag">Coast</span><span class="opt-tag">Art</span></div>
@@ -369,7 +375,7 @@
           <span class="opt-label">Rome &amp;<br>Lazio gardens</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">Rome you know, done differently</div>
           <p class="opt-blurb">Skip the Colosseum and Vatican this time — go for the parks, the Appian Way and Trastevere, then the great gardens of Lazio by train: Tivoli, Ninfa, Bomarzo. ~8 days by rail.</p>
           <div class="opt-tags"><span class="opt-tag">City Break</span><span class="opt-tag">History</span><span class="opt-tag">Gardens</span></div>
@@ -385,7 +391,7 @@
           <span class="opt-label">Portofino &amp;<br>Italian Riviera</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">Pastel harbours, coastal paths &amp; pesto</div>
           <p class="opt-blurb">Base in Santa Margherita, ferry to Portofino, boat to hidden coves, train to the Cinque Terre. ~7 days by rail.</p>
           <div class="opt-tags"><span class="opt-tag">Coastal</span><span class="opt-tag">Chilled</span><span class="opt-tag">Villages</span></div>
@@ -401,7 +407,7 @@
           <span class="opt-label">Carcassonne &amp;<br>the Languedoc</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">A fairy-tale fortress &amp; the warm south-west</div>
           <p class="opt-blurb">Sleep inside a storybook walled city, then Cathar castles, the Canal du Midi under plane trees, red-brick Albi and the Mediterranean an hour down the line. ~9 days, mostly by rail.</p>
           <div class="opt-tags"><span class="opt-tag">History</span><span class="opt-tag">Countryside</span><span class="opt-tag">Coast</span></div>
@@ -417,7 +423,7 @@
           <span class="opt-label">Istria &amp;<br>the Adriatic</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>6 travel days</span></div>
           <div class="opt-meta">The quiet, green side of Croatia</div>
           <p class="opt-blurb">A Venetian old town on the sea for a base, Roman Pula, gold mosaics, truffle hill towns and wild swimming — reached by rail then catamaran from Venice. ~9 days.</p>
           <div class="opt-tags"><span class="opt-tag">Coast</span><span class="opt-tag">History</span><span class="opt-tag">Chilled</span></div>
@@ -433,7 +439,7 @@
           <span class="opt-label">Atlantic France &amp;<br>the Basque coast</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>5 travel days</span></div>
           <div class="opt-meta">Beaches, dunes &amp; the Basque sea</div>
           <p class="opt-blurb">Golden Bordeaux and the tallest dune in Europe, then a perfect Basque bay — Biarritz, Bayonne and a hop across to San Sebastián. All by rail. ~9 days.</p>
           <div class="opt-tags"><span class="opt-tag">Coast</span><span class="opt-tag">Beaches</span><span class="opt-tag">Rail</span></div>
@@ -449,7 +455,7 @@
           <span class="opt-label">Sardinia &amp;<br>Forte Village</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>6 travel days</span></div>
           <div class="opt-meta">The luxury switch-off — no flights</div>
           <p class="opt-blurb">Ikos-level luxury without a plane: trains then an overnight ferry to a five-star beach resort on Sardinia's turquoise south coast. Spa, sand, do-nothing days. 7 nights.</p>
           <div class="opt-tags"><span class="opt-tag">Luxury</span><span class="opt-tag">Beach</span><span class="opt-tag">Resort</span></div>
@@ -465,7 +471,7 @@
           <span class="opt-label">The Cap &amp;<br>the Côte d'Azur</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">Riviera glamour, all on one train</div>
           <p class="opt-blurb">Hôtel Welcome vibes turned all the way up: a deep-blue bay to call home, with Èze, Monaco, Menton and Nice strung along the little coastal train. ~8 days.</p>
           <div class="opt-tags"><span class="opt-tag">Riviera</span><span class="opt-tag">Sea</span><span class="opt-tag">Glamour</span></div>
@@ -481,7 +487,7 @@
           <span class="opt-label">Collioure &amp;<br>the Côte Vermeille</span>
         </div>
         <div class="opt-body">
-          <span class="movebadge movebadge--one">1 base</span>
+          <div class="badgerow"><span class="movebadge movebadge--one">1 base</span><span class="travelbadge"><svg class="tb-ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4 travel days</span></div>
           <div class="opt-meta">A Catalan harbour, all by rail</div>
           <p class="opt-blurb">Matisse's red roofs and a sheltered cove to call home, with Banyuls, Céret, Perpignan and Dalí's Cadaqués strung along the little coast train. ~12 days.</p>
           <div class="opt-tags"><span class="opt-tag">Seaside</span><span class="opt-tag">Catalan</span><span class="opt-tag">Art &amp; swims</span></div>
