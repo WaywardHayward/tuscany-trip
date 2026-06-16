@@ -29,6 +29,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
 <style>
   :root{
     --paper:#EDEEE7;
@@ -268,6 +269,40 @@
     .opt-ph::after{display:none}
     .sec h2::after{transition:none}
   }
+  /* ===========================================================
+     OVERVIEW MAP — index only. Slick Leaflet map of every base. */
+  .tripmap-sec{padding-top:46px}
+  .tripmap-card{position:relative;margin-top:30px;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow);background:var(--paper-2)}
+  #tripmap{height:480px;width:100%;background:#dde2d6;z-index:1}
+  .tripmap-card .leaflet-container{font-family:"Inter",system-ui,-apple-system,sans-serif;background:#dde2d6}
+  .tripmap-cap{display:flex;align-items:center;gap:12px;flex-wrap:wrap;
+    margin:14px 2px 0;color:var(--ink-soft);font-size:14.5px}
+  .tripmap-cap .dotk{display:inline-flex;align-items:center;gap:8px}
+  .tripmap-cap .dotk i{width:15px;height:15px;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+    background:linear-gradient(160deg,#26b3a2,#157065);box-shadow:0 1px 3px rgba(28,42,33,.3)}
+  .tripmap-hint{margin-left:auto;font-size:13px;color:var(--slate)}
+  /* numbered teardrop pins */
+  .tm-pin{position:relative;width:30px;height:30px}
+  .tm-pin .tm-pin-body{position:absolute;inset:0;border-radius:50% 50% 50% 0;transform:rotate(-45deg);
+    background:linear-gradient(160deg,#26b3a2 0%,#1F9B8C 45%,#157065 100%);
+    box-shadow:0 2px 7px rgba(28,42,33,.4);border:2px solid #fff;transition:transform .18s ease}
+  .tm-pin .tm-pin-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+    color:#fff;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:13px}
+  .leaflet-marker-icon:hover .tm-pin-body,.leaflet-marker-icon:focus .tm-pin-body{transform:rotate(-45deg) scale(1.16)}
+  /* popups in the house palette */
+  .leaflet-popup-content-wrapper{border-radius:14px;background:var(--paper);color:var(--ink);
+    border:1px solid var(--line);box-shadow:0 14px 34px -14px rgba(28,42,33,.45)}
+  .leaflet-popup-content{margin:13px 16px;font-size:14.5px;line-height:1.42}
+  .leaflet-popup-tip{background:var(--paper);border:1px solid var(--line)}
+  .tm-pop-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;text-transform:uppercase;
+    letter-spacing:.14em;font-size:10.5px;color:var(--jade-deep)}
+  .tm-pop-name{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:16px;
+    color:var(--green-deep);margin:3px 0 7px}
+  .tm-pop-link{display:inline-block;font-weight:600;color:var(--jade-deep);text-decoration:none;font-size:13.5px}
+  .tm-pop-link:hover{text-decoration:underline}
+  .leaflet-control-zoom a{color:var(--green)!important;border-color:var(--line)!important}
+  @media(max-width:760px){ #tripmap{height:380px} .tripmap-hint{display:none} }
 </style>
 </head>
 <body>
@@ -303,6 +338,19 @@
   <section class="intro reveal">
     <p class="lead">One summer, eleven different daydreams. <em>All planned out end to end</em> — tap a card to dig in.</p>
     <p class="body">Each one is ready to read: the full day-by-day, home bases, day trips, eating well and the practical bits. Same brief every time: a garden or a view to come home to, a handful of perfect days out, and vegetarian heaven. Pick the one that sings.</p>
+  </section>
+
+  <section class="sec tripmap-sec" id="overview">
+    <div class="sec-head reveal"><span class="eyebrow">All eleven, at a glance</span></div>
+    <h2 class="reveal">One summer, on the map</h2>
+    <p class="sub reveal">Where each plan sets up its home base &mdash; tap a pin to jump straight to that trip. Nearly all are an easy hop down by rail.</p>
+    <div class="tripmap-card reveal">
+      <div id="tripmap" role="application" aria-label="Map of western Europe showing the home base of all eleven trip ideas"></div>
+    </div>
+    <div class="tripmap-cap reveal">
+      <span class="dotk"><i></i> Each pin marks one trip's home base</span>
+      <span class="tripmap-hint">Drag to explore &middot; click a pin for the plan</span>
+    </div>
   </section>
 
   <section class="sec" id="shortlist">
@@ -573,6 +621,55 @@
         });
       },{passive:true});
     }
+  })();
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script>
+  (function(){
+    var el = document.getElementById('tripmap');
+    if(!el || !window.L) return;
+    var trips = [
+      { n:1,  name:"Tuscany",                        href:"tuscany.html",   ll:[43.843,10.503] },
+      { n:2,  name:"Naples & Pompeii",               href:"naples.html",    ll:[40.852,14.268] },
+      { n:3,  name:"Barcelona & Costa Brava",        href:"spain.html",     ll:[41.387,2.169]  },
+      { n:4,  name:"Rome & Lazio gardens",           href:"rome.html",      ll:[41.898,12.473] },
+      { n:5,  name:"Portofino & the Riviera",        href:"portofino.html", ll:[44.333,9.213]  },
+      { n:6,  name:"Carcassonne & the Languedoc",    href:"france.html",    ll:[43.2065,2.3640]},
+      { n:7,  name:"Istria & the Adriatic",          href:"croatia.html",   ll:[45.081,13.6387]},
+      { n:8,  name:"Atlantic France & the Basque coast", href:"atlantic.html", ll:[43.388,-1.659] },
+      { n:9,  name:"Sardinia & Forte Village",       href:"sardinia.html",  ll:[38.945,8.987]  },
+      { n:10, name:"The Cap & the Côte d'Azur",      href:"cap.html",       ll:[43.7038,7.3110]},
+      { n:11, name:"Collioure & the Côte Vermeille", href:"collioure.html", ll:[42.5263,3.0830]}
+    ];
+    var map = L.map('tripmap', { scrollWheelZoom:false, attributionControl:false });
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', { maxZoom:18 }).addTo(map);
+    L.control.attribution({ position:'bottomright', prefix:false })
+      .addAttribution('© <a href="https://www.openstreetmap.org/">OSM</a> · <a href="https://carto.com/">CARTO</a>').addTo(map);
+
+    var markers = trips.map(function(t){
+      var icon = L.divIcon({
+        className:'', iconSize:[30,30], iconAnchor:[15,28], popupAnchor:[0,-26],
+        html:'<div class="tm-pin"><span class="tm-pin-body"></span><span class="tm-pin-num">'+t.n+'</span></div>'
+      });
+      var m = L.marker(t.ll, { icon:icon, title:t.name, riseOnHover:true }).addTo(map);
+      m.bindPopup(
+        '<div class="tm-pop-num">Option '+t.n+'</div>'+
+        '<div class="tm-pop-name">'+t.name+'</div>'+
+        '<a class="tm-pop-link" href="'+t.href+'">See the full plan →</a>',
+        { closeButton:false, offset:[0,-2] }
+      );
+      m.on('mouseover', function(){ this.openPopup(); });
+      return m;
+    });
+
+    map.fitBounds(L.featureGroup(markers).getBounds().pad(0.18));
+
+    /* let the page scroll freely; only zoom by wheel once the map has focus */
+    map.on('focus', function(){ map.scrollWheelZoom.enable(); });
+    map.on('blur',  function(){ map.scrollWheelZoom.disable(); });
+
+    setTimeout(function(){ map.invalidateSize(); }, 300);
+    window.addEventListener('resize', function(){ map.invalidateSize(); });
   })();
 </script>
 <script src="enhance.js"></script>
