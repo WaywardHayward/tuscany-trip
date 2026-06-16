@@ -152,6 +152,7 @@
       <div class="pres-map" id="pres-map-container"></div>
       <div class="pres-flyer">
         <div class="pres-flyer-accent"></div>
+        <img class="pres-flyer-img" alt="" referrerpolicy="no-referrer">
         <div class="pres-flyer-body">
           <div class="pres-flyer-eyebrow"></div>
           <h3 class="pres-flyer-title"></h3>
@@ -363,6 +364,16 @@
   }
 
   function arriveAt(stop) {
+    const img = flyer.querySelector('.pres-flyer-img');
+    if (stop.image) {
+      img.onerror = () => { img.style.display = 'none'; };
+      img.alt = stop.title || '';
+      img.src = stop.image;
+      img.style.display = 'block';
+    } else {
+      img.removeAttribute('src');
+      img.style.display = 'none';
+    }
     flyer.querySelector('.pres-flyer-eyebrow').textContent = stop.eyebrow || `Day ${current + 1}`;
     flyer.querySelector('.pres-flyer-title').textContent = stop.title;
     flyer.querySelector('.pres-flyer-desc').textContent = stop.desc;

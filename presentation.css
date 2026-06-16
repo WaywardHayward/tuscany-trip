@@ -57,6 +57,11 @@
   height: 5px;
   background: linear-gradient(90deg, #1F9B8C, #26412F, #D69B3C);
 }
+.pres-flyer-img {
+  display: none;
+  width: 100%; height: 158px; object-fit: cover;
+  background: #e6e8dd;
+}
 .pres-flyer-body { padding: 22px 26px 26px; }
 .pres-flyer-eyebrow {
   font-family: "Bricolage Grotesque", sans-serif;
@@ -155,6 +160,7 @@
 /* Mobile */
 @media (max-width: 700px) {
   .pres-flyer { bottom: 80px; left: 12px; max-width: calc(100% - 24px); border-radius: 16px; }
+  .pres-flyer-img { height: 120px; }
   .pres-controls { bottom: 16px; right: 12px; }
   .pres-flyer-title { font-size: 1.3rem; }
   .pres-btn { width: 44px; height: 44px; }
