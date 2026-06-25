@@ -206,3 +206,46 @@ ul.rails li{position:relative;padding:9px 12px 9px 14px;border-radius:11px;font-
 ul.rails li::before{content:"";position:absolute;left:0;top:8px;bottom:8px;width:3px;border-radius:3px;
   background:linear-gradient(180deg,#7fe0cf,#2f9b8c)}
 ul.rails li strong{font-weight:700}
+
+/* ============================================================
+   POP-UP BOOK + PARALLAX  (added)
+   Sections and cards unfold like a pop-up book as they scroll
+   in; hero, background and media panes drift at their own pace.
+   Desktop + motion-safe only — mobile gets a gentle fade-up,
+   reduced-motion gets none of it.
+   ============================================================ */
+@media (prefers-reduced-motion:no-preference) and (min-width:761px){
+  /* item-level cards that "stand up" from a backward tilt */
+  .fx-pop{
+    opacity:0;
+    transform:perspective(1400px) translateY(48px) rotateX(18deg) scale(.965);
+    transform-origin:50% 100%;
+    backface-visibility:hidden;
+    transition:opacity .85s cubic-bezier(.2,.7,.2,1),
+               transform .9s cubic-bezier(.2,.7,.2,1),
+               box-shadow .9s ease;
+  }
+  .fx-pop.in{opacity:1;transform:none}
+
+  /* section blocks already fade in — give them the 3D unfold too */
+  .reveal{
+    transform:perspective(1500px) translateY(30px) rotateX(11deg) scale(.985);
+    transform-origin:50% 100%;
+  }
+  .reveal.in{transform:none}
+
+  /* media panes pan within their frame (object-position, set by JS) */
+  .fx-media{
+    object-position:50% var(--fx-oy,50%);
+    transition:transform .6s cubic-bezier(.2,.7,.2,1),object-position .2s linear;
+  }
+
+  .hero-in{will-change:transform,opacity}
+  .fx-aurora{will-change:transform}
+}
+
+/* mobile: skip the 3D, keep a tasteful fade-up so cards still arrive */
+@media (max-width:760px){
+  .fx-pop{opacity:0;transform:translateY(22px);transition:opacity .6s ease,transform .6s ease}
+  .fx-pop.in{opacity:1;transform:none}
+}

@@ -95,3 +95,88 @@
     build();
   }
 })();
+
+/* ============================================================
+   enhance.js — pop-up book + parallax layer (added).
+   Self-contained second pass; runs after the block above.
+   ============================================================ */
+(function () {
+  "use strict";
+  var mq = window.matchMedia;
+  var reduce = mq && mq("(prefers-reduced-motion: reduce)").matches;
+  if (reduce) return;                       // honour reduced motion: do nothing
+  var small = mq && mq("(max-width: 760px)").matches;
+
+  function ready(fn) {
+    if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", fn);
+    else fn();
+  }
+
+  ready(function () {
+    /* ---------- 1) Tag item cards to pop up ---------- */
+    // Section blocks (.reveal) already get the 3D unfold via CSS. Here we add
+    // the same to item-level cards that aren't already revealed, with a stagger.
+    var pops = [].slice.call(document.querySelectorAll(".t-card, .card, .opt"))
+      .filter(function (n) {
+        return !n.classList.contains("reveal") &&
+               !n.closest(".present-overlay, .presentation, .fx-present");
+      });
+    var counts = new WeakMap();
+    pops.forEach(function (n) {
+      n.classList.add("fx-pop");
+      var p = n.parentNode;
+      var i = counts.get(p) || 0; counts.set(p, i + 1);
+      n.style.transitionDelay = Math.min(i * 75, 360) + "ms";
+    });
+
+    var vh = window.innerHeight;
+    window.addEventListener("resize", function () { vh = window.innerHeight; }, { passive: true });
+
+    /* ---------- 2) Parallax targets (desktop only) ---------- */
+    var heroIn = null, aurora = null, media = [];
+    if (!small) {
+      heroIn = document.querySelector(".hero-in");
+      aurora = document.querySelector(".fx-aurora");
+      media = [].slice.call(document.querySelectorAll(".base-img img, .opt-ph img, .card-ph img"));
+      media.forEach(function (m) { m.classList.add("fx-media"); });
+    }
+
+    /* ---------- 3) One rAF loop: reveal sweep + parallax ----------
+       A scroll-synced sweep reveals anything past the trigger line. Unlike an
+       IntersectionObserver it can't be out-run by a fast flick, so nothing is
+       ever left stuck at opacity:0. It also rescues the base .reveal blocks. */
+    var ticking = false;
+    function frame() {
+      ticking = false;
+      var y = window.pageYOffset || document.documentElement.scrollTop || 0;
+      var line = vh * 0.9;
+
+      var waiting = document.querySelectorAll(".fx-pop:not(.in), .reveal:not(.in)");
+      for (var k = 0; k < waiting.length; k++) {
+        if (waiting[k].getBoundingClientRect().top < line) waiting[k].classList.add("in");
+      }
+
+      if (!small) {
+        if (heroIn) {
+          heroIn.style.transform = "translate3d(0," + Math.min(y * 0.28, 200).toFixed(1) + "px,0)";
+          heroIn.style.opacity = Math.max(1 - y / (vh * 0.8), 0).toFixed(3);
+        }
+        if (aurora) {
+          aurora.style.transform = "translate3d(0," + (y * 0.12).toFixed(1) + "px,0)";
+        }
+        for (var i = 0; i < media.length; i++) {
+          var m = media[i], r = m.getBoundingClientRect();
+          if (r.bottom < -60 || r.top > vh + 60) continue;
+          var prog = (r.top + r.height / 2) / vh;          // ~1 entering bottom, ~0 leaving top
+          m.style.setProperty("--fx-oy", (50 + (prog - 0.5) * 26).toFixed(1) + "%");
+        }
+      }
+    }
+    function onScroll() { if (!ticking) { ticking = true; requestAnimationFrame(frame); } }
+    window.addEventListener("scroll", onScroll, { passive: true });
+    // a few settling passes for late layout (fonts, images, leaflet)
+    frame();
+    setTimeout(frame, 200);
+    setTimeout(frame, 800);
+  });
+})();
