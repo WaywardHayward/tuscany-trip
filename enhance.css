@@ -241,7 +241,6 @@ ul.rails li strong{font-weight:700}
   }
 
   .hero-in{will-change:transform,opacity}
-  .fx-aurora{will-change:transform}
 }
 
 /* mobile: skip the 3D, keep a tasteful fade-up so cards still arrive */

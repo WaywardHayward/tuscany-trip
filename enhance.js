@@ -133,10 +133,9 @@
     window.addEventListener("resize", function () { vh = window.innerHeight; }, { passive: true });
 
     /* ---------- 2) Parallax targets (desktop only) ---------- */
-    var heroIn = null, aurora = null, media = [];
+    var heroIn = null, media = [];
     if (!small) {
       heroIn = document.querySelector(".hero-in");
-      aurora = document.querySelector(".fx-aurora");
       media = [].slice.call(document.querySelectorAll(".base-img img, .opt-ph img, .card-ph img"));
       media.forEach(function (m) { m.classList.add("fx-media"); });
     }
@@ -160,9 +159,6 @@
         if (heroIn) {
           heroIn.style.transform = "translate3d(0," + Math.min(y * 0.28, 200).toFixed(1) + "px,0)";
           heroIn.style.opacity = Math.max(1 - y / (vh * 0.8), 0).toFixed(3);
-        }
-        if (aurora) {
-          aurora.style.transform = "translate3d(0," + (y * 0.12).toFixed(1) + "px,0)";
         }
         for (var i = 0; i < media.length; i++) {
           var m = media[i], r = m.getBoundingClientRect();
