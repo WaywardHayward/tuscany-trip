@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x7hxl336a5");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Provence &amp; the Luberon · Helen &amp; Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#7c6bb0 0%,#caa24a 55%,#37583F 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#e7d6f0}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#8a6db0,#37583F);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gordes_Vaucluse_France_Luc_Viatour.JPG?width=1600" alt="The honey-stone hill village of Gordes rising in tiers above the Luberon" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option fourteen · Provence</div>
+    <h1>Perched stone, lavender and ochre</h1>
+    <p>The hill villages we fell for at Saint-Paul, all over again and on a grander scale — with a Provençal pool to come home to, and the Roman south an easy train away.</p>
+    <div class="meta"><span style="display:inline-flex;align-items:center;gap:5px"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:13px;height:13px;flex:none;margin-right:1px"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>4&nbsp;travel days</span><span>7 nights</span><span>Rail down to Avignon</span><span>One mas with a pool</span><span>Villages &amp; lavender</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">We loved Saint-Paul for the perched stone and the green calm. <em>The Luberon is exactly that magic, with room to roam</em> — and a pool to come home to.</p>
+    <p class="body">This is the most Saint-Paul of all the trips: a string of honey-and-ochre villages on their hilltops — Gordes, Roussillon, Ménerbes — a Provençal mas with a pool to come back to, lavender rolling up to a Cistercian abbey, and Saturday markets piled with melons and tomatoes. The grand Roman south is on the doorstep too: Avignon's papal palace, the arena at Arles where Van Gogh painted, and the impossible three tiers of the Pont du Gard. The fast train drops you in Avignon in an afternoon; a little hire car handles the hilltop lanes from there. Vegetarian heaven, gentle days, and a different perched village every time you stir.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">a mas in the Luberon</div></div><div class="fact"><div class="k">hill villages</div><div class="v">Gordes, Roussillon &amp; more</div></div><div class="fact"><div class="k">Roman south</div><div class="v">Pont du Gard, Arles, Avignon</div></div><div class="fact"><div class="k">lavender</div><div class="v">abbey rows in high summer</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Down by rail, then the hilltop lanes</h2>
+    <p class="sub reveal">A quick run south to Avignon, a little hire car for the local lanes, then a week of slow village-hopping with the Roman sights an easy reach away.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Edinburgh → Paris</h3><p class="t-blurb">Morning train to London, then the Eurostar across to Paris. A night in the city to stretch your legs and eat well before turning south.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">city</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Paris → Avignon</h3><p class="t-blurb">A single fast train straight down the Rhône valley to Avignon in well under four hours. Pick up a small car and wind up into the Luberon, the hills going gold as you climb.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">arrive</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Settle into the mas</h3><p class="t-blurb">Drop the bags at the farmhouse, find the pool, and let the afternoon go. An evening stroll up into the nearest village for the view as the stone turns honey-coloured at dusk.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">pool</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">The perched villages</h3><p class="t-blurb">A gentle loop of the hilltops: Gordes tumbling down its cliff, the burning-ochre lanes of Roussillon, sleepy Ménerbes and Bonnieux — a coffee in each square, the pool by mid-afternoon.</p><div class="t-chips"><span class="chip">villages</span><span class="chip">slow</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">Lavender &amp; markets</h3><p class="t-blurb">The Abbaye de Sénanque with its famous rows of lavender, then a morning market — L'Isle-sur-la-Sorgue on its canals is the loveliest — piled high with melons, tomatoes, olives and herbs.</p><div class="t-chips"><span class="chip">lavender</span><span class="chip">market</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">The Roman south <span style="font-weight:500;color:var(--lemon)">· a day out</span></h3><p class="t-blurb">Down to the plain for the giants of Roman Gaul: the Pont du Gard striding across its river, the arena at Arles, and Nîmes with its temple and the green Jardins de la Fontaine.</p><div class="t-chips"><span class="chip">Roman</span><span class="chip">art</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Avignon, or Aix <span style="font-weight:500;color:var(--lemon)">· a day out</span></h3><p class="t-blurb">The walled papal city of Avignon and its vast palace, easy by train; or elegant Aix-en-Provence, all plane-tree boulevards, fountains and Cézanne's studio in the hills above.</p><div class="t-chips"><span class="chip">city</span><span class="chip">art</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then home the easy way,</strong> one last swim and a last village square, the car back to Avignon, and the fast train rolling north through France.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">A Provençal mas, the whole week</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Abbaye-senanque-gordes-iso.jpg?width=1200" alt="Rows of lavender before the Abbaye de Sénanque in the Luberon" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>A farmhouse in the Luberon, near Gordes</h2>
+        <p>Not a hotel in town — a <em>mas</em>, a Provençal stone farmhouse with a pool and a garden, tucked into the hills within reach of Gordes. The closest thing there is to those Saint-Paul photos, with a different perched village over every rise. A small hire car makes the lanes easy; otherwise you needn't move.</p>
+        <p style="color:#CFE0D4;margin:0 0 14px;font-size:15.5px">Three real ones to set the level, all with a pool and Luberon views:</p>
+        <div class="stays"><a class="stay" href="https://www.herbesblanches.com/en/" target="_blank" rel="noopener"><span><span class="nm">Le Mas des Herbes Blanches &mdash; the pick</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;300&ndash;500</span><span class="ds">A former farmhouse on a quiet ridge at Joucas, just outside Gordes, with a heated pool and terraces gazing over the Luberon. Exactly the mas-with-a-view feeling, and a lovely table.</span></span></a><a class="stay" href="https://airelles.com/en/destination/gordes-hotel" target="_blank" rel="noopener"><span><span class="nm">La Bastide de Gordes &mdash; the splurge</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;600&ndash;950</span><span class="ds">The grand one: a 16th-century maison built into the cliff of Gordes itself, with cascading pools cantilevered over the valley and a big spa. Pure indulgence, right in the village.</span></span></a><a class="stay" href="https://lemasvigneron.com/en/" target="_blank" rel="noopener"><span><span class="nm">Le Mas Vigneron &mdash; the gentle option</span><span class="star">&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;150&ndash;250</span><span class="ds">A tiny four-room guesthouse near Gordes with a refreshing pool and a garden terrace &mdash; intimate, family-run and the closest to the simple Saint-Paul spirit.</span></span></a></div>
+        <p class="spark">Rails get you to Avignon; a small hire car covers the hilltop lanes from there. <a href="https://www.herbesblanches.com/en/" target="_blank" rel="noopener">See Le Mas des Herbes Blanches →</a></p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Within easy reach</span></div>
+    <h2 class="reveal">Villages, gardens and Roman stone</h2>
+    <p class="sub reveal">The villages are a short drive; the Roman sights an easy train or run down to the plain. Tap any of them for photos, hours and directions.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Gordes" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Old_town_of_Gordes.JPG?width=800" alt="The stone lanes of Gordes" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Gordes</span></div><div class="card-body"><div class="card-meta">The perched villages</div><h3 class="card-name">Gordes &amp; the hilltops</h3><p class="card-blurb">The Luberon's poster village, tumbling in honey-stone tiers down its cliff — and its cousins Ménerbes, Bonnieux and Lacoste, each a square, a view and a slow coffee.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Roussillon%20Vaucluse" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Roussillon_sentier_des_ocres.JPG?width=800" alt="The ochre cliffs and trail at Roussillon" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Roussillon</span></div><div class="card-body"><div class="card-meta">Ochre village</div><h3 class="card-name">Roussillon &amp; the ochre trail</h3><p class="card-blurb">A village painted every shade of red and gold, built on the richest ochre in France, with a short walking trail through the fiery cliffs and pinnacles below it.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Abbaye%20de%20S%C3%A9nanque" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/S%C3%A9nanque_06.JPG?width=800" alt="Lavender rows before the Abbaye de Sénanque" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Abbaye de Sénanque</span></div><div class="card-body"><div class="card-meta">Garden · near Gordes</div><h3 class="card-name">Sénanque Abbey &amp; lavender</h3><p class="card-blurb">The classic Provence picture: a plain 12th-century Cistercian abbey behind rows of lavender, still farmed by the monks. Loveliest in late June and July.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Pont%20du%20Gard" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Pont_Du_Gard_Roman_Aqueduct.jpg?width=800" alt="The three tiers of the Pont du Gard" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Pont du Gard</span></div><div class="card-body"><div class="card-meta">Roman · day out</div><h3 class="card-name">Pont du Gard</h3><p class="card-blurb">A 2,000-year-old aqueduct striding three tiers of arches across the river — one of the wonders of the Roman world, and a swimming spot below it on a hot day.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Arles%20Amphitheatre" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Arena_Arles_-_inside.JPG?width=800" alt="Inside the Roman arena at Arles" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Arles</span></div><div class="card-body"><div class="card-meta">Roman &amp; Van Gogh</div><h3 class="card-name">Arles</h3><p class="card-blurb">A golden little Roman city — a great arena still standing, a Roman theatre, and the cafés and light that Van Gogh painted. Easy on the train from Avignon.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Palais%20des%20Papes%20Avignon" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_Papes_avignon.JPG?width=800" alt="The Palais des Papes in Avignon" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Avignon</span></div><div class="card-body"><div class="card-meta">Walled city · the rail hub</div><h3 class="card-name">Avignon</h3><p class="card-blurb">The walled papal city on the Rhône: the vast Palais des Papes, the famous half-a-bridge, and ramparts to wander. Your gateway, and a fine day out in itself.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there on rails</h3><p>Quick and easy: one fast train almost the whole way to the edge of the Luberon.</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h20 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Avignon</strong> &middot; direct TGV ~3h40 down the Rhône valley</li><li><strong>Avignon &rarr; the Luberon</strong> &middot; ~45&nbsp;min by car &mdash; pick up a small hire car at the station for the hilltop lanes</li></ul></div><div class="box reveal"><h3>Getting around</h3><p>Avignon, Arles and Nîmes are all dead easy by train, and the Pont du Gard is a short hop from there. The perched villages, the abbey and the markets, though, really want a car &mdash; the cleanest answer is the Tuscany one: long-haul on rails, a small hire car just for the Provençal leg, dropped before the train home.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>Provence is a vegetarian's paradise of sun and vegetables:</p><ul><li>Ratatouille and a tian of summer vegetables</li><li>Soupe au pistou; tapenade on good bread</li><li>Goat cheese, ripe tomatoes, olives and herbs</li><li>Melon, figs, and lavender-honey ice cream</li></ul></div><div class="box reveal"><h3>When to go</h3><p>For the lavender you want the windows either side of midsummer. <span class="warn">Aim for late June or July</span> for the abbey rows in full purple; the villages are warm and golden, the markets at their best, and the pool very much in use.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Back to Saint-Paul, scaled up?</div>
+  <p>A pool in a Provençal garden, a perched village over every hill, lavender and Roman stone &mdash; the trip the whole idea began with. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { kind:"travel", coords:[55.953,-3.188], zoom:5, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Skyline_of_Edinburgh.jpg/500px-Skyline_of_Edinburgh.jpg", title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and a night in the city before turning south.", chips:["rail","start"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:10, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, then take a single fast train straight down the Rhône valley to Avignon.", chips:["city","overnight"] },
+  { kind:"travel", coords:[43.949,4.806], zoom:11, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Palais_des_Papes_avignon.JPG?width=500", title:"Avignon", eyebrow:"Day 2 · Arrive & drive", desc:"The TGV drops you in Avignon; pick up a small car and wind up into the Luberon, the hills going gold as you climb.", chips:["rail","car"] },
+  { base:true, coords:[43.911,5.200], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Gordes_Vaucluse_France_Luc_Viatour.JPG?width=500", title:"The Luberon mas", eyebrow:"Day 3–7 · The base", desc:"A Provençal farmhouse with a pool near Gordes, a perched village over every rise — the closest thing to those Saint-Paul photos.", chips:["base","pool"] },
+  { coords:[43.902,5.293], zoom:14, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Roussillon_sentier_des_ocres.JPG?width=500", title:"Roussillon", eyebrow:"Optional · Ochre village", desc:"A village painted every shade of red and gold on the richest ochre in France, with a short trail through the fiery cliffs.", chips:["village","ochre"] },
+  { coords:[43.928,5.190], zoom:15, image:"https://commons.wikimedia.org/wiki/Special:FilePath/S%C3%A9nanque_06.JPG?width=500", title:"Abbaye de Sénanque", eyebrow:"Optional · Lavender", desc:"A plain 12th-century abbey behind famous rows of lavender, still farmed by the monks. Loveliest in late June and July.", chips:["lavender","garden"] },
+  { coords:[43.947,4.535], zoom:14, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Pont_Du_Gard_Roman_Aqueduct.jpg?width=500", title:"Pont du Gard", eyebrow:"Optional · Roman", desc:"A 2,000-year-old aqueduct striding three tiers of arches across the river — a wonder of the Roman world, with a swim below.", chips:["roman","river"] },
+  { coords:[43.677,4.631], zoom:14, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Arena_Arles_-_inside.JPG?width=500", title:"Arles", eyebrow:"Optional · Roman & Van Gogh", desc:"A golden Roman city with a great arena and theatre, and the light and cafés that Van Gogh painted — easy by train.", chips:["roman","art"] },
+  { coords:[43.529,5.447], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Old_town_of_Gordes.JPG?width=500", title:"Aix-en-Provence", eyebrow:"Optional · Last day out", desc:"Plane-tree boulevards, fountains and Cézanne's studio in the hills — an elegant last day before the slow journey home.", chips:["city","art"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
