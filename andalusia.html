@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x7hxl336a5");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Andalusia · Ikos Andalusia · Helen &amp; Alex</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#D69B3C 0%,#b5562a 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#f2dca9}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:46ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 34%,var(--jade) 60%,var(--jade-deep) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--optional .t-card{background:#FBF6EC;border-color:#EAD9B4}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#D69B3C,#157065);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASE */
+  .base{background:var(--green-deep);color:#EAF0EA;border-radius:26px;margin-top:30px;overflow:hidden}
+  .base-grid{display:grid;grid-template-columns:1.05fr .95fr}
+  .base-img{position:relative;min-height:340px}
+  .base-img img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .base-txt{padding:34px 32px}
+  .base-txt .eyebrow{color:#8fd6cb}
+  .base-txt h2{color:#fff;font-size:1.9rem;margin:6px 0 12px}
+  .base-txt p{color:#CFE0D4;margin:0 0 14px;font-size:15.5px}
+  .stays{display:flex;flex-direction:column;gap:10px;margin-top:6px}
+  .stay{display:flex;gap:13px;align-items:center;background:rgba(255,255,255,.06);
+    border:1px solid rgba(255,255,255,.14);border-radius:14px;padding:10px;text-decoration:none}
+  .stay img{width:64px;height:64px;border-radius:10px;object-fit:cover;flex:none;background:#2b4a36}
+  .stay .nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;font-size:1rem}
+  .stay .ds{font-size:13px;color:#B9CFBE}
+  .spark{margin-top:16px;font-size:14px;color:#A9C6B1}
+  .spark a{color:#8fd6cb;font-weight:600}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .base-grid{grid-template-columns:1fr}
+    .base-img{min-height:230px}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Playa_de_la_Rada_-_Estepona_Garden_of_the_Costa_del_Sol.jpg?width=1600" alt="The long sweep of Playa de la Rada and the Mediterranean at Estepona, Costa del Sol" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Option thirteen · Andalusia</div>
+    <h1>The Ikos one — and not a single flight</h1>
+    <p>Rails all the way south to the Costa del Sol, then a week at Ikos Andalusia with everything taken care of — beach, pools, spa, and the white-village hills on tap.</p>
+    <div class="meta"><span style="display:inline-flex;align-items:center;gap:5px"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:13px;height:13px;flex:none;margin-right:1px"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>6&nbsp;travel days</span><span>7 nights</span><span>Rail all the way to Málaga</span><span>5-star, all-inclusive</span><span>The easy one</span></div>
+  </div>
+</header>
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← all the summer options</a></p>
+  <section class="intro reveal">
+    <p class="lead">This is the one you actually asked for: <em>Ikos itself — and reached, the whole way, without ever boarding a plane.</em></p>
+    <p class="body">Ikos Andalusia sits on its own stretch of beach near Estepona, on the soft western end of the Costa del Sol with Marbella down the road and the white-village hills rising behind. It's the easiest holiday there is: a five-star, all-inclusive resort where the rooms, the pools, the spa, the beach service and nine restaurants are simply <em>there</em>, sorted, the moment you arrive. Getting to it is the only bit of planning — and even that's a pleasure: Eurostar to Paris, a fast run down to Barcelona, the high-speed line along the coast to Málaga, then a short transfer to the sand. Do nothing for a week, or slip out to Ronda's gorge, Moorish Málaga and the whitewashed hill towns whenever you fancy.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+  <section class="facts reveal"><div class="fact"><div class="k">1 base</div><div class="v">Ikos Andalusia, all week</div></div><div class="fact"><div class="k">no flights</div><div class="v">rails, then a short transfer</div></div><div class="fact"><div class="k">5-star</div><div class="v">beach, pools, spa &mdash; all-in</div></div><div class="fact"><div class="k">white hills</div><div class="v">Ronda &amp; the pueblos near</div></div></section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Get there slowly, then stop</h2>
+    <p class="sub reveal">A lovely run down through France and Spain by rail, then a whole week of doing as little or as much as you like &mdash; the day trips are all optional.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">01</div><h3 class="t-title">Edinburgh → Paris</h3><p class="t-blurb">Morning train to London, then the Eurostar across to Paris. A night in the city to stretch your legs and eat well before the long run south.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">city</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">02</div><h3 class="t-title">Paris → Barcelona</h3><p class="t-blurb">A single high-speed train straight over the Pyrenees to Barcelona &mdash; olive groves and mountains sliding past the window. An easy evening and a night in the city.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">overnight</span></div></div></li>
+<li class="t-item t-item--travel"><div class="t-node"></div><div class="t-card"><div class="t-num">03</div><h3 class="t-title">Barcelona → the Costa del Sol</h3><p class="t-blurb">The fast line down the Spanish coast to Málaga, then a short transfer along the shore to the resort. Drop the bags, find the beach, first swim before supper.</p><div class="t-chips"><span class="chip">rail</span><span class="chip">arrive</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">04</div><h3 class="t-title">Settle into Ikos Andalusia</h3><p class="t-blurb">The bit you came for: a lounger on the sand, the big pools, a long first lunch and a wander round the gardens. Everything's included, so there's nothing to think about.</p><div class="t-chips"><span class="chip">arrive</span><span class="chip">beach</span></div></div></li>
+<li class="t-item t-item--base"><div class="t-node"></div><div class="t-card"><div class="t-num">05</div><h3 class="t-title">Do gloriously little</h3><p class="t-blurb">Beach service in the morning, the spa and its thermal pools in the afternoon, a swim or a paddle-board, then a different one of the nine restaurants each evening. Repeat for as long as you like.</p><div class="t-chips"><span class="chip">spa</span><span class="chip">slow</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">06</div><h3 class="t-title">Estepona &amp; the coast <span style="font-weight:500;color:var(--lemon)">· if restless</span></h3><p class="t-blurb">Ten minutes along the shore, the old town is a maze of flower-hung white lanes, painted murals and the huge glasshouse of the Orchidarium &mdash; then ice cream on the marina.</p><div class="t-chips"><span class="chip">town</span><span class="chip">gardens</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">07</div><h3 class="t-title">Ronda &amp; the white villages <span style="font-weight:500;color:var(--lemon)">· if restless</span></h3><p class="t-blurb">Up into the hills to Ronda, split in two by a vast gorge with a stone bridge soaring across it &mdash; and the cliff-clinging pueblos blancos like Casares on the way.</p><div class="t-chips"><span class="chip">gorge</span><span class="chip">villages</span></div></div></li>
+<li class="t-item t-item--optional"><div class="t-node"></div><div class="t-card"><div class="t-num">08</div><h3 class="t-title">Málaga, or a cliff walk <span style="font-weight:500;color:var(--lemon)">· if restless</span></h3><p class="t-blurb">Moorish Málaga for the Alcazaba, the Roman theatre and the Picasso museum in his home city &mdash; or the thrilling boardwalk of the Caminito del Rey, pinned to a gorge wall.</p><div class="t-chips"><span class="chip">art</span><span class="chip">history</span></div></div></li>
+      <li class="t-branch reveal"><strong>Then home the same easy way,</strong> one last morning on the sand, the transfer back to Málaga, and the trains rolling north through Spain and France.</li>
+    </ul>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where we'd stay</span></div>
+    <h2 class="reveal">One resort, the whole week</h2>
+    <div class="base reveal"><div class="base-grid">
+      <div class="base-img"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Paseo_mar%C3%ADtimo_Estepona.jpg?width=1200" alt="The palm-lined seafront promenade at Estepona on the Costa del Sol" onerror="this.style.display='none'"></div>
+      <div class="base-txt">
+        <div class="eyebrow">The plan</div>
+        <h2>Ikos Andalusia, Estepona</h2>
+        <p>A five-star, all-inclusive resort on its own beach near Estepona, under an hour from Málaga. Nine restaurants with menus from Michelin-starred chefs, a big spa, a run of pools and a private stretch of sand &mdash; you never have to leave, but Ronda, Málaga and the hill towns are a short hop when you want them.</p>
+        <p style="color:#CFE0D4;margin:0 0 14px;font-size:15.5px">It's all-in in the fullest sense: the restaurants, room service, the spa's thermal suites and even a car for a day to go exploring are part of the deal. The one real choice is <strong style="color:#fff;font-weight:600">which room grade</strong> you settle into &mdash; that sets your view and your price:</p>
+        <div class="stays"><a class="stay" href="https://ikosresorts.com/resorts/ikos-andalusia/" target="_blank" rel="noopener"><span><span class="nm">Deluxe Junior Suite, Sea View &mdash; the pick</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;350&ndash;600</span><span class="ds">A roomy sea-view suite a short stroll from the beach and the main pools &mdash; the easy first-visit choice, with the whole resort on your doorstep and everything included.</span></span></a><a class="stay" href="https://ikosresorts.com/resorts/ikos-andalusia/" target="_blank" rel="noopener"><span><span class="nm">Deluxe Collection Swim-Up Suite &mdash; the splurge</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;550&ndash;800</span><span class="ds">Step straight off your terrace into a shared lagoon pool, with the bay beyond and the spa close at hand. The grown-up indulgence, for slow mornings.</span></span></a><a class="stay" href="https://ikosresorts.com/resorts/ikos-andalusia/" target="_blank" rel="noopener"><span><span class="nm">Deluxe Room, Garden View &mdash; the gentle option</span><span class="star">&#9733;&#9733;&#9733;&#9733;&#9733;</span><span class="px">&asymp;&pound;300&ndash;480</span><span class="ds">Set a few steps back in the gardens &mdash; same beach, same pools, same restaurants and spa, just a touch softer on the wallet.</span></span></a></div>
+        <p class="spark">Ikos arranges the transfer from Málaga, and inside it's all a short walk or a buggy ride. <a href="https://ikosresorts.com/resorts/ikos-andalusia/" target="_blank" rel="noopener">See the resort →</a></p>
+      </div>
+    </div></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">If you stir from the lounger</span></div>
+    <h2 class="reveal">Within easy reach</h2>
+    <p class="sub reveal">All optional. Tap any of them for photos, hours and directions — most are a short transfer or the resort's own car-for-a-day.</p>
+    <div class="grid"><a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Playa%20de%20la%20Rada%20Estepona" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Playa_de_la_Rada_-_Estepona_Garden_of_the_Costa_del_Sol.jpg?width=800" alt="Playa de la Rada beach, Estepona" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">The beach &amp; the coast</span></div><div class="card-body"><div class="card-meta">On the doorstep</div><h3 class="card-name">The beach &amp; the pools</h3><p class="card-blurb">The resort's own stretch of sand and a run of pools, with the long Estepona shore and warm, shallow Mediterranean either side. This is the headline act.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Estepona%20old%20town" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Calle_pozo_de_los_palos_-_Estepona_Garden_of_the_Costa_del_Sol.jpg?width=800" alt="A flower-filled white lane in Estepona old town" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Estepona old town</span></div><div class="card-body"><div class="card-meta">10 minutes away</div><h3 class="card-name">Estepona old town &amp; Orchidarium</h3><p class="card-blurb">A pretty maze of whitewashed lanes hung with flowerpots and painted murals, plus a giant domed Orchidarium glasshouse and an easy marina for an ice cream.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Puente%20Nuevo%20Ronda" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Puente_Nuevo,_Ronda.jpg?width=800" alt="The Puente Nuevo bridge over the gorge at Ronda" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Ronda</span></div><div class="card-body"><div class="card-meta">Up in the hills</div><h3 class="card-name">Ronda &amp; the gorge</h3><p class="card-blurb">A town split clean in two by a 100-metre gorge, with a great stone bridge striding across it. One of the most dramatic sights in Spain, and a glorious day out.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Alcazaba%20de%20M%C3%A1laga" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Alcazaba_de_M%C3%A1laga_overview.jpg?width=800" alt="The Moorish Alcazaba fortress in Málaga" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Málaga</span></div><div class="card-body"><div class="card-meta">Moorish city · the coast line</div><h3 class="card-name">Málaga</h3><p class="card-blurb">A handsome seaside city: the hilltop Alcazaba and Roman theatre, a fine cathedral, and the Picasso museum in the house where he was born. Easy on the local coast train, too.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Casares%20M%C3%A1laga" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Casares,_pueblo_blanco.jpg?width=800" alt="The white village of Casares spilling down its hill" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Casares</span></div><div class="card-body"><div class="card-meta">Nearest white village</div><h3 class="card-name">Casares &amp; the pueblos blancos</h3><p class="card-blurb">The classic Andalusian postcard, half an hour up the hill: a tumble of white houses spilling down a crag under a ruined castle, with the sea glinting far below.</p><span class="card-link">Have a look →</span></div></a>
+<a class="card" href="https://www.google.com/maps/search/?api=1&amp;query=Caminito%20del%20Rey" target="_blank" rel="noopener"><div class="card-ph"><img loading="lazy" src="https://commons.wikimedia.org/wiki/Special:FilePath/Caminito_del_Rey_2018_5.jpg?width=800" alt="The boardwalk of the Caminito del Rey pinned to a gorge wall" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Caminito del Rey</span></div><div class="card-body"><div class="card-meta">Inland · book ahead</div><h3 class="card-name">Caminito del Rey</h3><p class="card-blurb">A jaw-dropping boardwalk bolted to the sheer walls of a gorge, high above a turquoise river. An easy, level walk with a serious view &mdash; pre-book your slot.</p><span class="card-link">Have a look →</span></div></a></div>
+  </section>
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know"><div class="box reveal"><h3>Getting there — all by rail</h3><p>The whole point: no planes. A lovely run down through France and Spain, then a short transfer to the sand.</p><ul class="rails"><li><strong>Edinburgh &rarr; London &rarr; Paris</strong> &middot; LNER ~4h20 + Eurostar ~2h20 &middot; overnight in Paris</li><li><strong>Paris &rarr; Barcelona</strong> &middot; one high-speed train ~6h30 &middot; a night in Barcelona</li><li><strong>Barcelona &rarr; Málaga</strong> &middot; AVE ~5h50, then a ~1h transfer to the resort (the coast railway stops at Fuengirola, so the last leg is by road &mdash; Ikos arranges it)</li></ul></div><div class="box reveal"><h3>The resort &amp; getting around</h3><p>Ikos handles the transfer from Málaga, and inside everything's a short walk or a buggy ride &mdash; beach, spa, pools and the restaurants all on site. The all-inclusive even includes a car for a day, so a run up to Ronda, Casares or the Caminito del Rey is easy; Málaga itself you can also reach on the local coast train. No hire car needed.</p></div><div class="box reveal"><h3>Eating well, meat-free</h3><p>Andalusia is kind to vegetarians, and the resort's nine kitchens even more so:</p><ul><li>Salmorejo and gazpacho &mdash; chilled tomato soups</li><li>Espinacas con garbanzos &mdash; spinach with chickpeas</li><li>Berenjenas con miel &mdash; fried aubergine with cane honey</li><li>Bread, olives, oranges and almonds; churros and ice cream</li></ul></div><div class="box reveal"><h3>The splurge, and when</h3><p>This is the indulgent, no-effort one &mdash; everything's done for you, so it sits at the top of the budget in peak. <span class="warn">Aim for June or September</span>: the prices and crowds ease, the sea is warm, and the Costa del Sol's fierce midsummer heat softens to something lovely.</p></div></div>
+  </section>
+</div>
+<footer><div class="wrap">
+  <div class="big">Just switch off?</div>
+  <p>A private beach, big pools, a spa and nine kitchens &mdash; all of it sorted, and all of it reached without an airport in sight. Back to <a href="index.html">the other options</a> whenever.</p>
+  <div class="fine">Made for Helen &amp; Alex · summer 2026</div>
+</div></footer>
+<script>
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(function(el){io.observe(el)});
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { kind:"travel", coords:[55.953,-3.188], zoom:5, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/1/1a/Skyline_of_Edinburgh.jpg/500px-Skyline_of_Edinburgh.jpg", title:"Edinburgh", eyebrow:"Day 1 · Departure", desc:"Morning train south to London, then the Eurostar to Paris and a night in the city before the long run south.", chips:["rail","start"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:10, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", title:"A night in Paris", eyebrow:"Day 1 · Overnight", desc:"Break the journey in Paris, then take a single high-speed train over the Pyrenees to Barcelona.", chips:["city","overnight"] },
+  { kind:"travel", coords:[41.387,2.169], zoom:9, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Sagrada_Familia_01.jpg?width=500", title:"Barcelona", eyebrow:"Day 2 · Overnight", desc:"Over the border to Barcelona for an easy evening and a night, then the fast line down the Spanish coast.", chips:["city","rail"] },
+  { base:true, coords:[36.421,-5.045], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Playa_de_la_Rada_-_Estepona_Garden_of_the_Costa_del_Sol.jpg?width=500", title:"Ikos Andalusia", eyebrow:"Day 3–7 · The base", desc:"A short transfer to the resort: a private beach, big pools, a spa and nine restaurants — a week to do gloriously little.", chips:["resort","beach"] },
+  { coords:[36.426,-5.146], zoom:14, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Calle_pozo_de_los_palos_-_Estepona_Garden_of_the_Costa_del_Sol.jpg?width=500", title:"Estepona", eyebrow:"Optional · The old town", desc:"Flower-hung white lanes, painted murals and the domed Orchidarium, ten minutes along the coast.", chips:["town","gardens"] },
+  { coords:[36.742,-5.166], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Puente_Nuevo,_Ronda.jpg?width=500", title:"Ronda", eyebrow:"Optional · The gorge", desc:"A hill town split in two by a vast gorge with a great stone bridge striding across it — Spain at its most dramatic.", chips:["gorge","views"] },
+  { coords:[36.444,-5.273], zoom:14, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Casares,_pueblo_blanco.jpg?width=500", title:"Casares", eyebrow:"Optional · White village", desc:"The classic Andalusian postcard half an hour up the hill: white houses spilling down a crag under a castle.", chips:["village","white"] },
+  { coords:[36.721,-4.417], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Alcazaba_de_M%C3%A1laga_overview.jpg?width=500", title:"Málaga", eyebrow:"Optional · Moorish city", desc:"The hilltop Alcazaba, a Roman theatre and the Picasso museum in his home city — easy on the local coast train.", chips:["art","history"] },
+  { coords:[36.913,-4.770], zoom:13, image:"https://commons.wikimedia.org/wiki/Special:FilePath/Caminito_del_Rey_2018_5.jpg?width=500", title:"Caminito del Rey", eyebrow:"Optional · Cliff walk", desc:"A boardwalk bolted to the sheer walls of a gorge high above a turquoise river — book a slot before the slow journey home.", chips:["walk","gorge"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
