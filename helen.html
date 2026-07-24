@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<script type="text/javascript">
+  (function(c,l,a,r,i,t,y){
+    c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+    t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+    y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+  })(window, document, "clarity", "script", "x7hxl336a5");
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Helen's trip · Paris, Florence, the Bay &amp; Milan</title>
+<meta name="description" content="Helen's summer 2026 rail trip: London to Paris, down to Florence, the Bay of Naples at Sorrento, then Milan and home — all by train, 25 July to 5 August.">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="theme-color" content="#26412F">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#EDEEE7;
+    --paper-2:#E6E8DD;
+    --ink:#1C2A21;
+    --ink-soft:#4C5A50;
+    --green-deep:#26412F;
+    --green:#37583F;
+    --jade:#1F9B8C;
+    --jade-deep:#157065;
+    --stone:#E3E4D6;
+    --line:#D2D4C4;
+    --slate:#5E7689;
+    --lemon:#D69B3C;
+    --shadow:0 1px 2px rgba(28,42,33,.06),0 12px 30px -16px rgba(28,42,33,.25);
+    --r:18px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;background:var(--paper);color:var(--ink);
+    font-family:"Inter",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;
+    font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:980px;margin:0 auto;padding:0 22px}
+  h1,h2,h3{font-family:"Bricolage Grotesque","Inter",sans-serif;font-weight:700;line-height:1.04;letter-spacing:-.01em;margin:0}
+  a{color:inherit}
+  .eyebrow{font-family:"Bricolage Grotesque",sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12.5px}
+
+  /* HERO */
+  .hero{position:relative;min-height:84vh;display:flex;align-items:flex-end;overflow:hidden;
+    background:linear-gradient(160deg,#37583F 0%,#26412F 55%,#157065 100%)}
+  .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .hero::after{content:"";position:absolute;inset:0;
+    background:linear-gradient(180deg,rgba(20,38,30,.18) 0%,rgba(20,38,30,.05) 38%,rgba(18,34,26,.62) 78%,rgba(15,30,23,.86) 100%)}
+  .hero-in{position:relative;z-index:2;width:100%;padding:0 22px 52px;max-width:1024px;margin:0 auto;color:#F3F3EC}
+  .hero .eyebrow{color:#bfe6df}
+  .hero h1{color:#fff;font-size:clamp(2.7rem,8.2vw,5.4rem);font-weight:800;margin:.18em 0 .28em;text-wrap:balance}
+  .hero p{max-width:48ch;font-size:1.12rem;color:#E9EBE2;margin:0}
+  .meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .meta span{background:rgba(255,255,255,.14);border:1px solid rgba(255,255,255,.28);
+    backdrop-filter:blur(4px);padding:7px 13px;border-radius:999px;font-size:13.5px;font-weight:500;color:#fff}
+
+  /* INTRO */
+  .intro{padding:62px 0 8px}
+  .intro .lead{font-family:"Bricolage Grotesque",sans-serif;font-weight:500;font-size:clamp(1.35rem,3.4vw,1.95rem);
+    line-height:1.32;letter-spacing:-.015em;max-width:30ch}
+  .intro .lead em{font-style:normal;color:var(--jade-deep)}
+  .intro .body{margin-top:18px;max-width:62ch;color:var(--ink-soft)}
+
+  /* FACTS */
+  .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:40px 0 8px}
+  .fact{background:var(--stone);border:1px solid var(--line);border-radius:14px;padding:16px 16px 18px}
+  .fact .k{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.5rem;color:var(--green-deep)}
+  .fact .v{font-size:13.5px;color:var(--ink-soft);margin-top:2px}
+
+  /* SECTION HEADS */
+  .sec{padding:58px 0 6px}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:8px}
+  .sec-head .eyebrow{color:var(--jade-deep)}
+  .sec h2{font-size:clamp(1.7rem,4.6vw,2.5rem);font-weight:800;color:var(--green-deep)}
+  .sec .sub{color:var(--ink-soft);max-width:60ch;margin:10px 0 0}
+
+  /* TIMELINE — the signature: a line that greens as you head south */
+  .timeline{list-style:none;margin:34px 0 0;padding:0;position:relative}
+  .timeline::before{content:"";position:absolute;left:13px;top:6px;bottom:6px;width:3px;border-radius:3px;
+    background:linear-gradient(180deg,var(--slate) 0%,#3f7a6e 22%,var(--jade) 46%,var(--jade-deep) 66%,#3f7a6e 86%,var(--slate) 100%)}
+  .t-item{position:relative;padding:0 0 22px 50px}
+  .t-node{position:absolute;left:5px;top:7px;width:19px;height:19px;border-radius:50%;
+    background:var(--paper);border:3px solid var(--jade);box-shadow:0 0 0 4px var(--paper)}
+  .t-item--travel .t-node{border-color:var(--slate)}
+  .t-item--optional .t-node{border-color:var(--lemon);border-style:dashed}
+  .t-card{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:16px 18px 17px;box-shadow:var(--shadow)}
+  .t-item--travel .t-card{background:#F3F5F6;border-color:#D3DBE0}
+  .t-num{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:12px;letter-spacing:.16em;
+    color:var(--jade-deep)}
+  .t-item--travel .t-num{color:var(--slate)}
+  .t-item--optional .t-num{color:var(--lemon)}
+  .t-title{font-size:1.18rem;margin:2px 0 6px}
+  .t-blurb{margin:0;color:var(--ink-soft);font-size:15.5px}
+  .t-time{display:inline-flex;align-items:center;gap:6px;margin-top:10px;font-size:13px;font-weight:600;
+    color:var(--slate);background:var(--paper-2);border:1px solid var(--line);padding:3px 10px;border-radius:999px}
+  .t-chips{margin-top:11px;display:flex;flex-wrap:wrap;gap:6px}
+  .chip{font-size:11.5px;font-weight:600;letter-spacing:.03em;color:var(--green-deep);
+    background:var(--paper-2);border:1px solid var(--line);padding:3px 9px;border-radius:999px}
+  .t-branch{position:relative;padding:6px 0 10px 50px;color:var(--ink-soft);font-size:15px}
+  .t-branch strong{color:var(--ink)}
+
+  /* CARDS */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:30px}
+  .card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;text-decoration:none;box-shadow:var(--shadow);
+    transition:transform .25s ease,box-shadow .25s ease}
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 38px -18px rgba(28,42,33,.4)}
+  .card-ph{position:relative;aspect-ratio:4/3;background:linear-gradient(135deg,#37583F,#1F9B8C);overflow:hidden}
+  .card-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .ph-label{position:absolute;left:12px;bottom:10px;color:#fff;font-family:"Bricolage Grotesque",sans-serif;
+    font-weight:700;font-size:1rem;text-shadow:0 1px 8px rgba(0,0,0,.5);opacity:0}
+  .ph-fail .ph-label{opacity:1}
+  .card-body{padding:15px 17px 17px;display:flex;flex-direction:column;gap:5px;flex:1}
+  .card-meta{font-size:11.5px;font-weight:600;letter-spacing:.04em;text-transform:uppercase;color:var(--jade-deep)}
+  .card-name{font-size:1.15rem}
+  .card-blurb{margin:2px 0 0;color:var(--ink-soft);font-size:14.5px;flex:1}
+  .card-link{font-weight:600;font-size:14px;color:var(--green-deep);margin-top:8px}
+
+  /* BASES — the four places Helen sleeps, in order */
+  .bases{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
+  .basecard{position:relative;display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);
+    border-radius:var(--r);overflow:hidden;box-shadow:var(--shadow)}
+  .basecard .bc-ph{position:relative;aspect-ratio:4/3;overflow:hidden;background:linear-gradient(135deg,#37583F,#1F9B8C)}
+  .basecard .bc-ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .bc-n{position:absolute;left:11px;top:10px;z-index:2;font-family:"Bricolage Grotesque",sans-serif;font-weight:700;
+    font-size:11px;letter-spacing:.14em;color:#fff;text-transform:uppercase;background:rgba(20,38,30,.5);
+    border:1px solid rgba(255,255,255,.3);padding:3px 9px;border-radius:999px}
+  .bc-body{padding:13px 15px 15px}
+  .bc-nm{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;font-size:1.12rem;color:var(--green-deep)}
+  .bc-nights{font-size:12px;font-weight:600;letter-spacing:.03em;text-transform:uppercase;color:var(--jade-deep);margin:2px 0 6px}
+  .bc-ds{margin:0;color:var(--ink-soft);font-size:14px}
+
+  /* KNOW */
+  .know{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-top:30px}
+  .know .box{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .know h3{font-size:1.18rem;color:var(--green-deep);margin-bottom:7px}
+  .know p{margin:0;color:var(--ink-soft);font-size:15px}
+  .know .warn{color:var(--lemon);font-weight:600}
+  .know ul{margin:8px 0 0;padding-left:18px;color:var(--ink-soft);font-size:15px}
+  .know li{margin:3px 0}
+  .know a{color:var(--jade-deep);font-weight:600}
+  .know .rails{list-style:none;padding-left:0}
+  .know .rails li{margin:6px 0;padding-left:2px}
+  .links{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .links a{font-size:13px;font-weight:600;color:var(--green-deep);background:var(--paper-2);
+    border:1px solid var(--line);padding:6px 11px;border-radius:999px;text-decoration:none}
+
+  /* FOOTER */
+  footer{margin-top:64px;background:var(--green-deep);color:#DCE7DD;padding:46px 0 40px;text-align:center}
+  footer .big{font-family:"Bricolage Grotesque",sans-serif;font-weight:700;color:#fff;
+    font-size:clamp(1.5rem,4.4vw,2.1rem);letter-spacing:-.01em}
+  footer p{max-width:46ch;margin:12px auto 0;color:#B6CCBC;font-size:15px}
+  footer .fine{margin-top:24px;font-size:12.5px;color:#7e9c87}
+
+  .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+  .reveal.in{opacity:1;transform:none}
+
+  @media(max-width:760px){
+    body{font-size:16px}
+    .facts{grid-template-columns:repeat(2,1fr)}
+    .grid{grid-template-columns:1fr 1fr}
+    .bases{grid-template-columns:1fr 1fr}
+    .know{grid-template-columns:1fr}
+  }
+  @media(max-width:460px){.grid{grid-template-columns:1fr}.bases{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}.card{transition:none}}
+</style>
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css">
+<link rel="stylesheet" href="presentation.css">
+<link rel="stylesheet" href="enhance.css">
+</head>
+<body>
+<header class="hero">
+  <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FirenzeDec092023_01.jpg/1280px-FirenzeDec092023_01.jpg" alt="Florence at dusk, the Duomo above the rooftops" onerror="this.style.display='none'">
+  <div class="hero-in">
+    <div class="eyebrow">Helen's trip &middot; summer 2026</div>
+    <h1>Paris, Florence, the Bay &amp; Milan</h1>
+    <p>A grand loop through Italy and back, all on the rails: London down to Paris, high-speed to Florence, the Bay of Naples at Sorrento, then Milan and home.</p>
+    <div class="meta"><span style="display:inline-flex;align-items:center;gap:5px"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" style="width:13px;height:13px;flex:none;margin-right:1px"><path d="M12 2c-4.42 0-8 .5-8 4v9.5C4 17.43 5.57 19 7.5 19L6 20.5v.5h12v-.5L16.5 19c1.93 0 3.5-1.57 3.5-3.5V6c0-3.5-3.58-4-8-4zM7.5 17c-.83 0-1.5-.67-1.5-1.5S6.67 14 7.5 14s1.5.67 1.5 1.5S8.33 17 7.5 17zm3.5-7H6V6h5v4zm2 0V6h5v4h-5zm3.5 7c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/></svg>All by rail</span><span>25 Jul &ndash; 5 Aug 2026</span><span>11 nights</span><span>Four cities</span><span>No flights</span></div>
+  </div>
+</header>
+
+<div class="wrap">
+  <p style="padding-top:18px;margin:0"><a href="index.html" style="color:var(--jade-deep);font-weight:600;text-decoration:none">← back to the summer options</a></p>
+
+  <section class="intro reveal">
+    <p class="lead">Helen's own summer run: <em>four cities, one rail pass of a fortnight</em>, north to south and back again.</p>
+    <p class="body">Not a &ldquo;which shall we pick&rdquo; this time &mdash; this one's booked. Down the East Coast on LNER, across on Eurostar for a night in Paris, then the long high-speed haul to Florence for three nights of art and Renaissance. On to the Bay of Naples and four slow nights in Sorrento &mdash; lemon groves, Capri, Pompeii &mdash; before turning north for a couple of nights in Milan, a last evening in Paris, and home. Every leg on a train.</p>
+    <button class="play-journey-btn" onclick="TripPresentation.open()">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M8 5v14l11-7z"/></svg>
+      Play the journey
+    </button>
+  </section>
+
+  <section class="facts reveal">
+    <div class="fact"><div class="k">12 days</div><div class="v">Sat 25 Jul to Wed 5 Aug 2026</div></div>
+    <div class="fact"><div class="k">4 bases</div><div class="v">Paris, Florence, Sorrento &amp; Milan</div></div>
+    <div class="fact"><div class="k">0 flights</div><div class="v">the whole loop runs on the rails</div></div>
+    <div class="fact"><div class="k">2 countries</div><div class="v">France &amp; Italy, end to end</div></div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">The shape of it</span></div>
+    <h2 class="reveal">Day by day, London to the Bay and back</h2>
+    <p class="sub reveal">The line runs cool and northern at each end, then warms right through the Italian middle. About how it'll feel, too.</p>
+    <ul class="timeline">
+      <li class="t-item t-item--travel">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Sat 25 Jul</div><h3 class="t-title">Down south &amp; across to Paris</h3>
+        <p class="t-blurb">LNER down the East Coast Main Line to London, then Eurostar under the Channel to Gare du Nord. A first night in Paris to break the journey and shake off the travel.</p>
+        <span class="t-time">LNER + Eurostar &middot; night in Paris</span>
+        <div class="t-chips"><span class="chip">rail</span><span class="chip">start</span></div></div>
+      </li>
+      <li class="t-item t-item--travel">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Sun 26 Jul</div><h3 class="t-title">Paris → Florence</h3>
+        <p class="t-blurb">The big one: a full day of high-speed rail across France and down through the Alps into Tuscany, arriving Florence in time for a first Negroni and an evening wander.</p>
+        <span class="t-time">07:50 → 17:04 &middot; arrive Florence</span>
+        <div class="t-chips"><span class="chip">rail</span><span class="chip">arrive</span></div></div>
+      </li>
+      <li class="t-item">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Mon 27 Jul</div><h3 class="t-title">Florence &mdash; the art</h3>
+        <p class="t-blurb">A pre-booked Uffizi or Accademia in the morning, the Duomo and Baptistery, then over the Ponte Vecchio into the Oltrarno for the quiet side of the city.</p>
+        <div class="t-chips"><span class="chip">art</span><span class="chip">city</span></div></div>
+      </li>
+      <li class="t-item">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Tue 28 Jul</div><h3 class="t-title">Florence &mdash; slow day</h3>
+        <p class="t-blurb">The Boboli and Bardini gardens looking back over the rooftops, San Miniato at golden hour, and Piazzale Michelangelo for the whole city laid out below.</p>
+        <div class="t-chips"><span class="chip">gardens</span><span class="chip">views</span></div></div>
+      </li>
+      <li class="t-item t-item--travel">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Wed 29 Jul</div><h3 class="t-title">Florence → Naples → Sorrento</h3>
+        <p class="t-blurb">High-speed south to Naples (~3½ hrs), then the Circumvesuviana line down the coast to Sorrento (~1 hr 15) to settle into the calm of the bay.</p>
+        <span class="t-time">Florence → Naples ~3h30, then ~1h15 to Sorrento</span>
+        <div class="t-chips"><span class="chip">rail</span><span class="chip">move</span></div></div>
+      </li>
+      <li class="t-item">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Thu 30 Jul</div><h3 class="t-title">Sorrento settles you in</h3>
+        <p class="t-blurb">Lemon groves, the colourful Marina Grande for a long lunch, a seafront wander and a first proper do-nothing afternoon over the Gulf of Naples.</p>
+        <div class="t-chips"><span class="chip">rest</span><span class="chip">coast</span></div></div>
+      </li>
+      <li class="t-item">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Fri 31 Jul</div><h3 class="t-title">Capri across the water</h3>
+        <p class="t-blurb">Hydrofoil over early, up to the Gardens of Augustus for the Faraglioni view and the chairlift up Monte Solaro, back before the day boats clog it up.</p>
+        <div class="t-chips"><span class="chip">island</span><span class="chip">garden</span></div></div>
+      </li>
+      <li class="t-item">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Sat 1 Aug</div><h3 class="t-title">Pompeii, or just the pool</h3>
+        <p class="t-blurb">The little train up to Pompeii for a morning among the ruins with Vesuvius behind &mdash; or a lazy last Sorrento day, whichever the mood wants.</p>
+        <div class="t-chips"><span class="chip">history</span><span class="chip">easy</span></div></div>
+      </li>
+      <li class="t-item t-item--travel">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Sun 2 Aug</div><h3 class="t-title">Sorrento → Milan</h3>
+        <p class="t-blurb">The long haul north: back up to Naples, then high-speed the length of Italy to Milan for a change of scene and a couple of city nights.</p>
+        <span class="t-time">Naples → Milan by Frecciarossa &middot; night in Milan</span>
+        <div class="t-chips"><span class="chip">rail</span><span class="chip">move</span></div></div>
+      </li>
+      <li class="t-item">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Mon 3 Aug</div><h3 class="t-title">Milan &mdash; the finale city</h3>
+        <p class="t-blurb">The Duomo and its rooftop, the Galleria, La Scala, and an aperitivo in the Navigli as the trip winds down. Book ahead if The Last Supper's on the list.</p>
+        <div class="t-chips"><span class="chip">city</span><span class="chip">aperitivo</span></div></div>
+      </li>
+      <li class="t-item t-item--travel">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Tue 4 Aug</div><h3 class="t-title">Milan → Paris</h3>
+        <p class="t-blurb">An early start back over the Alps to Paris, arriving early afternoon &mdash; time for a last French evening, dinner and a wander before the run home.</p>
+        <span class="t-time">06:25 → 13:13 &middot; last night in Paris</span>
+        <div class="t-chips"><span class="chip">rail</span><span class="chip">city</span></div></div>
+      </li>
+      <li class="t-item t-item--travel">
+        <div class="t-node"></div>
+        <div class="t-card"><div class="t-num">Wed 5 Aug</div><h3 class="t-title">Paris → home</h3>
+        <p class="t-blurb">Eurostar back to London, then LNER up the East Coast home &mdash; a head full of Florence, lemon groves and Milanese rooftops, and never once at an airport.</p>
+        <span class="t-time">Eurostar + LNER &middot; home</span>
+        <div class="t-chips"><span class="chip">rail</span><span class="chip">home</span></div></div>
+      </li>
+    </ul>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Where you sleep</span></div>
+    <h2 class="reveal">Four bases, in order</h2>
+    <p class="sub reveal">One night to land, three for the art, four for the bay, two for the finale &mdash; then a last night in Paris on the way back.</p>
+    <div class="bases reveal">
+      <div class="basecard">
+        <div class="bc-ph"><span class="bc-n">1st &amp; last</span><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg" alt="The Eiffel Tower over Paris" onerror="this.style.display='none'"></div>
+        <div class="bc-body"><div class="bc-nm">Paris</div><div class="bc-nights">2 nights &middot; 25 Jul &amp; 4 Aug</div><p class="bc-ds">The hinge of the trip, both ways &mdash; a night to break the journey out, and a last French evening on the way home.</p></div>
+      </div>
+      <div class="basecard">
+        <div class="bc-ph"><span class="bc-n">Nights 2&ndash;4</span><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FirenzeDec092023_01.jpg/500px-FirenzeDec092023_01.jpg" alt="Florence and the Duomo" onerror="this.style.display='none'"></div>
+        <div class="bc-body"><div class="bc-nm">Florence</div><div class="bc-nights">3 nights &middot; 26&ndash;28 Jul</div><p class="bc-ds">Renaissance city: the Uffizi, the Duomo, the Oltrarno and the gardens over the rooftops. Three unhurried nights.</p></div>
+      </div>
+      <div class="basecard">
+        <div class="bc-ph"><span class="bc-n">Nights 5&ndash;8</span><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/View_of_Sorrento.jpg/500px-View_of_Sorrento.jpg" alt="Sorrento above the Bay of Naples" onerror="this.style.display='none'"></div>
+        <div class="bc-body"><div class="bc-nm">Sorrento</div><div class="bc-nights">4 nights &middot; 29 Jul&ndash;1 Aug</div><p class="bc-ds">The calm heart of the trip: lemon groves and a cliff-top marina, with Capri and Pompeii both an easy day out.</p></div>
+      </div>
+      <div class="basecard">
+        <div class="bc-ph"><span class="bc-n">Nights 9&ndash;10</span><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Milan_-_Scala_-_Facade.jpg/500px-Milan_-_Scala_-_Facade.jpg" alt="The facade of La Scala, Milan" onerror="this.style.display='none'"></div>
+        <div class="bc-body"><div class="bc-nm">Milan</div><div class="bc-nights">2 nights &middot; 2&ndash;3 Aug</div><p class="bc-ds">The last Italian stop: the Duomo rooftop, the Galleria and La Scala, and an aperitivo before turning for home.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Along the way</span></div>
+    <h2 class="reveal">The things worth stopping for</h2>
+    <p class="sub reveal">Tap any of them for photos, hours and directions. A few close on Mondays or Tuesdays, so worth planning around.</p>
+    <div class="grid">
+      <a class="card" href="https://www.uffizi.it/en/the-uffizi" target="_blank" rel="noopener">
+        <div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FirenzeDec092023_01.jpg/500px-FirenzeDec092023_01.jpg" alt="The Uffizi and Florence" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">The Uffizi, Florence</span></div>
+        <div class="card-body"><div class="card-meta">Art · pre-book · shut Mondays</div><h3 class="card-name">The Uffizi</h3>
+        <p class="card-blurb">Botticelli, Leonardo, Caravaggio &mdash; the greatest hits of the Renaissance under one roof. Book a timed slot to skip the queue.</p><span class="card-link">Have a look →</span></div></a>
+      <a class="card" href="https://www.uffizi.it/giardino-boboli/" target="_blank" rel="noopener">
+        <div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FirenzeDec092023_01.jpg/500px-FirenzeDec092023_01.jpg" alt="Boboli &amp; Bardini gardens, Florence" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Boboli &amp; Bardini, Florence</span></div>
+        <div class="card-body"><div class="card-meta">Gardens · Oltrarno</div><h3 class="card-name">Boboli &amp; Bardini</h3>
+        <p class="card-blurb">Two hillside gardens behind the Pitti Palace, terraces and statues looking back over the whole of Florence.</p><span class="card-link">Have a look →</span></div></a>
+      <a class="card" href="https://www.google.com/maps/search/?api=1&query=Gardens%20of%20Augustus%2C%20Capri" target="_blank" rel="noopener">
+        <div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Capri_in_Cartolina_-_Vista_da_Termini_%28Massa_Lubrense%29.jpg/500px-Capri_in_Cartolina_-_Vista_da_Termini_%28Massa_Lubrense%29.jpg" alt="Capri and the Faraglioni rocks" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Capri</span></div>
+        <div class="card-body"><div class="card-meta">Island · from Sorrento</div><h3 class="card-name">Capri</h3>
+        <p class="card-blurb">Ferry over for the Gardens of Augustus, the Faraglioni view and the chairlift up Monte Solaro. Go early, beat the crowds.</p><span class="card-link">Have a look →</span></div></a>
+      <a class="card" href="https://pompeiisites.org/en/" target="_blank" rel="noopener">
+        <div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Theathres_of_Pompeii.jpg/500px-Theathres_of_Pompeii.jpg" alt="The ruins of Pompeii" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Pompeii</span></div>
+        <div class="card-body"><div class="card-meta">Ruins · 35 min by train</div><h3 class="card-name">Pompeii</h3>
+        <p class="card-blurb">A whole Roman city frozen mid-life. Vast and shadeless, so go for the 9am opening with water and a hat.</p><span class="card-link">Have a look →</span></div></a>
+      <a class="card" href="https://www.museoarcheologiconapoli.it/en/" target="_blank" rel="noopener">
+        <div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Napoli_-_Maschio_Angioino_-_202209302342_3.jpg/500px-Napoli_-_Maschio_Angioino_-_202209302342_3.jpg" alt="Naples on the bay" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Naples</span></div>
+        <div class="card-body"><div class="card-meta">City · on the way through</div><h3 class="card-name">Naples</h3>
+        <p class="card-blurb">The gateway to the bay and the home of pizza &mdash; worth a wander and a margherita if there's an hour between trains.</p><span class="card-link">Have a look →</span></div></a>
+      <a class="card" href="https://www.google.com/maps/search/?api=1&query=Duomo%20di%20Milano" target="_blank" rel="noopener">
+        <div class="card-ph"><img loading="lazy" src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Milan_-_Scala_-_Facade.jpg/500px-Milan_-_Scala_-_Facade.jpg" alt="Milan, La Scala" onerror="this.style.display='none';this.parentNode.classList.add('ph-fail')"><span class="ph-label">Milan</span></div>
+        <div class="card-body"><div class="card-meta">City · the finale</div><h3 class="card-name">Milan's Duomo &amp; La Scala</h3>
+        <p class="card-blurb">Walk the Duomo rooftop among the spires, cut through the Galleria, and toast the trip with an aperitivo before the last leg north.</p><span class="card-link">Have a look →</span></div></a>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="sec-head reveal"><span class="eyebrow">Good to know</span></div>
+    <h2 class="reveal">The practical bits</h2>
+    <div class="know">
+      <div class="box reveal">
+        <h3>The rail legs, in order</h3>
+        <p>The whole loop is booked on trains &mdash; the long days are the reward, not the chore:</p>
+        <ul class="rails">
+          <li><strong>Home &rarr; London &rarr; Paris</strong> &middot; LNER + Eurostar, night in Paris</li>
+          <li><strong>Paris &rarr; Florence</strong> &middot; 07:50 &rarr; 17:04, high-speed via the Alps</li>
+          <li><strong>Florence &rarr; Naples &rarr; Sorrento</strong> &middot; ~3h30 + ~1h15 on the Circumvesuviana</li>
+          <li><strong>Sorrento &rarr; Naples &rarr; Milan</strong> &middot; Frecciarossa the length of Italy</li>
+          <li><strong>Milan &rarr; Paris</strong> &middot; 06:25 &rarr; 13:13, back over the Alps</li>
+          <li><strong>Paris &rarr; London &rarr; home</strong> &middot; Eurostar + LNER</li>
+        </ul>
+        <div class="links">
+          <a href="https://www.seat61.com/trains-and-routes/paris-to-florence-by-train.htm" target="_blank" rel="noopener">Paris–Florence on seat61</a>
+          <a href="https://www.seat61.com/international-trains/trains-to-italy.htm" target="_blank" rel="noopener">Trains to Italy</a>
+        </div>
+      </div>
+      <div class="box reveal">
+        <h3>Booking &amp; changes</h3>
+        <p>Reserve the Eurostar and the French high-speed legs (Paris&ndash;Florence, Milan&ndash;Paris) as early as you can &mdash; fares climb and seats sell out. The Italian Frecciarossa legs are flexible and frequent. <span class="warn">One to watch:</span> the Paris&ndash;Milan line closes for works ~11 Sept&ndash;9 Oct 2026, but this trip runs in late July, well clear of it.</p>
+      </div>
+      <div class="box reveal">
+        <h3>Around the Bay of Naples</h3>
+        <p>The Circumvesuviana threads Naples &rarr; Herculaneum &rarr; Pompeii Scavi (~35&nbsp;min) &rarr; Sorrento (~65&nbsp;min, every 30&nbsp;min) &mdash; cheap and frequent, if a bit rough; the faster Campania Express is worth the few extra euros. Hydrofoils reach Capri in ~20&ndash;25&nbsp;min from Sorrento.</p>
+      </div>
+      <div class="box reveal">
+        <h3>Eating well, meat-free</h3>
+        <p>Vegetarian heaven the whole way down:</p>
+        <ul>
+          <li>Florence &mdash; ribollita, pappa al pomodoro, pecorino</li>
+          <li>The bay &mdash; pizza margherita, parmigiana di melanzane, lemon everything</li>
+          <li>Milan &mdash; risotto alla milanese and a proper aperitivo</li>
+          <li>Paris, top and tail &mdash; the good bakery on both nights</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+</div>
+
+<footer>
+  <div class="wrap">
+    <div class="big">Buon viaggio, Helen 🚆</div>
+    <p>Four cities, a fortnight of trains, and not a single airport. Back to <a href="index.html">the other options</a> whenever.</p>
+    <div class="fine">Helen's trip · summer 2026</div>
+  </div>
+</footer>
+
+<script>
+  const io=new IntersectionObserver((es)=>{es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+  document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+</script>
+<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+<script src="presentation.js"></script>
+<script>
+TripPresentation.init([
+  { kind:"travel", coords:[51.505,-0.09], zoom:6, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", title:"Down south, across to Paris", eyebrow:"Sat 25 Jul · Departure", desc:"LNER down the East Coast to London, then Eurostar under the Channel for a first night in Paris.", chips:["rail","start"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:11, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", title:"Paris → Florence", eyebrow:"Sun 26 Jul · The big leg", desc:"07:50 → 17:04: a full day of high-speed rail across France and through the Alps into Tuscany.", chips:["rail","arrive"] },
+  { base:true, coords:[43.770,11.256], zoom:13, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/d/d2/FirenzeDec092023_01.jpg/500px-FirenzeDec092023_01.jpg", title:"Florence", eyebrow:"Mon 27–Tue 28 Jul · Art", desc:"The Uffizi and the Duomo, the Oltrarno over the Ponte Vecchio, and the Boboli gardens over the rooftops.", chips:["art","gardens"] },
+  { base:true, coords:[40.626,14.376], zoom:13, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/View_of_Sorrento.jpg/500px-View_of_Sorrento.jpg", title:"Sorrento & the Bay", eyebrow:"Wed 29 Jul–Sat 1 Aug · Coast", desc:"Four nights over the Gulf of Naples: lemon groves and the marina, with Capri and Pompeii both an easy day out.", chips:["rest","coast"] },
+  { coords:[40.551,14.222], zoom:13, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/7/7d/Capri_in_Cartolina_-_Vista_da_Termini_%28Massa_Lubrense%29.jpg/500px-Capri_in_Cartolina_-_Vista_da_Termini_%28Massa_Lubrense%29.jpg", title:"Capri across the water", eyebrow:"Fri 31 Jul · Island", desc:"Hydrofoil over for the Gardens of Augustus, the Faraglioni view and the chairlift up Monte Solaro.", chips:["island","garden"] },
+  { base:true, coords:[45.464,9.190], zoom:13, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Milan_-_Scala_-_Facade.jpg/500px-Milan_-_Scala_-_Facade.jpg", title:"Milan", eyebrow:"Sun 2–Mon 3 Aug · The finale", desc:"The Duomo rooftop, the Galleria and La Scala, and an aperitivo in the Navigli before the run home.", chips:["city","aperitivo"] },
+  { kind:"travel", coords:[48.856,2.352], zoom:11, image:"https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg/500px-La_Tour_Eiffel_vue_de_la_Tour_Saint-Jacques%2C_Paris_ao%C3%BBt_2014_%282%29.jpg", title:"Milan → Paris → home", eyebrow:"Tue 4–Wed 5 Aug · Homeward", desc:"06:25 → 13:13 back over the Alps for a last Paris evening, then Eurostar and LNER home. Never once at an airport.", chips:["rail","home"] }
+]);
+</script>
+<script src="enhance.js"></script>
+</body>
+</html>
